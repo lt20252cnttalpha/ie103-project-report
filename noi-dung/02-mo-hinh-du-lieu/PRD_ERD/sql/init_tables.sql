@@ -1,0 +1,109 @@
+
+-- INIT DATABASE FOR ROOM BOOKING SYSTEM (MSSQL)
+-- ============================================
+
+-- ===== USER & AUTH =====
+CREATE TABLE ADMINS (
+    id INT IDENTITY PRIMARY KEY,
+    email NVARCHAR(255) NOT NULL UNIQUE,
+    password_hash NVARCHAR(255) NOT NULL,
+    full_name NVARCHAR(255),
+    status NVARCHAR(50) DEFAULT 'ACTIVE'
+);
+
+CREATE TABLE ROLES (
+    id INT IDENTITY PRIMARY KEY,
+    code NVARCHAR(50) NOT NULL UNIQUE,
+    name NVARCHAR(255) NOT NULL
+);
+
+CREATE TABLE PERMISSIONS (
+    id INT IDENTITY PRIMARY KEY,
+    code NVARCHAR(100) NOT NULL UNIQUE,
+    description NVARCHAR(255)
+);
+
+CREATE TABLE ADMIN_ROLES (
+    admin_id INT NOT NULL,
+    role_id INT NOT NULL,
+    PRIMARY KEY (admin_id, role_id),
+    FOREIGN KEY (admin_id) REFERENCES ADMINS(id),
+    FOREIGN KEY (role_id) REFERENCES ROLES(id)
+);
+
+CREATE TABLE ROLE_PERMISSIONS (
+    role_id INT NOT NULL,
+    permission_id INT NOT NULL,
+    PRIMARY KEY (role_id, permission_id),
+    FOREIGN KEY (role_id) REFERENCES ROLES(id),
+    FOREIGN KEY (permission_id) REFERENCES PERMISSIONS(id)
+);
+
+CREATE TABLE USERS (
+    id INT IDENTITY PRIMARY KEY,
+    email NVARCHAR(255) NOT NULL UNIQUE,
+    phone NVARCHAR(20),
+    password_hash NVARCHAR(255) NOT NULL,
+    full_name NVARCHAR(255),
+    status NVARCHAR(50) DEFAULT 'ACTIVE'
+);
+
+-- ===== ROOM & BOOKING =====
+CREATE TABLE LOAIPHONG (
+    id INT IDENTITY PRIMARY KEY,
+    ten_loai NVARCHAR(100) NOT NULL,
+    gia_co_ban DECIMAL(18,2) NOT NULL
+);
+
+CREATE TABLE PHONG (
+    id INT IDENTITY PRIMARY KEY,
+    so_phong NVARCHAR(20) NOT NULL UNIQUE,
+    loai_phong_id INT NOT NULL,
+    trang_thai NVARCHAR(50) DEFAULT 'AVAILABLE',
+    FOREIGN KEY (loai_phong_id) REFERENCES LOAIPHONG(id)
+);
+
+CREATE TABLE DATPHONG (
+    id INT IDENTITY PRIMARY KEY,
+    user_id INT NOT NULL,
+    check_in DATETIME NOT NULL,
+    check_out DATETIME NOT NULL,
+    trang_thai NVARCHAR(50) DEFAULT 'PENDING',
+    created_at DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (user_id) REFERENCES USERS(id)
+);
+
+CREATE TABLE CT_DATPHONG (
+    id INT IDENTITY PRIMARY KEY,
+    datphong_id INT NOT NULL,
+    phong_id INT NOT NULL,
+    don_gia DECIMAL(18,2) NOT NULL,
+    FOREIGN KEY (datphong_id) REFERENCES DATPHONG(id),
+    FOREIGN KEY (phong_id) REFERENCES PHONG(id),
+    CONSTRAINT UQ_CT_DATPHONG UNIQUE (datphong_id, phong_id)
+);
+
+-- ===== PAYMENT =====
+CREATE TABLE PAYMENTS (
+    id INT IDENTITY PRIMARY KEY,
+    booking_id INT NOT NULL,
+    user_id INT NOT NULL,
+    amount DECIMAL(18,2) NOT NULL,
+    method NVARCHAR(50),
+    status NVARCHAR(50),
+    created_at DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (booking_id) REFERENCES DATPHONG(id),
+    FOREIGN KEY (user_id) REFERENCES USERS(id)
+);
+
+CREATE TABLE REFUNDS (
+    id INT IDENTITY PRIMARY KEY,
+    payment_id INT NOT NULL,
+    refund_amount DECIMAL(18,2) NOT NULL,
+    status NVARCHAR(50),
+    reason NVARCHAR(255),
+    approved_by INT,
+    created_at DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (payment_id) REFERENCES PAYMENTS(id),
+    FOREIGN KEY (approved_by) REFERENCES ADMINS(id)
+);
