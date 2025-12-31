@@ -1,6 +1,7 @@
 # ie103-project-report
 
-IE103 Project Report (Typst)
+- IE103 Project Report (Typst)
+- Deadline: 28/01/2026.
 
 ## Quy Cách Tổ Chức
 
