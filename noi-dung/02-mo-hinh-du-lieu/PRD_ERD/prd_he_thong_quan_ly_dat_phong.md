@@ -373,7 +373,7 @@ updated_at
 
 #### 13.5.1 Phân quyền admin
 
-```
+```mermaid
 erDiagram
     ADMINS ||--o{ ADMIN_ROLES : has
     ROLES ||--o{ ADMIN_ROLES : assigned
@@ -384,7 +384,7 @@ erDiagram
 
 #### 13.5.2 Quy trình đặt phòng
 
-```
+```mermaid
 erDiagram
     USERS ||--o{ DATPHONG : creates
     DATPHONG ||--o{ PAYMENTS : has
@@ -397,7 +397,7 @@ erDiagram
 
 ### 13.6 ERD tổng thể hệ thống (User, Booking, Payment, Admin & Authorization)
 
-```
+```mermaid
 erDiagram
     %% ===== USER & AUTH =====
     ADMINS {
