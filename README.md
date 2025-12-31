@@ -10,6 +10,7 @@ IE103 Project Report (Typst)
 ## Nội Dung
 
 - Bám sát hướng dẫn về Yêu Cầu [ĐỒ ÁN MÔN HỌC QUẢN LÝ THÔNG TIN](noi-dung/FinalProject_GUIDE-Yeu_Cau.md).
+- Bổ sung nội dung vào thư mục [noi-dung](noi-dung) tương ứng từng mục dưới đây.
 
 ### 1. Mô tả bài toán
 
@@ -39,7 +40,7 @@ IE103 Project Report (Typst)
 
 ## Phạm vi chức năng
 
--  Chi tiết tại [prd_he_thong_quan_ly_dat_phong.md](noi-dung/02-mo-hinh-du-lieu/PRD_ERD/prd_he_thong_quan_ly_dat_phong.md) 
+-  Chi tiết tại [prd_he_thong_quan_ly_dat_phong.md](noi-dung/02-mo-hinh-du-lieu/PRD_ERD/prd_he_thong_quan_ly_dat_phong.md)
 
 ### In Scope
 
@@ -60,6 +61,12 @@ IE103 Project Report (Typst)
 2. Hệ thống kế toán hoặc xuất hóa đơn điện tử
 3. Tối ưu hiệu năng cho quy mô lớn (high traffic)
 4. Tích hợp bên thứ ba (OTA như Booking, Agoda)
+
+## Demo
+
+- Web App.
+  - BE: https://github.com/lt20252cnttalpha/ie103-project-be
+  - FE: https://github.com/lt20252cnttalpha/ie103-project-fe
 
 ## Công Cụ
 
