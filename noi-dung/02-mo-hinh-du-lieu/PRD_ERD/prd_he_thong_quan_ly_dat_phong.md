@@ -21,8 +21,8 @@ Hệ thống Quản lý Đặt phòng (BMS) được xây dựng nhằm hỗ tr�
 ### 1.4 Phạm vi áp dụng
 
 - Khách sạn, nhà nghỉ, homestay quy mô nhỏ và vừa
-- Có giao diện quản lý (BMS) cho Admin/Staff
-- Có giao diện người dùng (User Application) cho End User
+- **Có giao diện quản lý (BMS) cho Admin/Staff**
+- **Có giao diện người dùng (User Application) cho End User**
 - Có triển khai ứng dụng web hoặc mobile ở mức hoàn chỉnh cho mục đích demo và đồ án
 - Có tích hợp thanh toán trực tuyến ở mức mô phỏng
 
