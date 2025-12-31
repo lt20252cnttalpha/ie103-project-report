@@ -115,19 +115,19 @@ Là **Staff**, tôi muốn ghi nhận thanh toán và hoàn tiền cho một đ�
 
 ### 7.1 Các thực thể chính
 
-- LOAIPHONG
-- PHONG
-- KHACHHANG
-- DATPHONG
-- CT\_DATPHONG
-- USERS (End User)
-- ADMINS (Admin / Staff)
-- ROLES
-- PERMISSIONS
-- ADMIN\_ROLES
-- ROLE\_PERMISSIONS
-- PAYMENTS
-- REFUNDS
+1. `LOAIPHONG`
+2. `PHONG`
+3. `KHACHHANG`
+4. `DATPHONG`
+5. `CT_DATPHONG`
+6. `USERS` (End User)
+7. `ADMINS` (Admin / Staff)
+8. `ROLES`
+9. `PERMISSIONS`
+10. `ADMIN_ROLES`
+11. `ROLE_PERMISSIONS`
+12. `PAYMENTS`
+13. `REFUNDS`
 
 ### 7.2 Quan hệ giữa các thực thể
 
