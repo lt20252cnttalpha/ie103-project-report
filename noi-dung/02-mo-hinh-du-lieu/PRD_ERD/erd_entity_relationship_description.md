@@ -81,7 +81,7 @@ Tài liệu này mô tả ý nghĩa của từng **thực thể (Entity)** trong
 
 ## 2. Nhóm Room & Booking
 
-### 2.1 LOAIPHONG
+### 2.1 `LOAIPHONG`
 
 **Mô tả:**
 
@@ -93,7 +93,7 @@ Tài liệu này mô tả ý nghĩa của từng **thực thể (Entity)** trong
 
 ---
 
-### 2.2 PHONG
+### 2.2 `PHONG`
 
 **Mô tả:**
 
@@ -106,7 +106,7 @@ Tài liệu này mô tả ý nghĩa của từng **thực thể (Entity)** trong
 
 ---
 
-### 2.3 DATPHONG
+### 2.3 `DATPHONG`
 
 **Mô tả:**
 
@@ -120,7 +120,7 @@ Tài liệu này mô tả ý nghĩa của từng **thực thể (Entity)** trong
 
 ---
 
-### 2.4 CT\_DATPHONG (Chi tiết đặt phòng)
+### 2.4 `CT_DATPHONG` (Chi tiết đặt phòng)
 
 **Mô tả:**
 
@@ -140,7 +140,7 @@ Tài liệu này mô tả ý nghĩa của từng **thực thể (Entity)** trong
 
 ## 3. Nhóm Payment & Refund
 
-### 3.1 PAYMENTS
+### 3.1 `PAYMENTS`
 
 **Mô tả:**
 
@@ -154,7 +154,7 @@ Tài liệu này mô tả ý nghĩa của từng **thực thể (Entity)** trong
 
 ---
 
-### 3.2 REFUNDS
+### 3.2 `REFUNDS`
 
 **Mô tả:**
 
@@ -170,9 +170,9 @@ Tài liệu này mô tả ý nghĩa của từng **thực thể (Entity)** trong
 
 ## 4. Tóm tắt quan hệ chính
 
-- USERS ⟶ DATPHONG ⟶ CT\_DATPHONG ⟶ PHONG ⟶ LOAIPHONG
-- DATPHONG ⟶ PAYMENTS ⟶ REFUNDS
-- ADMINS ⟶ ADMIN\_ROLES ⟶ ROLES ⟶ ROLE\_PERMISSIONS ⟶ PERMISSIONS
+- `USERS` ⟶ `DATPHONG` ⟶ `CT_DATPHONG` ⟶ `PHONG` ⟶ `LOAIPHONG`
+- `DATPHONG` ⟶ `PAYMENTS` ⟶ `REFUNDS`
+- `ADMINS` ⟶ `ADMIN_ROLES` ⟶ `ROLES` ⟶ `ROLE_PERMISSIONS` ⟶ `PERMISSIONS`
 
 ---
 
