@@ -6,7 +6,7 @@
 
 ### 1.1 Tên sản phẩm
 
-**Booking Management System (BMS)**
+- **Booking Management System (BMS)**
 
 ### 1.2 Mục đích
 
@@ -21,8 +21,8 @@ Hệ thống Quản lý Đặt phòng (BMS) được xây dựng nhằm hỗ tr�
 ### 1.4 Phạm vi áp dụng
 
 - Khách sạn, nhà nghỉ, homestay quy mô nhỏ và vừa
-- Có giao diện quản lý (BMS) cho Admin/Staff
-- Có giao diện người dùng (User Application) cho End User
+- **Có giao diện quản lý (BMS) cho Admin/Staff**
+- **Có giao diện người dùng (User Application) cho End User**
 - Có triển khai ứng dụng web hoặc mobile ở mức hoàn chỉnh cho mục đích demo và đồ án
 - Có tích hợp thanh toán trực tuyến ở mức mô phỏng
 
@@ -115,23 +115,23 @@ Là **Staff**, tôi muốn ghi nhận thanh toán và hoàn tiền cho một đ�
 
 ### 7.1 Các thực thể chính
 
-- LOAIPHONG
-- PHONG
-- KHACHHANG
-- DATPHONG
-- CT\_DATPHONG
-- USERS (End User)
-- ADMINS (Admin / Staff)
-- ROLES
-- PERMISSIONS
-- ADMIN\_ROLES
-- ROLE\_PERMISSIONS
-- PAYMENTS
-- REFUNDS
+1. `LOAIPHONG`
+2. `PHONG`
+3. `KHACHHANG`
+4. `DATPHONG`
+5. `CT_DATPHONG`
+6. `USERS` (End User)
+7. `ADMINS` (Admin / Staff)
+8. `ROLES`
+9. `PERMISSIONS`
+10. `ADMIN_ROLES`
+11. `ROLE_PERMISSIONS`
+12. `PAYMENTS`
+13. `REFUNDS`
 
 ### 7.2 Quan hệ giữa các thực thể
 
-```
+```verilog
 LOAIPHONG 1 --- n PHONG
 KHACHHANG 1 --- n DATPHONG
 DATPHONG 1 --- n CT_DATPHONG
@@ -169,9 +169,9 @@ Hệ thống hỗ trợ ghi nhận thanh toán ở mức cơ bản. Mỗi đặt
 
 ### 9.2 Trạng thái thanh toán
 
-- PAID: Đã thanh toán
-- UNPAID: Chưa thanh toán
-- REFUNDED: Đã hoàn tiền
+- `PAID`: Đã thanh toán
+- `UNPAID`: Chưa thanh toán
+- `REFUNDED`: Đã hoàn tiền
 
 ### 9.3 Chính sách hoàn tiền (Refund Policy)
 
@@ -182,8 +182,8 @@ Hệ thống hỗ trợ ghi nhận thanh toán ở mức cơ bản. Mỗi đặt
 ### 9.4 Dữ liệu lưu trữ
 
 - Số tiền đã trả
-- Phương thức thanh toán (Tiền mặt / Chuyển khoản)
-- Trạng thái thanh toán (PAID / UNPAID / REFUNDED)
+- Phương thức thanh toán (Tiền mặt (`TM`) / Chuyển khoản (`CK`))
+- Trạng thái thanh toán (`PAID` / `UNPAID` / `REFUNDED`)
 - Ngày thanh toán
 - Ngày hoàn tiền (nếu có)
 
@@ -245,10 +245,10 @@ Hệ thống hỗ trợ ghi nhận thanh toán ở mức cơ bản. Mỗi đặt
 - Không tích hợp cổng thanh toán thực tế
 - Mỗi đơn đặt phòng có thể có nhiều giao dịch thanh toán (mở rộng)
 - Trạng thái thanh toán:
-  - PENDING
-  - SUCCESS
-  - FAILED
-  - CANCELLED
+  - `PENDING`
+  - `SUCCESS`
+  - `FAILED`
+  - `CANCELLED`
 
 ---
 
@@ -258,10 +258,10 @@ Hệ thống hỗ trợ ghi nhận thanh toán ở mức cơ bản. Mỗi đặt
 - Admin duyệt hoàn tiền
 - Hỗ trợ hoàn tiền toàn phần hoặc một phần
 - Trạng thái hoàn tiền:
-  - REQUESTED
-  - APPROVED
-  - REJECTED
-  - COMPLETED
+  - `REQUESTED`
+  - `APPROVED`
+  - `REJECTED`
+  - `COMPLETED`
 
 ---
 
@@ -373,7 +373,7 @@ updated_at
 
 #### 13.5.1 Phân quyền admin
 
-```
+```mermaid
 erDiagram
     ADMINS ||--o{ ADMIN_ROLES : has
     ROLES ||--o{ ADMIN_ROLES : assigned
@@ -384,7 +384,7 @@ erDiagram
 
 #### 13.5.2 Quy trình đặt phòng
 
-```
+```mermaid
 erDiagram
     USERS ||--o{ DATPHONG : creates
     DATPHONG ||--o{ PAYMENTS : has
@@ -397,7 +397,7 @@ erDiagram
 
 ### 13.6 ERD tổng thể hệ thống (User, Booking, Payment, Admin & Authorization)
 
-```
+```mermaid
 erDiagram
     %% ===== USER & AUTH =====
     ADMINS {
