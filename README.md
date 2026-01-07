@@ -30,7 +30,7 @@ Tasks:
 | 25410176 | Trần Sơn Bình         | Function: 3                |               |
 | 25410247 | Lê Kim Long           | ERD/Data Seed              |               |
 | 25410337 | La Anh Vũ             |                            |               |
-| 25410209 | Lê Ngọc Hiệp          |                            |               |
+| 25410209 | Lê Ngọc Hiệp          | Report                     |               |
 | 25410271 | Nguyễn Thị Ngọc Nhung |                            |               |
 
 Kế hoạch:
@@ -77,18 +77,17 @@ Kế hoạch:
 
 2. **An toàn thông tin**
    1. (Bảo mật)
-   2. Xác thực
-     * JWT
-
+   2. ~~Xác thực~~
+   
    3. Phân quyền
      * [RBAC](https://whitehat.vn/threads/kiem-soat-truy-cap-dua-tren-vai-tro-role-based-access-control-la-gi.17301/)
      * Xét duyệt REFUNDS
-
+   
    4. Import
    5. Export
    6. Backup
    7. Restore.
-
+   
 3. **Trình bày thông tin** (đủ độ khó, đủ số lượng)
    1. Menu
    2. Form
@@ -96,7 +95,7 @@ Kế hoạch:
    4. Help.
 
 4. **Các chức năng** của hệ thống (Từ phần phân tích)
-   * Mô tả dạng văn bản. Không cần đemo.
+   * Mô tả dạng văn bản. Không cần demo.
 
 5. Lưu ý: **Demo** cho các chức năng (Trên nền tảng Web, Desktop, Mobile, ...)
    * Demo các mục được trình bày ở phần Xử lý thông tin, An toàn thông tin, vv..
