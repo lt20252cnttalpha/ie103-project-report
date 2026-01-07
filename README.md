@@ -69,36 +69,41 @@ Kế hoạch:
 
 ### 4. Quản lý thông tin
 
-1. **Xử lý thông tin**
-   1. ~~Stored Procedure: 5~~
-   2. ~~Trigger: 5~~
-   3. ~~Function: 3~~
-   4. ~~Cursor: 2.~~
+#### Xử lý thông tin
 
-2. **An toàn thông tin**
-   1. (Bảo mật)
-   2. ~~Xác thực~~
-   
-   3. Phân quyền
-     * [RBAC](https://whitehat.vn/threads/kiem-soat-truy-cap-dua-tren-vai-tro-role-based-access-control-la-gi.17301/)
-     * Xét duyệt REFUNDS
-   
-   4. Import
-   5. Export
-   6. Backup
-   7. Restore.
-   
-3. **Trình bày thông tin** (đủ độ khó, đủ số lượng)
-   1. Menu
-   2. Form
-   3. Report
-   4. Help.
+1. ~~Stored Procedure: 5~~
+2. ~~Trigger: 5~~
+3. ~~Function: 3~~
+4. ~~Cursor: 2.~~
 
-4. **Các chức năng** của hệ thống (Từ phần phân tích)
-   * Mô tả dạng văn bản. Không cần demo.
+#### An toàn thông tin
 
-5. Lưu ý: **Demo** cho các chức năng (Trên nền tảng Web, Desktop, Mobile, ...)
-   * Demo các mục được trình bày ở phần Xử lý thông tin, An toàn thông tin, vv..
+1. (Bảo mật)
+2. ~~Xác thực~~
+
+3. Phân quyền
+   1. RBAC](https://whitehat.vn/threads/kiem-soat-truy-cap-dua-tren-vai-tro-role-based-access-control-la-gi.17301/)
+   2. Xét duyệt REFUNDS
+
+4. Import
+5. Export
+6. Backup
+7. Restore.
+
+#### Trình bày thông tin (đủ độ khó, đủ số lượng)
+
+1. Menu
+2. Form
+3. Report
+4. Help.
+
+#### **Các chức năng** của hệ thống (Từ phần phân tích)
+
+* Mô tả dạng văn bản. Không cần demo.
+
+#### Lưu ý: **Demo** cho các chức năng (Trên nền tảng Web, Desktop, Mobile, ...)
+
+* Demo các mục được trình bày ở phần Xử lý thông tin, An toàn thông tin, vv..
 
 
 ## Phạm vi chức năng
