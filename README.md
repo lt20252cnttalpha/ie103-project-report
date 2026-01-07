@@ -37,6 +37,8 @@
 * **Các đối tượng** nào cần **quản lý**, **mối quan hệ** giữa các đối tượng (Tức chi tiết các thực thể cần quản lý, các thuộc tính cần có và mối quan hệ giữa chúng).
 * Trình bày **các ràng buộc** trên các đối tượng (nếu có).
 * Vẽ **mô hình mức quan niệm** cho mối quan hệ giữa các thực thể tương ứng với loại mô hình dữ liệu lựa chọn (VD: Sơ đồ ERD cho Mô hình quan hệ, Đồ thị quan hệ cho mô hình Đồ thị-Graph, ...).
+  * Chen notation.
+
 * **Thiết kế CSDL** cho bài toán tương ứng với loại mô hình dữ liệu lựa chọn (Tức chuyển sang **mô hình mức logic**). Lưu ý kèm theo các giải thích cho các bảng trong CSDL (Tân từ).
 
 ### 3. Cài đặt
@@ -47,30 +49,30 @@
 ### 4. Quản lý thông tin
 
 1. **Xử lý thông tin**
-   * Stored Procedure: 5
-   * Trigger: 5
-   * Function: 3
-   * Cursor: 2.
+   1. Stored Procedure: 5
+   2. Trigger: 5
+   3. Function: 3
+   4. Cursor: 2.
 
 2. **An toàn thông tin**
-   * (Bảo mật)
-   * Xác thực
+   1. (Bảo mật)
+   2. Xác thực
      * JWT
 
-   * Phân quyền
+   3. Phân quyền
      * [RBAC](https://whitehat.vn/threads/kiem-soat-truy-cap-dua-tren-vai-tro-role-based-access-control-la-gi.17301/)
      * Xét duyệt REFUNDS
 
-   * Import
-   * Export
-   * Backup
-   * Restore.
+   4. Import
+   5. Export
+   6. Backup
+   7. Restore.
 
 3. **Trình bày thông tin** (đủ độ khó, đủ số lượng)
-   * Menu
-   * Form
-   * Report
-   * Help.
+   1. Menu
+   2. Form
+   3. Report
+   4. Help.
 
 4. **Các chức năng** của hệ thống (Từ phần phân tích)
    * Mô tả dạng văn bản. Không cần đemo.
