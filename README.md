@@ -18,18 +18,20 @@
 
 Tasks:
 
-| MSSV     | Họ và Tên             | Tasks                      |
-| -------- | --------------------- | -------------------------- |
-| 25410291 | Đinh Xuân Sâm         | Report/Demo Video/ERD Chen |
-| 25410319 | Đặng Hữu Toàn         | Cursor: 2                  |
-| 25410321 | Nguyễn Điền Triết     | Stored Procedure: 3        |
-| 25410204 | Trương Xuân Hậu       |                            |
-| 25410338 | Lê Anh Vũ             | Stored Procedure: 2        |
-| 25410176 | Trần Sơn Bình         |                            |
-| 25410247 | Lê Kim Long           | ERD/Data Seed              |
-| 25410337 | La Anh Vũ             |                            |
-| 25410209 | Lê Ngọc Hiệp          |                            |
-| 25410271 | Nguyễn Thị Ngọc Nhung |                            |
+- Với mỗi đề bài, tạo một mini-report trình bày bài toán tương ứng.
+
+| MSSV     | Họ và Tên             | Tasks                      | NOTES         |
+| -------- | --------------------- | -------------------------- | ------------- |
+| 25410291 | Đinh Xuân Sâm         | Report/Demo Video/ERD Chen |               |
+| 25410319 | Đặng Hữu Toàn         | Cursor: 2                  |               |
+| 25410321 | Nguyễn Điền Triết     | Stored Procedure: 3        |               |
+| 25410204 | Trương Xuân Hậu       |                            |               |
+| 25410338 | Lê Anh Vũ             | Stored Procedure: 2        | Các bảng mới. |
+| 25410176 | Trần Sơn Bình         |                            |               |
+| 25410247 | Lê Kim Long           | ERD/Data Seed              |               |
+| 25410337 | La Anh Vũ             |                            |               |
+| 25410209 | Lê Ngọc Hiệp          |                            |               |
+| 25410271 | Nguyễn Thị Ngọc Nhung |                            |               |
 
 ## Quy Cách Tổ Chức
 
