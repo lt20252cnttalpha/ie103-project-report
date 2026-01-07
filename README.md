@@ -29,7 +29,7 @@ Tasks:
 | 25410338 | Lê Anh Vũ             | Stored Procedure: 2        | Các bảng mới. |
 | 25410176 | Trần Sơn Bình         | Function: 3                |               |
 | 25410247 | Lê Kim Long           | ERD/Data Seed              |               |
-| 25410337 | La Anh Vũ             |                            |               |
+| 25410337 | La Anh Vũ             | Code/Demo                  |               |
 | 25410209 | Lê Ngọc Hiệp          | Report                     |               |
 | 25410271 | Nguyễn Thị Ngọc Nhung |                            |               |
 
