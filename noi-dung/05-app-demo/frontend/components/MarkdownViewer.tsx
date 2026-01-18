@@ -31,7 +31,7 @@ const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
                   setError('');
 
                   // Load markdown file from sql-demo folder
-                  fetch(`/sql-demo/${filePath}`)
+                  fetch(`${import.meta.env.BASE_URL}sql-demo/${filePath}`)
                         .then(res => {
                               if (!res.ok) throw new Error(`Failed to load: ${res.statusText}`);
                               return res.text();

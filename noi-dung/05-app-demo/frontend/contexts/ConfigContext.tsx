@@ -28,6 +28,9 @@ interface ConfigContextType {
 
 const ConfigContext = createContext<ConfigContextType | undefined>(undefined);
 
+// Get base URL from Vite config (e.g., '/ie103-project-report/')
+const base = import.meta.env.BASE_URL;
+
 export const ConfigProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       const [config, setConfig] = useState<AppConfig | null>(null);
       const [loading, setLoading] = useState(true);
@@ -36,7 +39,7 @@ export const ConfigProvider: React.FC<{ children: React.ReactNode }> = ({ childr
 
       const fetchJson = async (path: string, fallback: any) => {
             try {
-                  const res = await fetch(path);
+                  const res = await fetch(`${import.meta.env.BASE_URL}${path}`);
                   if (!res.ok) throw new Error(`Failed to load ${path}`);
                   return await res.json();
             } catch (e) {

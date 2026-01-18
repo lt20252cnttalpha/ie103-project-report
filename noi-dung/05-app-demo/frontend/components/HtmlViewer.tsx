@@ -28,7 +28,7 @@ const HtmlViewer: React.FC<HtmlViewerProps> = ({
                   setLoading(true);
                   setError('');
 
-                  fetch(`/sql-demo/${filePath}`)
+                  fetch(`${import.meta.env.BASE_URL}sql-demo/${filePath}`)
                         .then(res => {
                               if (!res.ok) throw new Error(`Failed to load: ${res.statusText}`);
                               return res.text();

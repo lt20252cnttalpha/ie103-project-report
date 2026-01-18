@@ -89,7 +89,7 @@ const ScenarioDetail: React.FC = () => {
                         // Load SQL from file in sql-demo folder
                         const fetchScript = async () => {
                               try {
-                                    const response = await fetch(`/sql-demo/${meta.sqlFile}`);
+                                    const response = await fetch(`${import.meta.env.BASE_URL}sql-demo/${meta.sqlFile}`);
                                     if (response.ok) {
                                           const sqlText = await response.text();
                                           setSqlContent(sqlText);
