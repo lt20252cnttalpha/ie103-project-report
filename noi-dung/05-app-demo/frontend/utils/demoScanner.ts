@@ -30,13 +30,15 @@ export async function scanDemoConfigs(): Promise<DemoConfig[]> {
 
       for (const type of DEMO_TYPES) {
             try {
+                  const BASE_URL = import.meta.env.BASE_URL;
                   // Fetch the list of demo folders for this type
                   const demoFolders = await getDemoFolders(type);
 
                   for (const folder of demoFolders) {
                         try {
                               // Load config.json for this demo
-                              const configPath = `/sql-demo/${type}/${folder}/config.json`;
+                              const configPath = `${BASE_URL}sql-demo/${type}/${folder}/config.json`;
+                              console.log({configPath});
                               const response = await fetch(configPath);
 
                               if (response.ok) {
@@ -64,7 +66,7 @@ export async function scanDemoConfigs(): Promise<DemoConfig[]> {
 async function getDemoFolders(type: string): Promise<string[]> {
       try {
             // Try to load manifest file
-            const manifestPath = `/sql-demo/${type}/manifest.json`;
+            const manifestPath = `${import.meta.env.BASE_URL}/sql-demo/${type}/manifest.json`;
             const response = await fetch(manifestPath);
 
             if (response.ok) {
