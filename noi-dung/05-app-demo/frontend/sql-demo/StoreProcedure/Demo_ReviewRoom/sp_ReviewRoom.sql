@@ -22,11 +22,13 @@ BEGIN
     END
 
     -- 2. Booking hợp lệ & COMPLETED
+    PRINT @DatPhongId;
+    PRINT @UserId;
     IF NOT EXISTS (
         SELECT 1 FROM DATPHONG
         WHERE id = @DatPhongId
           AND user_id = @UserId
-          AND trang_thai = 'COMPLETED'
+          AND trang_thai = N'HOAN_THANH'
     )
     BEGIN
         RAISERROR(N'Chỉ được đánh giá khi đặt phòng đã hoàn thành', 16, 1);
@@ -69,7 +71,7 @@ BEGIN
     )
     VALUES (
         @UserId, @PhongId, @DatPhongId,
-        @SoSao, @BinhLuan, 'PENDING'
+        @SoSao, @BinhLuan, N'CHO_XU_LY'
     );
 
     COMMIT TRAN;

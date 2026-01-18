@@ -14,7 +14,7 @@ Stored Procedure `SP_DANHGIA` dùng để **người dùng đánh giá phòng sa
 
 - Đảm bảo chỉ đánh giá khi đã ở xong
 - Mỗi đặt phòng chỉ được đánh giá **1 lần**
-- Lưu đánh giá ở trạng thái chờ duyệt (`PENDING`)
+- Lưu đánh giá ở trạng thái chờ duyệt (`CHO_XU_LY`)
 - Hỗ trợ quản trị viên kiểm duyệt nội dung
 
 ---
