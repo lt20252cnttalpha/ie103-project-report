@@ -1,20 +1,56 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Hướng Dẫn Cài Đặt Dự Án (SQL Demo Manager)
 
-# Run and deploy your AI Studio app
+Tài liệu này hướng dẫn chi tiết cách thiết lập môi trường phát triển cho dự án **SQL Demo Manager**.
 
-This contains everything you need to run your app locally.
+---
 
-View your app in AI Studio: https://ai.studio/apps/drive/1sIKSisiT7cz5XZ5lCTphlHzPlwSymKm8
+## 1. Cấu trúc thư mục
 
-## Run Locally
+Dự án được tổ chức như sau:
 
-**Prerequisites:**  Node.js
+```
+sql-demo-manager/
+├── public/
+│   ├── config/             # THƯ MỤC CẤU HÌNH (MỚI)
+│   │   ├── settings.json   # Cài đặt app
+│   │   ├── overview.json   # Trang tổng quan
+│   │   ├── scenarios.json  # Kịch bản SQL -> Đã chuyển sang thư mục `@sql-demo`
+│   │   ├── reports.json    # Báo cáo
+│   │   └── team.json       # Thành viên nhóm
+│   └── vite.svg
+├── server/                 # Mã nguồn Backend
+├── src/                    # Mã nguồn Frontend
+└── ...
+```
 
+## 2. Cách thay đổi nội dung Web
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Không cần sửa code React (File `.tsx`), bạn chỉ cần sửa các file `.json` trong thư mục `public/config/`.
+
+*   Muốn thêm bài Demo SQL? -> Sửa sửa trong thư mục `@sql-demo`
+*   Muốn thêm Báo cáo? -> Sửa `reports.json`
+*   Muốn sửa tên thành viên? -> Sửa `team.json`
+
+(Xem chi tiết trong file `CONFIG_GUIDE.md`)
+
+---
+
+## 3. Cài đặt & Chạy (Dev)
+
+### Backend (Node.js)
+```bash
+cd server
+npm install
+npm start
+```
+
+### Frontend (React/Vite)
+```bash
+# Tại thư mục gốc
+npm install
+npm run dev
+```
+Truy cập: `http://localhost:5173`
+
+---
+**Lưu ý:** Nếu website báo lỗi không load được config, hãy kiểm tra lại cú pháp JSON trong thư mục `public/config/`.
