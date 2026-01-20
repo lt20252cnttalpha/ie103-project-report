@@ -1,0 +1,37 @@
+{
+  "id": "demo-fn-tim-phong",
+  "title": "Function 2: Tìm Phòng Trống",
+  "type": "Function",
+  "shortDesc": "Lọc danh sách phòng trống theo thời gian thực.",
+  "mdFile": "Function/Demo_TimPhong/problem.html",
+  "sqlFile": "Function/Demo_TimPhong/fn_TimPhongTrong.sql",
+  "separateTables": [
+    {
+      "name": "PHONG",
+      "label": "🏨 Phòng Gốc",
+      "sqlFetchInitial": "SELECT TOP 20 * FROM PHONG WHERE trang_thai = 'AVAILABLE'",
+      "sqlBefore": "SELECT * FROM PHONG WHERE loai_phong_id = @LoaiPhongID",
+      "sqlAfter": "SELECT * FROM PHONG WHERE loai_phong_id = @LoaiPhongID",
+      "columns": [
+        { "key": "id", "label": "ID", "isPk": true },
+        { "key": "so_phong", "label": "Số Phòng" }
+      ]
+    },
+    {
+      "name": "KET_QUA",
+      "label": "✅ KẾT QUẢ TÌM KIẾM",
+      "sqlFetchInitial": "SELECT '' AS [SoPhong], '' AS [TrangThai]",
+      "sqlBefore": "SELECT 'Chưa chạy' AS [SoPhong], '' AS [TrangThai]",
+      "sqlAfter": "SELECT so_phong AS [SoPhong], N'✅ Còn trống' AS [TrangThai] FROM dbo.fn_TimPhongTrongTheoLoai(@LoaiPhongID, CAST(@CheckIn AS DATETIME), CAST(@CheckOut AS DATETIME))",
+      "columns": [
+        { "key": "SoPhong", "label": "Phòng Có Thể Đặt", "isPk": true },
+        { "key": "TrangThai", "label": "Trạng Thái" }
+      ]
+    }
+  ],
+  "params": [
+    { "name": "@LoaiPhongID", "type": "int", "defaultValue": 1 },
+    { "name": "@CheckIn", "type": "datetime", "defaultValue": "2025-04-02 14:00:00" },
+    { "name": "@CheckOut", "type": "datetime", "defaultValue": "2025-04-03 12:00:00" }
+  ]
+}

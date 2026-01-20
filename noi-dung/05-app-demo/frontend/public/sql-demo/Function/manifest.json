@@ -1,6 +1,7 @@
 {
       "demos": [
-            "Demo_CheckRoomAvailable",
-            "Demo_RevertCreateErorr"
+            "Demo_HangThanhVien",
+            "Demo_TimPhong",
+            "Demo_PhiHuyPhong"
       ]
 }
