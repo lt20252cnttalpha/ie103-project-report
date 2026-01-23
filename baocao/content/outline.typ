@@ -89,12 +89,12 @@
 <functions-3>
 
 
-==== F1
-<f1>
+==== F1: CheckRoomAvailable
+<f1-checkroomavailable>
 
 
-==== F2
-<f2>
+==== F2: RevertCreateError
+<f2-revertcreateerror>
 
 
 ==== F3
@@ -105,12 +105,12 @@
 <cursors-2>
 
 
-==== C1
-<c1>
+==== C1: SyncRoomStatus
+<c1-syncroomstatus>
 
 
-==== C2
-<c2>
+==== C2: UpdateStatusWhenOverdue
+<c2-updatestatuswhenoverdue>
 
 
 == Trình Bày Thông Tin

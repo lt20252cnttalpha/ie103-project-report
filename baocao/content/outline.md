@@ -46,17 +46,17 @@
 
 ### Functions (3)
 
-#### F1
+#### F1: CheckRoomAvailable
 
-#### F2
+#### F2: RevertCreateError
 
 #### F3
 
 ### Cursors (2)
 
-#### C1
+#### C1: SyncRoomStatus
 
-#### C2
+#### C2: UpdateStatusWhenOverdue
 
 ## Trình Bày Thông Tin
 
