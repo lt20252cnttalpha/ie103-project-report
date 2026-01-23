@@ -18,13 +18,14 @@
 
 // MARK: - Nội Dung Chính
 #include "content/contents.typ"
+#include "content/outline.typ"
 
 // MARK: - Kết Thúc
 
-= Q&A
+// = Q&A
 
-#focus-slide[
-  #smallcaps(lorem(10))
-]
+// #focus-slide[
+//   #smallcaps(lorem(10))
+// ]
 
-#ending-slide(title: [Thank You!])[Questions?]
+// #ending-slide(title: [Thank You!])[Questions?]
