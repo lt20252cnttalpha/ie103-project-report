@@ -54,9 +54,3 @@
     [15], [25410325], [Nguyễn Văn Trung],
   )
 ]
-
-= Đề Tài
-
-== Lý Do Chọn Đề Tài
-
-- #lorem(10)
