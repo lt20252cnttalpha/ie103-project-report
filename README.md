@@ -130,20 +130,9 @@ Kế hoạch:
 3. Tối ưu hiệu năng cho quy mô lớn (high traffic)
 4. Tích hợp bên thứ ba (OTA như Booking, Agoda)
 
-## Demo
+## Slides
 
-- Web App.
-  - BE: https://github.com/lt20252cnttalpha/ie103-project-be
-  - FE: https://github.com/lt20252cnttalpha/ie103-project-fe
-
-## Công Cụ
-
-- Vẽ ERD:
-  - Chen Notation:
-    - PlantUML: text-based; commit vào git được.
-      - Guide: https://plantuml.com/er-diagram
-      - Editor: https://www.planttext.com/
-    - Visual Diagram (như ví dụ): quản lý theo project, tập trung nhiều loại diagram; binary, không commit vào git được.
-
-![visual-diagram-example](assets/visual-diagram-example.png)
+- Khung nội dung: [outline.md](baocao/content/outline.md)
+- Hiện tại được biểu diễn theo chương (heading level 1) > mục (heading level 2) > tiểu mục (heading level 3).
+  - Khi thực hiện slides, chuyển tiểu mục về heading level 1.
 

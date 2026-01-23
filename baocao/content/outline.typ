@@ -1,0 +1,121 @@
+#import "../template/lib.typ": *
+
+= Mô Tả Bài Toán
+<mo-ta-bai-toan>
+
+
+== Đề Tài
+<de-tai>
+
+
+== Lý Do Chọn Đề Tài
+<ly-do-chon-de-tai>
+
+- #lorem(10)
+
+= Phân Tích Và Thiết Kế
+<phan-tich-va-thiet-ke>
+
+
+= Cài Đặt Và Triển Khai
+<cai-dat-va-trien-khai>
+
+
+= Quản Lý Thông Tin
+<quan-ly-thong-tin>
+
+
+== Xử Lý Thông Tin
+<xu-ly-thong-tin>
+
+
+=== Stored Procedures (5)
+<stored-procedures-5>
+
+
+==== SP1: ApplyVoucher
+<sp1-applyvoucher>
+
+
+==== SP2: BookingRoom
+<sp2-bookingroom>
+
+
+==== SP3: Checkout
+<sp3-checkout>
+
+
+==== SP4: Payment
+<sp4-payment>
+
+
+==== SP5: RegisterUser
+<sp5-registeruser>
+
+
+==== SPx: Review Room
+<spx-review-room>
+
+
+==== SPx: Service
+<spx-service>
+
+
+=== Triggers (5)
+<triggers-5>
+
+
+==== TG1: AutoPrice
+<tg1-autoprice>
+
+
+==== TG2: CheckTime
+<tg2-checktime>
+
+
+==== TG3: Payment
+<tg3-payment>
+
+
+==== TG4: Refund
+<tg4-refund>
+
+
+==== TG5: SyncStatus
+<tg5-syncstatus>
+
+
+=== Functions (3)
+<functions-3>
+
+
+==== F1: CheckRoomAvailable
+<f1-checkroomavailable>
+
+
+==== F2: RevertCreateError
+<f2-revertcreateerror>
+
+
+==== F3
+<f3>
+
+
+=== Cursors (2)
+<cursors-2>
+
+
+==== C1: SyncRoomStatus
+<c1-syncroomstatus>
+
+
+==== C2: UpdateStatusWhenOverdue
+<c2-updatestatuswhenoverdue>
+
+
+== Trình Bày Thông Tin
+<trinh-bay-thong-tin>
+
+
+= Kết Luận
+<ket-luan>
