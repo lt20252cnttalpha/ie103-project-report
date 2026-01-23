@@ -153,12 +153,12 @@
     show: std.align.with(center + horizon)
     block(
       fill: self.colors.primary,
-      inset: 2em,
+      inset: 1.5em,
       radius: 0.5em,
       breakable: false,
       {
         text(
-          size: 1.8em,
+          size: 1.2em,
           fill: self.colors.neutral-lightest,
           weight: "bold",
           info.title,
@@ -166,7 +166,7 @@
         if info.subtitle != none {
           parbreak()
           text(
-            size: 1.2em,
+            size: 1.0em,
             fill: self.colors.neutral-lightest,
             weight: "bold",
             info.subtitle,
@@ -177,7 +177,7 @@
     // institution
     if info.institution != none {
       parbreak()
-      text(size: 1.5em, smallcaps[#info.institution])
+      text(size: 1.5em, info.institution)
     }
     // authors
     grid(
@@ -190,7 +190,7 @@
     // date
     if info.date != none {
       parbreak()
-      text(size: 1.0em, fill: gray, utils.display-info-date(self))
+      text(size: 1.0em, utils.display-info-date(self))
     }
   }
   touying-slide(self: self, body)
@@ -227,11 +227,9 @@
           components.custom-progressive-outline(
             level: level,
             alpha: self.store.alpha,
-            indent: (1em, 1em),
+            indent: (0em, 1em),
             vspace: (.4em,),
             numbered: (numbered,),
-            // Giữ nguyên tiêu đề bao gồm định dạng và số lượng từ
-            short-heading: false,
             depth: 1,
             ..args.named(),
           ),
@@ -492,7 +490,7 @@
           height: 1.8em,
           fill: gradient.linear(
             self.colors.primary,
-            self.colors.tertiary,
+            self.colors.primary.lighten(60%),
           ),
           place(
             left + horizon,
