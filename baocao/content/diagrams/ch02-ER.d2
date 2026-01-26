@@ -256,9 +256,23 @@ DICHVU -- dichvu_trang_thai: {style: {stroke-width: 1}}
 DICHVU -- dichvu_created_at: {style: {stroke-width: 1}}
 DICHVU -- dichvu_updated_at: {style: {stroke-width: 1}}
 
+# MARK: PAYMENTS
 PAYMENTS: {class: entity; label: "PAYMENTS"}
-payment_id: {class: attr_pri; label: "id"}
-PAYMENTS -- payment_id: {style: {stroke-width: 1}}
+payments_id: {class: attr_pri; label: "id"}
+payments_booking_id: {class: attr_foreign_key; label: "booking_id"}
+payments_user_id: {class: attr_foreign_key; label: "user_id"}
+payments_so_tien: {class: attr; label: "so_tien"}
+payments_phuong_thuc: {class: attr; label: "phuong_thuc"; width: 120}
+payments_trang_thai: {class: attr; label: "trang_thai"}
+payments_created_at: {class: attr; label: "created_at"; width: 110}
+
+PAYMENTS -- payments_id: {style: {stroke-width: 1}}
+PAYMENTS -- payments_booking_id: {style: {stroke-width: 1}}
+PAYMENTS -- payments_user_id: {style: {stroke-width: 1}}
+PAYMENTS -- payments_so_tien: {style: {stroke-width: 1}}
+PAYMENTS -- payments_phuong_thuc: {style: {stroke-width: 1}}
+PAYMENTS -- payments_trang_thai: {style: {stroke-width: 1}}
+PAYMENTS -- payments_created_at: {style: {stroke-width: 1}}
 
 REFUNDS: {class: entity; label: "REFUNDS"}
 refund_id: {class: attr_pri; label: "id"}
