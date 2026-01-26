@@ -87,9 +87,11 @@ ROLES -- roles_permissions: (n, n)
 roles_permissions -- PERMISSIONS: (n, n)
 
 # USERS -> DATPHONG: thực hiện
+# Một user có tối thiểu 0, và tối đa n đặt phòng
+# Một đặt phòng có và chỉ có 1 user
 users_datphong: {class: rel; label: "thực hiện"}
-USERS -- users_datphong: (1, n)
-users_datphong -- DATPHONG: (1, n)
+USERS -- users_datphong: (0, n)
+users_datphong -- DATPHONG: (1, 1)
 
 # USERS -> PAYMENTS: thực hiện
 users_payment: {class: rel; label: "thực hiện"}
