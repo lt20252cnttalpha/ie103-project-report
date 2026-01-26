@@ -313,7 +313,7 @@ Quy cách:
 
 <!-- TODO: Cân nhắc sử dụng direction TD -->
 
-![Mô Hình ERD Hoàn Chỉnh](diagrams/ch02-concept-erd.svg)
+![Mô Hình Quan Niệm: Biểu Đồ ERD Hoàn Chỉnh](diagrams/ch02-concept-erd.svg)
 
 ## Mô Hình Mức Logic
 
