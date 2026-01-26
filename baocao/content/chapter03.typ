@@ -288,6 +288,29 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 == Khởi Tạo Cơ Sở Dữ Liệu
 <khoi-tao-co-so-du-lieu>
 
+- Script khởi tạo dữ liệu, phiên bản đầy đủ được đính kèm theo file báo cáo này, hoặc truy cập kho git của nhóm để lấy phiên bản đầy đủ nhất.
+
+=== Tạo Database
+<tao-database>
+
+#figure(
+  raw(read("code/ch03-00-create-database.sql"), lang: "sql", block: true),
+  caption: [
+    Khởi Tạo Cơ Sở Dữ Liệu: Tạo Database
+  ],
+)
+
+=== Khai Báo Các Bảng
+<khai-bao-cac-bang>
+
+- Phiên bản ví dụ miêu tả.
+
+#figure(
+  raw(read("code/ch03-01-tables.sql"), lang: "sql", block: true),
+  caption: [
+    Khởi Tạo Cơ Sở Dữ Liệu: Khai Báo Các Bảng
+  ],
+)
 
 == Dữ Liệu Mẫu
 <du-lieu-mau>

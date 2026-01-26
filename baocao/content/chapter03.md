@@ -477,14 +477,23 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 #figure(
   raw(read("code/ch03-00-create-database.sql"), lang: "sql", block: true),
   caption: [
-    Khởi Tạo CSDL: Tạo Database
+    Khởi Tạo Cơ Sở Dữ Liệu: Tạo Database
   ],
 )
 ```
 
 ### Khai Báo Các Bảng
 
+- Phiên bản ví dụ miêu tả.
 
+```{=typst}
+#figure(
+  raw(read("code/ch03-01-tables.sql"), lang: "sql", block: true),
+  caption: [
+    Khởi Tạo Cơ Sở Dữ Liệu: Khai Báo Các Bảng
+  ],
+)
+```
 
 ## Dữ Liệu Mẫu
 
