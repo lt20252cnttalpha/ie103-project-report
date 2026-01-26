@@ -33,9 +33,29 @@
 - Tối ưu hiệu năng cho quy mô lớn (high traffic).
 - Tích hợp bên thứ ba (OTA như Booking, Agoda).
 
-== Đối Tượng Và Mối Quan Hệ
-<doi-tuong-va-moi-quan-he>
+== Quy Tắc Nghiệp Vụ & Xác Định Thực Thể
+<quy-tac-nghiep-vu-xac-dinh-thuc-the>
 
+
+=== Các Quy Tắc Nghiệp Vụ
+<cac-quy-tac-nghiep-vu>
+
+- Một phòng không được đặt trùng thời gian.
+- Ngày trả phòng phải lớn hơn ngày nhận phòng.
+- Giờ trả phòng trễ nhất là #strong[12:00 trưa] mỗi ngày.
+- Giờ nhận phòng sớm nhất là #strong[14:00 (2 giờ chiều)] mỗi ngày.
+- Một lần đặt phòng phải có ít nhất một phòng.
+- Mỗi đặt phòng chỉ có tối đa một thanh toán.
+- Số tiền thanh toán phải lớn hơn 0.
+- Không được xóa đặt phòng nếu đã thanh toán.
+- Có thể hoàn tiền nếu người dùng yêu cầu trước 24 tiếng (2 ngày) kể từ ngày nhận phòng.
+- Chỉ có #strong[Admin] mới có quyền duyệt hoàn trả.
+- #strong[Mỗi đặt phòng có thể áp dụng tối đa một mã giảm giá (voucher)].
+- #strong[Mã giảm giá phải còn hạn sử dụng và chưa hết số lượng].
+- #strong[Khách hàng có thể gọi dịch vụ đi kèm bất cứ lúc nào trong thời gian lưu trú].
+- #strong[Chỉ những khách hàng đã thanh toán (PAID) và đã trả phòng mới được đánh giá].
+- #strong[Mỗi đặt phòng chỉ được đánh giá một lần].
+- #strong[Số sao đánh giá phải từ 1 đến 5].
 
 === User Stories
 <user-stories>
@@ -61,50 +81,264 @@
 - US-10: Xem đánh giá phòng
   - Là #strong[End User], tôi muốn xem điểm trung bình và các đánh giá của từng loại phòng để đưa ra quyết định đặt phòng phù hợp.
 
-=== Các Đối Tượng Chính
-<cac-doi-tuong-chinh>
+=== Danh Sách Các Thực Thể
+<danh-sach-cac-thuc-the>
 
+- ADMINS (Quản Lý/Quản Trị Viên)
+  - Đại diện cho người dùng nội bộ của hệ thống (Admin / Staff).
+  - Có quyền quản lý nghiệp vụ và dữ liệu hệ thống
+- DATPHONG (Đặt Phòng)
+  - Đại diện cho một giao dịch đặt phòng.
+  - Có thể được hủy hoặc không.
+- DICHVU (Dịch Vụ)
+  - Đại diện cho một dịch vụ đi kèm.
+- LOAIPHONG (Loại Phòng)
+  - Đại diện cho một loại phòng.
+- PAYMENTS (Thanh Toán)
+  - Đại diện cho một giao dịch thanh toán.
+- PERMISSIONS (Quyền Hạn)
+  - Định nghĩa quyền thao tác cụ thể (CRUD phòng, duyệt hoàn tiền, xem báo cáo…).
+- PHONG (Phòng)
+  - Đại diện cho một phòng.
+  - Có thể được đặt hoặc không.
+- REFUNDS (Hoàn Tiền)
+  - Đại diện cho một giao dịch hoàn tiền.
+- REVIEWS (Đánh Giá)
+  - Đại diện cho một đánh giá.
+- ROLES (Vai Trò)
+  - Đại diện cho một vai trò.
+- USERS (Người Dùng)
+  - Đại diện cho một người dùng/khách hàng cuối của hệ thống quản lý đặt phòng.
+  - Có thể thực hiện đặt phòng, hủy đặt phòng, thanh toán, đánh giá, và xem các thông tin của mình.
+- VOUCHERS (Mã Giảm Giá)
+  - Đại diện cho một mã giảm giá.
+  - Có thể được áp dụng khi đặt phòng.
 
-=== Quan Hệ Giữa Các Đối Tượng
-<quan-he-giua-cac-doi-tuong>
+=== Quan Hệ Giữa Các Thực Thể
+<quan-he-giua-cac-thuc-the>
 
-- `ADMINS 1 --- n ADMIN_ROLES`: Một admin có thể có nhiều admin role.
-- `DATPHONG 1 --- 1 REVIEWS`: Một đặt phòng có thể có một đánh giá.
-- `DATPHONG 1 --- n CT_DATPHONG`: Một đặt phòng có thể có nhiều chi tiết đặt phòng.
-- `DATPHONG 1 --- n CT_SUDUNG_DV`: Một đặt phòng có thể sử dụng nhiều dịch vụ.
-- `DATPHONG 1 --- n PAYMENTS`: Một đặt phòng có thể có nhiều thanh toán.
-- `DICHVU 1 --- n CT_SUDUNG_DV`: Một dịch vụ có thể được sử dụng nhiều lần.
-- `LOAIPHONG 1 --- n PHONG`: Một loại phòng có thể có nhiều phòng.
-- `PAYMENTS 1 --- n REFUNDS`: Một thanh toán có thể có nhiều hoàn tiền.
-- `PERMISSIONS 1 --- n ROLE_PERMISSIONS`: Một permission có thể thuộc nhiều role.
-- `PHONG 1 --- n CT_DATPHONG`: Một phòng có thể có nhiều chi tiết đặt phòng.
-- `PHONG 1 --- n REVIEWS`: Một phòng có thể có nhiều đánh giá.
-- `ROLES 1 --- n ADMIN_ROLES`: Một role có thể có nhiều admin roles.
-- `ROLES 1 --- n ROLE_PERMISSIONS`: Một role có thể có nhiều role permission.
-- `USERS 1 --- n DATPHONG`: Một user có thể có nhiều đặt phòng.
-- `USERS 1 --- n REVIEWS`: Một user có thể đánh giá nhiều phòng.
-- `VOUCHERS 1 --- n DATPHONG`: Một voucher có thể được dùng cho nhiều đặt phòng.
+Đây là quan hệ giữa các thực thể dưới góc độ và ngôn ngữ nghiệp vụ.
+
+- ADMINS - ROLES: #emph[nhiều - nhiều]
+  - Một admin có thể có nhiều vai trò.
+  - Một vai trò có thể gán cho nhiều admin.
+- PHONG - LOAIPHONG: #emph[một - nhiều]
+  - Một phòng thuộc về một loại phòng.
+  - Một loại phòng có thể có nhiều phòng.
+- USERS - DATPHONG: #emph[một - nhiều]
+  - Một người dùng có thể có nhiều đặt phòng.
+  - Một đặt phòng được thực hiện bởi một người dùng.
+- DATPHONG - PHONG: #emph[nhiều - nhiều]
+  - Một đặt phòng có thể có nhiều phòng.
+  - Một phòng có thể được đặt trong nhiều đặt phòng.
+- DATPHONG - VOUCHERS: #emph[một - nhiều]
+  - Một đặt phòng có thể có một mã giảm giá.
+  - Một mã giảm giá có thể được áp dụng cho nhiều đặt phòng.
+- DATPHONG - REVIEWS: #emph[một - nhiều]
+  - Một lần đặt phòng có thể có một đánh giá.
+  - Một đánh giá chỉ thuộc về một lần đặt phòng.
+- USERS - REVIEWS: #emph[một - nhiều]
+  - Một người dùng có thể có nhiều đánh giá.
+  - Một đánh giá chỉ thuộc về một người dùng.
+- USERS - PAYMENTS: #emph[một - nhiều]
+  - Một người dùng có thể thực hiện nhiều thanh toán.
+  - Một thanh toán chỉ được thực hiện bởi một người dùng.
+- USERS - REFUNDS: #emph[một - nhiều]
+  - Một người dùng có thể yêu cầu nhiều lần hoàn tiền.
+  - Một lần hoàn tiền chỉ được yêu cầu bởi một người dùng.
+- PAYMENTS - REFUNDS: #emph[một - nhiều]
+  - Một lần thanh toán có thể có nhiều lần hoàn tiền.
+  - Một lần hoàn tiền chỉ thuộc về một lần thanh toán.
+- PAYMENTS - DATPHONG: #emph[một - nhiều]
+  - Một lần thanh toán thuộc về một lần đặt phòng.
+  - Một lần đặt phòng có thể có nhiều lần thanh toán.
+- ADMINS - REFUNDS: #emph[một - nhiều]
+  - Một admin có thể duyệt nhiều lần hoàn tiền.
+  - Một lần hoàn tiền chỉ được duyệt bởi một admin.
+- DATPHONG - DICHVU: #emph[nhiều - nhiều]
+  - Một lần đặt phòng có thể có nhiều dịch vụ đi kèm.
+  - Một dịch vụ đi kèm có thể được áp dụng cho nhiều lần đặt phòng.
+- ROLES - PERMISSIONS: #emph[nhiều - nhiều]
+  - Một vai trò có thể có nhiều quyền hạn.
+  - Một quyền hạn có thể thuộc về nhiều vai trò.
+
+Tóm tắt các mối quan hệ bằng mô hình đơn giản:
+
+- Các quan hệ nhiều - nhiều được tô sáng để phân biệt và dùng về sau.
+
+#figure(image("diagrams/entity-relationship.svg"),
+  caption: [
+    Mô Hình Hóa các Thực Thể và Mối Quan Hệ
+  ]
+)
 
 == Mô Hình Mức Quan Niệm
 <mo-hinh-muc-quan-niem>
 
-#figure(image("diagrams/ch02-ER.svg"),
+#figure(image("diagrams/ER.svg"),
   caption: [
     Mô Hình Thực Thể Quan Hệ
   ]
 )
 
-== Thiết Kế Cơ Sở Dữ Liệu
-<thiet-ke-co-so-du-lieu>
+=== Các Thực Thể
+<cac-thuc-the>
 
 
-=== Nhóm Bảng Thực Thể
-<nhom-bang-thuc-the>
+==== ADMINS (Quản Lý/Quản Trị Viên)
+<admins-quan-ly-quan-tri-vien>
+
+Định Nghĩa:
+
+- Đại diện cho người dùng nội bộ của hệ thống (Admin / Staff).
+- Có quyền quản lý nghiệp vụ và dữ liệu hệ thống.
+
+Thuộc Tính:
+
+- `id`: Mã định danh duy nhất của admin.
+- `username`: Tên đăng nhập của admin.
+- `password`: Mật khẩu của admin.
+- `full_name`: Họ tên đầy đủ của admin.
+- `email`: Email của admin.
+- `phone`: Số điện thoại của admin.
+- `address`: Địa chỉ của admin.
+- `created_at`: Thời gian tạo của admin.
+- `updated_at`: Thời gian cập nhật của admin.
+
+==== DATPHONG (Đặt Phòng)
+<datphong-dat-phong>
+
+
+==== DICHVU (Dịch Vụ)
+<dichvu-dich-vu>
+
+
+==== LOAIPHONG (Loại Phòng)
+<loaiphong-loai-phong>
+
+
+==== PAYMENTS (Thanh Toán)
+<payments-thanh-toan>
+
+
+==== PERMISSIONS (Quyền Hạn)
+<permissions-quyen-han>
+
+
+==== PHONG (Phòng)
+<phong-phong>
+
+
+==== REFUNDS (Hoàn Tiền)
+<refunds-hoan-tien>
+
+
+==== REVIEWS (Đánh Giá)
+<reviews-danh-gia>
+
+
+==== ROLES (Vai Trò)
+<roles-vai-tro>
+
+
+==== USERS (Người Dùng)
+<users-nguoi-dung>
+
+
+==== VOUCHERS (Mã Giảm Giá)
+<vouchers-ma-giam-gia>
+
+
+=== Các Mối Quan Hệ
+<cac-moi-quan-he>
+
+- `ADMINS - ROLES`: (n, n)
+  - Một admin có thể có nhiều admin role.
+  - Một role gán vào một admin cụ thể.
+
+== Mô Hình Mức Logic
+<mo-hinh-muc-logic>
+
+
+==== ADMINS (Quản Lý/Quản Trị Viên)
+<admins-quan-ly-quan-tri-vien>
+
+ADMINS(#underline[id], username, password, full\_name, email, phone, address, created\_at, updated\_at)
+
+- `id`: Mã định danh duy nhất của admin.
+- `username`: Tên đăng nhập của admin.
+- `password`: Mật khẩu của admin.
+- `full_name`: Họ tên đầy đủ của admin.
+- `email`: Email của admin.
+- `phone`: Số điện thoại của admin.
+- `address`: Địa chỉ của admin.
+- `created_at`: Thời gian tạo của admin.
+- `updated_at`: Thời gian cập nhật của admin.
+
+==== DATPHONG (Đặt Phòng)
+<datphong-dat-phong>
+
+
+==== DICHVU (Dịch Vụ)
+<dichvu-dich-vu>
+
+
+==== LOAIPHONG (Loại Phòng)
+<loaiphong-loai-phong>
+
+
+==== PAYMENTS (Thanh Toán)
+<payments-thanh-toan>
+
+
+==== PERMISSIONS (Quyền Hạn)
+<permissions-quyen-han>
+
+
+==== PHONG (Phòng)
+<phong-phong>
+
+
+==== REFUNDS (Hoàn Tiền)
+<refunds-hoan-tien>
+
+
+==== REVIEWS (Đánh Giá)
+<reviews-danh-gia>
+
+
+==== ROLES (Vai Trò)
+<roles-vai-tro>
+
+
+==== USERS (Người Dùng)
+<users-nguoi-dung>
+
+
+==== VOUCHERS (Mã Giảm Giá)
+<vouchers-ma-giam-gia>
 
 
 === Nhóm Bảng Mối Quan Hệ
 <nhom-bang-moi-quan-he>
 
+
+==== `ADMIN_ROLES`:
+<admin-roles>
+
+Mối quan hệ giữa ADMINS và ROLES
+
+`ADMIN_ROLES`\(#underline[admin\_id], #underline[role\_id])
+
+- `admin_id`: Mã định danh duy nhất của admin.
+
+- `role_id`: Mã định danh duy nhất của role.
+
+- ROLE\_PERMISSIONS
+
+- CT\_DATPHONG
+
+- CT\_SUDUNG\_DV
 
 === Tổng Hợp
 <tong-hop>
@@ -132,6 +366,13 @@
     [16], [`VOUCHERS`], [Thực thể], [Mã giảm giá],
   ),
   caption: [
-    Các Đối Tượng Chính
+    Các Bảng Trong Cơ Sở Dữ Liệu
   ],
 )
+
+== Thiết Kế Cơ Sở Dữ Liệu
+<thiet-ke-co-so-du-lieu>
+
+
+=== Vật Lý
+<vat-ly>

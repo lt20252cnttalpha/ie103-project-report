@@ -36,3 +36,21 @@ REVIEWS: {class: entity}
 ROLES: {class: entity}
 USERS: {class: entity}
 VOUCHERS: {class: entity}
+
+# --- 3. RELATIONSHIPS ---
+# (n, n): được tô sáng để dễ nhận diện
+
+ADMINS -- REFUNDS: (1, n)
+ADMINS -- ROLES: (n, n) {style: {fill: orange}}
+DATPHONG -- DICHVU: (n, n) {style: {fill: orange}}
+DATPHONG -- PHONG: (n, n) {style: {fill: orange}}
+DATPHONG -- REVIEWS: (1, 1)
+DATPHONG -- VOUCHERS: (n, 1)
+PAYMENTS -- DATPHONG: (n, 1)
+PAYMENTS -- REFUNDS: (1, n)
+PHONG -- LOAIPHONG: (n, 1)
+USERS -- DATPHONG: (1, n)
+USERS -- PAYMENTS: (1, n)
+USERS -- REFUNDS: (1, n)
+USERS -- REVIEWS: (1, n)
+ROLES -- PERMISSIONS: (n, n) {style: {fill: orange}}
