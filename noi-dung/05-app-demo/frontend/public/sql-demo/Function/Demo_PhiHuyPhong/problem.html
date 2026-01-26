@@ -98,11 +98,14 @@
 
     <div class="section">
         <h3>✅ Cách sử dụng</h3>
-        <pre><code>-- Test trường hợp báo hủy gấp (dưới 1 ngày trước Check-in)
-DECLARE @PhiPhat DECIMAL(18,0);
-SET @PhiPhat = dbo.fn_TinhPhiHuyPhong(2, '2024-01-10');
-
-PRINT 'Số tiền khách phải đền bù: ' + CAST(@PhiPhat AS VARCHAR);</code></pre>
+        <pre><code>
+-- Demo cách sử dụng hàm fn_TinhPhiHuyPhong
+SELECT 
+    @BookingID AS [Mã Đơn],
+    
+    FORMAT(CAST(@NgayBaoHuy AS DATETIME), 'dd/MM/yyyy') AS [Ngày Báo Hủy],
+    
+    FORMAT(dbo.fn_TinhPhiHuyPhong(@BookingID, CAST(@NgayBaoHuy AS DATETIME)), 'N0') + ' VNĐ' AS [💰 SỐ TIỀN PHẠT]</code></pre>
     </div>
 </body>
 </html>

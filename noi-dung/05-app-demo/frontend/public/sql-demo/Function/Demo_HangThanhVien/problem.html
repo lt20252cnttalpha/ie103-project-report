@@ -28,10 +28,10 @@
 
     <div class="section">
         <h3>📌 Mục đích</h3>
-        <p>Function Scalar dùng để <strong>tính hạng thành viên</strong> (Loyalty Tier) cho khách hàng:</p>
+        <p>Function dùng để <strong>tính hạng thành viên</strong> cho khách hàng:</p>
         <ul>
-            <li>Dựa trên tổng doanh thu thực tế (Realized Revenue).</li>
-            <li>Chỉ tính các giao dịch có trạng thái <strong>PAID</strong> hoặc <strong>SUCCESS</strong>.</li>
+            <li>Dựa trên tổng doanh thu thực tế.</li>
+            <li>Chỉ tính các giao dịch có trạng thái <strong>PAID</strong>.</li>
             <li>Giúp bộ phận CSKH áp dụng chính sách khuyến mãi tự động.</li>
         </ul>
     </div>
@@ -93,7 +93,7 @@
     <div class="section">
         <h3>🔄 Logic xử lý</h3>
         <div class="flow-step">1. Query bảng <code>PAYMENTS</code> theo UserID.</div>
-        <div class="flow-step">2. Filter các giao dịch thành công (Status IN 'PAID', 'SUCCESS').</div>
+        <div class="flow-step">2. Filter các giao dịch thành công (Status IN 'PAID').</div>
         <div class="flow-step">3. Tính tổng tiền: <code>SUM(amount)</code>.</div>
         <div class="flow-step">4. So sánh tổng tiền với các mốc quy định (5tr, 20tr).</div>
         <div class="flow-step">5. Trả về tên hạng tương ứng.</div>
@@ -103,12 +103,12 @@
 
     <div class="section">
         <h3>✅ Cách sử dụng</h3>
-        <pre><code>-- Kiểm tra hạng của khách hàng ID = 1
-SELECT 
-    full_name, 
-    dbo.fn_TinhHangThanhVien(id) AS Hanh_Thanh_Vien
-FROM USERS 
-WHERE id = 1;</code></pre>
+        <pre><code>SELECT  
+    u.id AS [ID], 
+    u.full_name AS [Full Name], 
+    dbo.fn_TinhHangThanhVien(@UserID) AS [Xếp Hạng] 
+FROM USERS u 
+WHERE u.id = @UserID; </code></pre>
     </div>
 </body>
 </html>
