@@ -332,47 +332,47 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 <cac-moi-quan-he>
 
 - ADMINS - ROLES: #emph[\(n - n)]
-  - Một admin có thể có nhiều vai trò.
-  - Một vai trò có thể gán cho nhiều admin.
-- PHONG - LOAIPHONG: #emph[\(1 - n)]
-  - Một phòng thuộc về một loại phòng.
-  - Một loại phòng có thể có nhiều phòng.
+  - Một admin có thể có tối thiểu #emph[1] và tối đa #emph[n] vai trò.
+  - Một vai trò có thể gán tối thiểu #emph[0] và tối đa #emph[n] admin.
+- LOAI PHONG - PHONG: #emph[\(1 - n)]
+  - Một loại phòng có tối thiểu #emph[0] và tối đa #emph[n] phòng.
+  - Một phòng thuộc và chỉ thuộc #emph[1] loại phòng.
 - USERS - DATPHONG: #emph[\(1 - n)]
-  - Một người dùng có thể có nhiều đặt phòng.
-  - Một đặt phòng được thực hiện bởi một người dùng.
+  - Một người dùng có tối thiểu #emph[0] và tối đa #emph[n] đơn đặt phòng.
+  - Một đặt phòng có và chỉ thuộc về #emph[1] người dùng.
 - DATPHONG - PHONG: #emph[\(n - n)]
-  - Một đặt phòng có thể có nhiều phòng.
-  - Một phòng có thể được đặt trong nhiều đặt phòng.
-- DATPHONG - VOUCHERS: #emph[\(1 - n)]
-  - Một đặt phòng có thể có một mã giảm giá.
-  - Một mã giảm giá có thể được áp dụng cho nhiều đặt phòng.
+  - Một đơn đặt phòng có tối thiểu #emph[1] và tối đa #emph[n] phòng.
+  - Một phòng có tối thiểu #emph[0] và tối đa #emph[n] đơn đặt phòng.
+- VOUCHERS - DATPHONG: #emph[\(1 - n)]
+  - Một mã giảm giá có tối thiểu #emph[0], và tối đa #emph[n] đơn đặt phòng.
+  - Một đơn đặt phòng có tối thiểu #emph[0], và tối đa #emph[1] mã giảm giá áp dụng.
 - DATPHONG - REVIEWS: #emph[một - một]
-  - Một lần đặt phòng có thể có một đánh giá.
-  - Một đánh giá chỉ thuộc về một lần đặt phòng.
+  - Một đơn đặt phòng có tối thiểu #emph[0] và tối đa #emph[1] đánh giá.
+  - Một đánh giá thuộc và chỉ thuộc #emph[1] đơn đặt phòng.
 - USERS - REVIEWS: #emph[\(1 - n)]
-  - Một người dùng có thể có nhiều đánh giá.
-  - Một đánh giá chỉ thuộc về một người dùng.
+  - Một user có tối thiểu #emph[0], và tối đa #emph[n] đánh giá.
+  - Một đánh giá có tối thiểu #emph[1] tối đa #emph[1] user.
 - USERS - PAYMENTS: #emph[\(1 - n)]
-  - Một người dùng có thể thực hiện nhiều thanh toán.
-  - Một thanh toán chỉ được thực hiện bởi một người dùng.
+  - Một user có tối thiểu #emph[0], và tối đa #emph[n] thanh toán.
+  - Một thanh toán có và chỉ có #emph[1] user
 - USERS - REFUNDS: #emph[\(1 - n)]
-  - Một người dùng có thể yêu cầu nhiều lần hoàn tiền.
-  - Một lần hoàn tiền chỉ được yêu cầu bởi một người dùng.
+  - Một user có tối thiểu #emph[0], và tối đa #emph[n] yêu cầu hoàn tiền.
+  - Một yêu cầu hoàn tiền có và chỉ có 1 user.
 - PAYMENTS - REFUNDS: #emph[\(1 - n)]
-  - Một lần thanh toán có thể có nhiều lần hoàn tiền.
-  - Một lần hoàn tiền chỉ thuộc về một lần thanh toán.
-- PAYMENTS - DATPHONG: #emph[\(1 - n)]
-  - Một lần thanh toán thuộc về một lần đặt phòng.
-  - Một lần đặt phòng có thể có nhiều lần thanh toán.
+  - Một thanh toán có tối thiểu #emph[0] và tối đa #emph[n] hoàn tiền.
+  - Một hoàn tiền được và chỉ được tạo từ #emph[1] thanh toán.
+- DATPHONG - PAYMENTS: #emph[\(1 - n)]
+  - Một đơn đặt phòng có tối thiểu #emph[0] và tối đa #emph[n] thanh toán.
+  - Một thanh toán có và chỉ có #emph[1] đơn đặt phòng.
 - ADMINS - REFUNDS: #emph[\(1 - n)]
-  - Một admin có thể duyệt nhiều lần hoàn tiền.
-  - Một lần hoàn tiền chỉ được duyệt bởi một admin.
+  - Một admin có thể duyệt tối thiểu #emph[0] và tối đa #emph[n] lần hoàn tiền.
+  - Một lần hoàn tiền chỉ được duyệt bởi #emph[1] một admin.
 - DATPHONG - DICHVU: #emph[\(n - n)]
-  - Một lần đặt phòng có thể có nhiều dịch vụ đi kèm.
-  - Một dịch vụ đi kèm có thể được áp dụng cho nhiều lần đặt phòng.
+  - Một đơn đặt phòng có thể có tối thiểu #emph[0] và tối đa #emph[n] dịch vụ đi kèm.
+  - Một dịch vụ đi kèm có thể được sử dụng tối thiểu #emph[0] và tối đa #emph[n] đơn đặt phòng.
 - ROLES - PERMISSIONS: #emph[\(n - n)]
-  - Một vai trò có thể có nhiều quyền hạn.
-  - Một quyền hạn có thể thuộc về nhiều vai trò.
+  - Một vai trò có tối thiểu #emph[0] và tối đa #emph[n] quyền hạn.
+  - Một quyền hạn có tối thiểu #emph[0] và tối đa #emph[n] vai trò.
 
 === Mô Hình Thực Thể Quan Hệ (ERD) Hoàn Chỉnh
 <mo-hinh-thuc-the-quan-he-erd-hoan-chinh>
@@ -397,86 +397,227 @@ Quy cách trình bày:
 - Khóa chính: #underline[gạch chân] (ví dụ: #underline[id])
 - Khóa ngoại: #emph[in nghiêng] (ví dụ: #emph[loai\_phong\_id])
 
+=== Nhóm Bảng Thực Thể
+<nhom-bang-thuc-the>
+
+
 ==== ADMINS (Quản Lý/Quản Trị Viên)
 <admins-quan-ly-quan-tri-vien>
 
-ADMINS(#underline[id], username, password, full\_name, email, phone, address, created\_at, updated\_at)
+ADMINS(#underline[id], email, password\_hash, full\_name, status, created\_at, updated\_at)
 
-- `id`: Mã định danh duy nhất của admin.
-- `username`: Tên đăng nhập của admin.
-- `password`: Mật khẩu của admin.
-- `full_name`: Họ tên đầy đủ của admin.
-- `email`: Email của admin.
-- `phone`: Số điện thoại của admin.
-- `address`: Địa chỉ của admin.
-- `created_at`: Thời gian tạo của admin.
-- `updated_at`: Thời gian cập nhật của admin.
+#table(
+  columns: (1fr,) * 2,
+  align: (left, left),
+  [Khóa], [Mô tả], [#underline[id]], [Mã định danh duy nhất của admin.], [email], [Tên đăng nhập của admin.], [password\_hash], [Mật khẩu của admin.], [full\_name], [Họ tên đầy đủ của admin.], [status], [Trạng thái của admin.], [created\_at], [Thời gian tạo của admin.], [updated\_at], [Thời gian cập nhật của admin.]
+)
 
 ==== DATPHONG (Đặt Phòng)
 <datphong-dat-phong>
 
+- Lưu trữ thông tin header của đơn đặt phòng.
+
+DATPHONG(#underline[id], #emph[user\_id], #emph[voucher\_id], check\_in, check\_out, trang\_thai, created\_at)
+
+#table(
+  columns: (1fr,) * 2,
+  align: (left, left),
+  [Khóa], [Mô tả], [#underline[id]], [Mã định danh đơn đặt phòng.], [#emph[user\_id]], [Khóa ngoại tham chiếu tới bảng USERS (Người đặt).], [#emph[voucher\_id]], [Khóa ngoại tham chiếu tới bảng VOUCHERS (Mã giảm giá áp dụng, có thể
+NULL).], [check\_in], [Ngày nhận phòng dự kiến.], [check\_out], [Ngày trả phòng dự kiến.], [trang\_thai], [Trạng thái đơn (PENDING, CONFIRMED, CANCELLED, COMPLETED).], [created\_at], [Thời gian tạo đơn.]
+)
 
 ==== DICHVU (Dịch Vụ)
 <dichvu-dich-vu>
 
+- Danh mục các dịch vụ đi kèm (Ăn uống, Spa, Đưa đón…).
+
+DICHVU(#underline[id], ten\_dich\_vu, don\_gia, don\_vi\_tinh, trang\_thai, created\_at, updated\_at)
+
+#table(
+  columns: (1fr,) * 2,
+  align: (left, left),
+  [Khóa], [Mô tả], [#underline[id]], [Mã định danh dịch vụ.], [ten\_dich\_vu], [Tên dịch vụ.], [don\_gia], [Đơn giá niêm yết.], [don\_vi\_tinh], [Đơn vị tính.], [trang\_thai], [Trạng thái khả dụng (ACTIVE/INACTIVE).], [created\_at], [Ngày tạo.], [updated\_at], [Ngày cập nhật.]
+)
 
 ==== LOAIPHONG (Loại Phòng)
 <loaiphong-loai-phong>
 
+- Danh mục phân loại phòng (Deluxe, Standard, Suite…).
+
+LOAIPHONG(#underline[id], ten\_loai, gia\_co\_ban, mo\_ta, suc\_chua)
+
+#table(
+  columns: (1fr,) * 2,
+  align: (left, left),
+  [Khóa], [Mô tả], [#underline[id]], [Mã định danh loại phòng.], [ten\_loai], [Tên hiển thị của loại phòng.], [gia\_co\_ban], [Giá gốc theo đêm.], [mo\_ta], [Mô tả chi tiết loại phòng.], [suc\_chua], [Số người tối đa cho phép.]
+)
 
 ==== PAYMENTS (Thanh Toán)
 <payments-thanh-toan>
 
+- Lưu trữ lịch sử giao dịch thanh toán.
+
+PAYMENTS(#underline[id], #emph[booking\_id], #emph[user\_id], so\_tien, phuong\_thuc, trang\_thai, created\_at)
+
+#table(
+  columns: (1fr,) * 2,
+  align: (left, left),
+  [Khóa], [Mô tả], [#underline[id]], [Mã định danh giao dịch.], [#emph[booking\_id]], [Khóa ngoại tham chiếu đơn đặt phòng được thanh toán.], [#emph[user\_id]], [Khóa ngoại tham chiếu người thực hiện thanh toán.], [so\_tien], [Số tiền thanh toán.], [phuong\_thuc], [Phương thức (TIEN\_MAT, CHUYEN\_KHOAN, THE, ONLINE).], [trang\_thai], [Trạng thái giao dịch (PENDING, SUCCESS, FAILED, CANCELLED, PAID, UNPAID,
+REFUNDED).], [created\_at], [Ngày tạo.]
+)
 
 ==== PERMISSIONS (Quyền Hạn)
 <permissions-quyen-han>
 
+- Danh sách các quyền hạn cụ thể trong hệ thống.
+
+PERMISSIONS(#underline[id], code, description)
+
+#table(
+  columns: (1fr,) * 2,
+  align: (left, left),
+  [Khóa], [Mô tả], [#underline[id]], [Mã định danh quyền hạn.], [code], [Mã code hệ thống (ví dụ: `VIEW_DASHBOARD`, `EDIT_ROOM`).], [description], [Mô tả chi tiết quyền hạn.]
+)
 
 ==== PHONG (Phòng)
 <phong-phong>
 
+- Danh sách các phòng vật lý.
+
 PHONG(#underline[id], so\_phong, #emph[loai\_phong\_id], trang\_thai)
+
+#table(
+  columns: (1fr,) * 2,
+  align: (left, left),
+  [Khóa], [Mô tả], [#underline[id]], [Mã định danh phòng.], [so\_phong], [Số hiệu phòng (ví dụ: 101, 202).], [#emph[loai\_phong\_id]], [Khóa ngoại tham chiếu tới bảng LOAIPHONG.], [trang\_thai], [Trạng thái hiện tại (AVAILABLE, OCCUPIED, MAINTENANCE, RESERVED).]
+)
 
 ==== REFUNDS (Hoàn Tiền)
 <refunds-hoan-tien>
 
+- Lưu trữ yêu cầu và lịch sử hoàn tiền.
+
+REFUNDS(#underline[id], #emph[payment\_id], #emph[requested\_by], #emph[approved\_by], so\_tien\_hoan, ly\_do, trang\_thai, created\_at, updated\_at)
+
+#table(
+  columns: (1fr,) * 2,
+  align: (left, left),
+  [Khóa], [Mô tả], [#underline[id]], [Mã định danh yêu cầu hoàn tiền.], [#emph[payment\_id]], [Khóa ngoại tham chiếu giao dịch gốc cần hoàn tại PAYMENTS.], [#emph[requested\_by]], [Người yêu cầu hoàn tiền, khóa ngoại tham chiếu tới USERS.], [#emph[approved\_by]], [Người duyệt hoàn tiền (có thể NULL nếu chưa duyệt). Khóa ngoại tham
+chiếu tới ADMINS.], [so\_tien\_hoan], [Số tiền được hoàn.], [trang\_thai], [Trạng thái (REQUESTED, APPROVED, REJECTED, COMPLETED).], [created\_at], [Ngày tạo.], [updated\_at], [Ngày cập nhật.]
+)
 
 ==== REVIEWS (Đánh Giá)
 <reviews-danh-gia>
 
+- Lưu trữ đánh giá từ khách hàng sau khi hoàn tất đặt phòng.
+
+REVIEWS(#underline[id], #emph[user\_id], #emph[phong\_id], #emph[datphong\_id], so\_sao, binh\_luan, ngay\_danh\_gia, trang\_thai, created\_at, updated\_at)
+
+#table(
+  columns: (1fr,) * 2,
+  align: (left, left),
+  [Khóa], [Mô tả], [#underline[id]], [Mã định danh đánh giá.], [#emph[user\_id]], [Người đánh giá, khóa ngoại tham chiếu tới USERS.], [#emph[datphong\_id]], [Khóa ngoại tham chiếu đơn đặt phòng, DATPHONG.], [#emph[phong\_id]], [Khóa ngoại tham chiếu phòng được đánh giá, PHONG.], [so\_sao], [Điểm đánh giá (1-5).], [trang\_thai], [Trạng thái kiểm duyệt (VISIBLE/HIDDEN).], [created\_at], [Ngày tạo.], [updated\_at], [Ngày cập nhật.]
+)
 
 ==== ROLES (Vai Trò)
 <roles-vai-tro>
 
+Định nghĩa các nhóm quyền (Admin, Staff, Customer).
+
+ROLES(#underline[id], code, name, description)
+
+#table(
+  columns: (1fr,) * 2,
+  align: (left, left),
+  [Khóa], [Mô tả], [#underline[id]], [Mã định danh vai trò.], [code], [Mã code vai trò (ADMIN, STAFF, USER).], [name], [Tên hiển thị.], [description], [Mô tả chi tiết vai trò.]
+)
 
 ==== USERS (Người Dùng)
 <users-nguoi-dung>
 
+- Lưu trữ thông tin khách hàng/người dùng cuối.
+
+USERS(#underline[id], email, phone, password\_hash, full\_name, status, created\_at, updated\_at)
+
+#table(
+  columns: (1fr,) * 2,
+  align: (left, left),
+  [Khóa], [Mô tả], [#underline[id]], [Mã định danh người dùng.], [email], [Địa chỉ email (dùng để đăng nhập).], [phone], [Số điện thoại liên lạc.], [password\_hash], [Mật khẩu đã mã hóa.], [full\_name], [Họ và tên.], [status], [Trạng thái (ACTIVE/INACTIVE).], [created\_at], [Ngày tạo.], [updated\_at], [Ngày cập nhật.]
+)
 
 ==== VOUCHERS (Mã Giảm Giá)
 <vouchers-ma-giam-gia>
 
+- Quản lý các chương trình khuyến mãi.
 
-=== Nhóm Bảng Mối Quan Hệ
-<nhom-bang-moi-quan-he>
+VOUCHERS(#underline[id], ma\_code, phan\_tram\_giam, ngay\_het\_han, so\_tien\_toi\_thieu, so\_lan\_toi\_da, so\_lan\_da\_dung, trang\_thai, created\_at, updated\_at)
 
+#table(
+  columns: (1fr,) * 2,
+  align: (left, left),
+  [Khóa], [Mô tả], [#underline[id]], [Mã định danh voucher.], [ma\_code], [Mã nhập khuyến mãi (ví dụ: SUMMER2024).], [phan\_tram\_giam], [Phần trăm giảm giá.], [ngay\_het\_han], [Ngày hết hạn.], [so\_tien\_toi\_thieu], [Số tiền tối thiểu để áp dụng voucher.], [so\_lan\_toi\_da], [Số lần sử dụng tối đa.], [so\_lan\_da\_dung], [Số lần đã sử dụng.], [trang\_thai], [Trạng thái (ACTIVE/INACTIVE).], [created\_at], [Ngày tạo.], [updated\_at], [Ngày cập nhật.]
+)
 
-==== `ADMIN_ROLES`:
+=== Nhóm Bảng Mối Liên Kết (Mối Quan Hệ n-n)
+<nhom-bang-moi-lien-ket-moi-quan-he-n-n>
+
+- Được hình thành từ việc tách các mối quan hệ nhiều-nhiều (Many-to-Many).
+
+==== ADMIN\_ROLES
 <admin-roles>
 
-Mối quan hệ giữa ADMINS và ROLES
+- Mối quan hệ giữa ADMINS và ROLES.
+- Phân quyền Admin.
 
-`ADMIN_ROLES`\(#underline[admin\_id], #underline[role\_id])
+ADMIN\_ROLES(#underline[admin\_id], #underline[role\_id])
 
-- `admin_id`: Mã định danh duy nhất của admin.
+#table(
+  columns: (1fr,) * 2,
+  align: (left, left),
+  [Khóa], [Mô tả], [#underline[#emph[admin\_id]]], [Mã định danh duy nhất của admin. Khóa ngoại tham chiếu ADMINS.], [#underline[#emph[role\_id]]], [Mã định danh duy nhất của role. Khóa ngoại tham chiếu ROLES.]
+)
 
-- `role_id`: Mã định danh duy nhất của role.
+==== ROLE\_PERMISSIONS
+<role-permissions>
 
-- ROLE\_PERMISSIONS
+- Giải quyết quan hệ N-N giữa ROLES và PERMISSIONS.
+- Gán quyền cho Role.
 
-- CT\_DATPHONG
+ROLE\_PERMISSIONS(#underline[role\_id], #underline[permission\_id])
 
-- CT\_SUDUNG\_DV
+#table(
+  columns: (1fr,) * 2,
+  align: (left, left),
+  [Khóa], [Mô tả], [#underline[#emph[role\_id]]], [Khóa ngoại tham chiếu ROLES.], [#underline[#emph[permission\_id]]], [Khóa ngoại tham chiếu PERMISSIONS.]
+)
+
+==== CT\_DATPHONG
+<ct-datphong>
+
+- Giải quyết quan hệ N-N giữa DATPHONG và PHONG.
+- Lưu trữ danh sách phòng trong một đơn đặt phòng.
+
+CT\_DATPHONG(#underline[id], #emph[datphong\_id], #emph[phong\_id], don\_gia)
+
+#table(
+  columns: (1fr,) * 2,
+  align: (left, left),
+  [Khóa], [Mô tả], [#underline[id]], [Mã định danh dòng chi tiết (Surrogate Key).], [#emph[datphong\_id]], [Khóa ngoại tham chiếu DATPHONG.], [#emph[phong\_id]], [Khóa ngoại tham chiếu PHONG.], [don\_gia], [Giá phòng được chốt tại thời điểm đặt (Lưu lịch sử giá).]
+)
+
+==== CT\_SUDUNG\_DV
+<ct-sudung-dv>
+
+- Giải quyết quan hệ N-N giữa DATPHONG và DICHVU.
+- Lưu trữ các dịch vụ khách sử dụng trong đơn đặt hàng.
+
+CT\_SUDUNG\_DV(#underline[id], #emph[datphong\_id], #emph[dichvu\_id], so\_luong, don\_gia, thoi\_diem\_su\_dung, ghi\_chu, created\_at)
+
+#table(
+  columns: (1fr,) * 2,
+  align: (left, left),
+  [Khóa], [Mô tả], [#underline[id]], [Mã định danh dòng chi tiết (Surrogate Key).], [#emph[datphong\_id]], [Khóa ngoại tham chiếu DATPHONG.], [#emph[dichvu\_id]], [Khóa ngoại tham chiếu DICHVU.], [so\_luong], [Số lượng dịch vụ sử dụng.], [don\_gia], [Đơn giá dịch vụ tại thời điểm sử dụng.], [thoi\_diem\_su\_dung], [Thời gian khách order dịch vụ.], [ghi\_chu], [Ghi chú về việc sử dụng dịch vụ.], [created\_at], [Ngày tạo.]
+)
 
 === Tổng Hợp
 <tong-hop>
