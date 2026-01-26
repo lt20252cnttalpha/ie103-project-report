@@ -11,6 +11,10 @@
 // Show document with thesis type
 #show: document.with(..data, acronyms: acronyms, doc-type: "thesis")
 
+// Đặt font cho code ở 0.8 để tiết kiệm không gian.
+// TODO: Cập nhật raw text size vào template.
+#show raw: set text(size: 0.8em)
+
 // Content goes here
 #include "content/tasks.typ"
 #include "content/chapter01.typ"
