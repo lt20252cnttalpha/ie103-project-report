@@ -1,0 +1,60 @@
+direction: right
+
+# --- 0. STYLES ---
+style: {
+  opacity: 0.0
+  fill: transparent
+}
+
+# --- 1. SETTINGS ---
+classes: {
+  entity: {
+    shape: rectangle
+    style: {border-radius: 10; fill: "#FFFFFF"; stroke: "#333333"}
+  }
+  rel: {
+    shape: diamond
+    style: {fill: "#F2F2F7"; stroke: "#8E8E93"}
+  }
+  attr: {
+    shape: oval
+    # width: 100; height: 50
+    style: {fill: "#F0F8FF"; stroke: "#4682B4"; stroke-dash: 3}
+  }
+}
+
+# --- 2. ENTITIES ---
+ADMINS: {class: entity; label: "ADMINS"}
+DATPHONG: {class: entity; label: "DATPHONG"}
+DICHVU: {class: entity; label: "DICHVU"}
+LOAIPHONG: {class: entity; label: "LOAIPHONG"}
+PAYMENTS: {class: entity; label: "PAYMENTS"}
+PERMISSIONS: {class: entity; label: "PERMISSIONS"}
+PHONG: {class: entity; label: "PHONG"}
+REFUNDS: {class: entity; label: "REFUNDS"}
+REVIEWS: {class: entity; label: "REVIEWS"}
+ROLES: {class: entity; label: "ROLES"}
+USERS: {class: entity; label: "USERS"}
+VOUCHERS: {class: entity; label: "VOUCHERS"}
+
+# --- 3. RELATIONSHIPS ---
+# ngôn ngữ "tự nhiên"
+
+# ADMINS -> REFUNDS: duyệt
+admin_approve_refund: {class: rel; label: "duyệt"}
+ADMINS -- admin_approve_refund: (1, n)
+admin_approve_refund -- REFUNDS: (1, n)
+
+ADMINS -> ROLES: được cấp
+DATPHONG -> DICHVU: bao gồm
+DATPHONG -> PAYMENTS: được
+DATPHONG -> PHONG: có nhiều
+DATPHONG -> REVIEWS: được
+LOAIPHONG <- PHONG: thuộc
+PAYMENTS -> REFUNDS: được
+ROLES -> PERMISSIONS: có các
+USERS -> DATPHONG: thực hiện
+USERS -> PAYMENTS: thực hiện
+USERS -> REFUNDS: yêu cầu
+USERS -> REVIEWS: viết
+VOUCHERS -> DATPHONG: áp dụng cho

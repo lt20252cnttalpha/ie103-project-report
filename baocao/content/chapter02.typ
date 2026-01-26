@@ -374,6 +374,15 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
   - Một vai trò có thể có nhiều quyền hạn.
   - Một quyền hạn có thể thuộc về nhiều vai trò.
 
+=== Mô Hình ERD Hoàn Chỉnh
+<mo-hinh-erd-hoan-chinh>
+
+#figure(image("diagrams/ch02-concept-erd.svg"),
+  caption: [
+    Mô Hình ERD Hoàn Chỉnh
+  ]
+)
+
 == Mô Hình Mức Logic
 <mo-hinh-muc-logic>
 
