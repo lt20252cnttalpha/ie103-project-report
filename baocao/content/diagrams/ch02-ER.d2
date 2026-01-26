@@ -333,9 +333,12 @@ admin_roles_role_id: {class: attr_foreign_pri; label: "role_id"}
 ADMIN_ROLES -- admin_roles_admin_id: {style: {stroke-width: 1; stroke: orange}}
 ADMIN_ROLES -- admin_roles_role_id: {style: {stroke-width: 1; stroke: orange}}
 
+# MARK: ROLE_PERMISSIONS
 ROLE_PERMISSIONS: {class: rel; label: "Bao Gồm\nROLE_PERMISSIONS"}
-roles_permissions_pri_key: {class: attr_foreign_pri; width: 200; label: "role_id, permission_id"}
-ROLE_PERMISSIONS -- roles_permissions_pri_key: {style: {stroke-width: 1; stroke: orange}}
+role_permissions_role_id: {class: attr_foreign_key; label: "role_id"}
+role_permissions_permission_id: {class: attr_foreign_key; label: "permission_id"; width: 130}
+ROLE_PERMISSIONS -- role_permissions_role_id: {style: {stroke-width: 1; stroke: orange}}
+ROLE_PERMISSIONS -- role_permissions_permission_id: {style: {stroke-width: 1; stroke: orange}}
 
 # MARK: CT_DATPHONG
 CT_DATPHONG: {class: rel; label: "Chi Tiết Đặt\nCT_DATPHONG"}
