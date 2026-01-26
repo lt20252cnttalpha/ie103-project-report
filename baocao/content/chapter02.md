@@ -730,8 +730,7 @@ ROLE_PERMISSIONS(<u>role_id</u>, <u>permission_id</u>)
   table(
     columns: (30%, 70%),
     align: (left, left),
-    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh đơn đặt phòng.], [#emph[user\_id]], [Khóa ngoại tham chiếu tới bảng USERS (Người đặt).], [#emph[voucher\_id]], [Khóa ngoại tham chiếu tới bảng VOUCHERS (Mã giảm giá áp dụng, có thể
-    NULL).], [check\_in], [Ngày nhận phòng dự kiến.], [check\_out], [Ngày trả phòng dự kiến.], [trang\_thai], [Trạng thái đơn (PENDING, CONFIRMED, CANCELLED, COMPLETED).], [created\_at], [Thời gian tạo đơn.]
+    [#strong[Khóa]], [#strong[Mô tả]], [#underline[#emph[role\_id]]], [Khóa ngoại tham chiếu ROLES.], [#underline[#emph[permission\_id]]], [Khóa ngoại tham chiếu PERMISSIONS.]
   ),
   caption: [
     Mô Hình Mức Logic: ROLES_PERMISSIONS
