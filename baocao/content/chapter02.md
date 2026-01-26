@@ -27,6 +27,24 @@
 
 ## Quy Tắc Nghiệp Vụ & Xác Định Thực Thể
 
+### Các Quy Tắc Nghiệp Vụ
+
+1. Một phòng không được đặt trùng thời gian
+2. Ngày trả phòng phải lớn hơn ngày nhận phòng
+3. Giờ trả phòng trễ nhất là **12:00 trưa** mỗi ngày
+4. Giờ nhận phòng sớm nhất là **14:00 (2 giờ chiều)** mỗi ngày
+5. Một lần đặt phòng phải có ít nhất một phòng
+6. Mỗi đặt phòng chỉ có tối đa một thanh toán
+7. Số tiền thanh toán phải lớn hơn 0
+8. Không được xóa đặt phòng nếu đã thanh toán
+9. Có thể hoàn tiền nếu người dùng yêu cầu trước 24 tiếng (2 ngày) kể từ ngày nhận phòng
+10. **Mỗi đặt phòng có thể áp dụng tối đa một mã giảm giá (voucher)**
+11. **Mã giảm giá phải còn hạn sử dụng và chưa hết số lượng**
+12. **Khách hàng có thể gọi dịch vụ đi kèm bất cứ lúc nào trong thời gian lưu trú**
+13. **Chỉ những khách hàng đã thanh toán (PAID) và đã trả phòng mới được đánh giá**
+14. **Mỗi đặt phòng chỉ được đánh giá một lần**
+15. **Số sao đánh giá phải từ 1 đến 5**
+
 ### User Stories
 
 - US-01: Quản lý phòng
@@ -55,6 +73,24 @@
 ### Danh Sách Các Thực Thể
 
 #### ADMINS (Quản Lý/Quản Trị Viên)
+
+Định Nghĩa:
+
+- Đại diện cho người dùng nội bộ của hệ thống (Admin / Staff).
+- Có quyền quản lý nghiệp vụ và dữ liệu hệ thống.
+
+Thuộc Tính:
+
+- `admin_id`: Mã định danh duy nhất của admin.
+- `username`: Tên đăng nhập của admin.
+- `password`: Mật khẩu của admin.
+- `full_name`: Họ tên đầy đủ của admin.
+- `email`: Email của admin.
+- `phone`: Số điện thoại của admin.
+- `address`: Địa chỉ của admin.
+- `created_at`: Thời gian tạo của admin.
+- `updated_at`: Thời gian cập nhật của admin.
+
 #### DATPHONG (Đặt Phòng)
 #### DICHVU (Dịch Vụ)
 #### LOAIPHONG (Loại Phòng)
