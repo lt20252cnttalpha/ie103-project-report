@@ -619,9 +619,14 @@ CT\_SUDUNG\_DV(#underline[id], #emph[datphong\_id], #emph[dichvu\_id], so\_luong
   [Khóa], [Mô tả], [#underline[id]], [Mã định danh dòng chi tiết (Surrogate Key).], [#emph[datphong\_id]], [Khóa ngoại tham chiếu DATPHONG.], [#emph[dichvu\_id]], [Khóa ngoại tham chiếu DICHVU.], [so\_luong], [Số lượng dịch vụ sử dụng.], [don\_gia], [Đơn giá dịch vụ tại thời điểm sử dụng.], [thoi\_diem\_su\_dung], [Thời gian khách order dịch vụ.], [ghi\_chu], [Ghi chú về việc sử dụng dịch vụ.], [created\_at], [Ngày tạo.]
 )
 
-=== Tổng Hợp
-<tong-hop>
+=== Tổng Hợp Danh Sách Bảng
+<tong-hop-danh-sach-bang>
 
+#table(
+  columns: (1fr,) * 3,
+  align: (left, left, left),
+  [Bảng], [Loại], [Mô Tả], [ADMINS], [Thực Thể], [Biểu diễn người quản trị.], [DATPHONG], [Thực Thể], [Lưu trữ thông tin đơn đặt phòng.], [DICHVU], [Thực Thể], [Danh mục các dịch vụ đi kèm.], [LOAIPHONG], [Thực Thể], [Danh mục phân loại phòng.], [PAYMENTS], [Thực Thể], [Lưu trữ lịch sử giao dịch thanh toán.], [PERMISSIONS], [Thực Thể], [Danh sách các quyền hạn hệ thống.], [PHONG], [Thực Thể], [Danh sách các phòng vật lý.], [REFUNDS], [Thực Thể], [Lưu trữ yêu cầu và lịch sử hoàn tiền.], [REVIEWS], [Thực Thể], [Lưu trữ đánh giá từ khách hàng.], [ROLES], [Thực Thể], [Định nghĩa các vai trò trong hệ thống.], [USERS], [Thực Thể], [Lưu trữ thông tin khách hàng.], [VOUCHERS], [Thực Thể], [Quản lý các chương trình khuyến mãi.], [ADMIN\_ROLES], [Liên Kết], [Mối quan hệ giữa ADMINS và ROLES.], [ROLE\_PERMISSIONS], [Liên Kết], [Mối quan hệ giữa ROLES và PERMISSIONS.], [CT\_DATPHONG], [Liên Kết], [Chi tiết các phòng trong đơn đặt phòng.], [CT\_SUDUNG\_DV], [Liên Kết], [Chi tiết các dịch vụ khách sử dụng.]
+)
 #figure(
   table(
     columns: (10%, 30%, 15%, 45%),
