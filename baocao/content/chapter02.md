@@ -431,16 +431,18 @@ PHONG(<u>id</u>, so_phong, *loai_phong_id*, trang_thai)
 
 - Lưu trữ yêu cầu và lịch sử hoàn tiền.
 
-REFUNDS(<u>id</u>, *payment_id*, *user_id*, *admin_id*, so_tien, ly_do, ngay_hoan_tien, trang_thai)
+REFUNDS(<u>id</u>, *payment_id*, *requested_by*, *approved_by*, so_tien_hoan, ly_do, trang_thai, created_at, updated_at)
 
 | Khóa | Mô tả |
 | --- | --- |
-| id | Mã định danh yêu cầu hoàn tiền. |
-| payment_id | Khóa ngoại tham chiếu giao dịch gốc cần hoàn. |
-| user_id | Người yêu cầu hoàn tiền. |
-| admin_id | Người duyệt hoàn tiền (có thể NULL nếu chưa duyệt). |
-| so_tien | Số tiền được hoàn. |
-| trang_thai | Trạng thái (PENDING, APPROVED, REJECTED). |
+| <u>id</u> | Mã định danh yêu cầu hoàn tiền. |
+| *payment_id* | Khóa ngoại tham chiếu giao dịch gốc cần hoàn tại PAYMENTS. |
+| *requested_by* | Người yêu cầu hoàn tiền, khóa ngoại tham chiếu tới USERS. |
+| *approved_by* | Người duyệt hoàn tiền (có thể NULL nếu chưa duyệt). Khóa ngoại tham chiếu tới ADMINS. |
+| so_tien_hoan | Số tiền được hoàn. |
+| trang_thai | Trạng thái (REQUESTED, APPROVED, REJECTED, COMPLETED). |
+| created_at | Ngày tạo. |
+| updated_at | Ngày cập nhật. |
 
 #### REVIEWS (Đánh Giá)
 
