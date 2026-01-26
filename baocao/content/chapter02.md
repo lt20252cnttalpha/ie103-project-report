@@ -720,10 +720,10 @@ ADMIN_ROLES(<u>admin_id</u>, <u>role_id</u>)
 
 ROLE_PERMISSIONS(<u>role_id</u>, <u>permission_id</u>)
 
-| **Khóa** | **Mô tả** |
+<!-- | **Khóa** | **Mô tả** |
 | --- | --- |
 | <u>*role_id*</u> | Khóa ngoại tham chiếu ROLES. |
-| <u>*permission_id*</u> | Khóa ngoại tham chiếu PERMISSIONS. |
+| <u>*permission_id*</u> | Khóa ngoại tham chiếu PERMISSIONS. | -->
 
 ```{=typst}
 #figure(
