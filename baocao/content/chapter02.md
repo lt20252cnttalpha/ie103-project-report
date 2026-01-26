@@ -478,15 +478,18 @@ ROLES(<u>id</u>, code, name, description)
 
 - Lưu trữ thông tin khách hàng/người dùng cuối.
 
-USERS(<u>id</u>, email, password_hash, full_name, phone_number, address, created_at, updated_at)
+USERS(<u>id</u>, email, phone, password_hash, full_name, status, created_at, updated_at)
 
 | Khóa | Mô tả |
 | --- | --- |
-| id | Mã định danh người dùng. |
+| <u>id</u> | Mã định danh người dùng. |
 | email | Địa chỉ email (dùng để đăng nhập). |
+| phone | Số điện thoại liên lạc. |
 | password_hash | Mật khẩu đã mã hóa. |
 | full_name | Họ và tên. |
-| phone_number | Số điện thoại liên lạc. |
+| status | Trạng thái (ACTIVE/INACTIVE). |
+| created_at | Ngày tạo. |
+| updated_at | Ngày cập nhật. |
 
 #### VOUCHERS (Mã Giảm Giá)
 
