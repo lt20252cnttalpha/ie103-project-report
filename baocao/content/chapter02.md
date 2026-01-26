@@ -376,13 +376,14 @@ DICHVU(<u>id</u>, ten_dich_vu, don_gia, don_vi_tinh, trang_thai, created_at, upd
 
 - Danh mục phân loại phòng (Deluxe, Standard, Suite...).
 
-LOAIPHONG(<u>id</u>, ten_loai, mo_ta, gia_co_ban, suc_chua, created_at, updated_at)
+LOAIPHONG(<u>id</u>, ten_loai, gia_co_ban, mo_ta, suc_chua)
 
 | Khóa | Mô tả |
 | --- | --- |
-| id | Mã định danh loại phòng. |
+| <u>id</u> | Mã định danh loại phòng. |
 | ten_loai | Tên hiển thị của loại phòng. |
 | gia_co_ban | Giá gốc theo đêm. |
+| mo_ta | Mô tả chi tiết loại phòng. |
 | suc_chua | Số người tối đa cho phép. |
 
 #### PAYMENTS (Thanh Toán)
