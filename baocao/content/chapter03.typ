@@ -3,7 +3,9 @@
 = Cài Đặt - Triển Khai
 <cai-dat-trien-khai>
 
-Trong chương này, Nhóm 02 sẽ trình bày chi tiết về việc cài đặt mô hình dữ liệu (mức vật lý) và các chức năng quản lý thông tin trên hệ quản trị cơ sở dữ liệu Microsoft SQL Server.
+Tiếp nối quá trình phân tích và thiết kế lược đồ quan hệ ở Chương 2, Chương 3 tập trung vào việc hiện thực hóa mô hình dữ liệu trên môi trường vật lý cụ thể. Mục tiêu của chương này là chuyển đổi các thiết kế mức logic thành cấu trúc lưu trữ thực tế, đảm bảo tính toàn vẹn dữ liệu và hiệu năng truy xuất.
+
+Nhóm thực hiện lựa chọn Microsoft SQL Server làm hệ quản trị cơ sở dữ liệu (DBMS) nhờ khả năng hỗ trợ mạnh mẽ các ràng buộc phức tạp và ngôn ngữ T-SQL. Nội dung chương bao gồm: thiết lập môi trường, đặc tả từ điển dữ liệu (Data Dictionary), xây dựng script khởi tạo (DDL) và nạp dữ liệu mẫu (Data Seeding) để phục vụ quá trình kiểm thử.
 
 == Môi Trường Cài Đặt
 <moi-truong-cai-dat>
@@ -288,7 +290,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 == Khởi Tạo Cơ Sở Dữ Liệu
 <khoi-tao-co-so-du-lieu>
 
-- Script khởi tạo dữ liệu, phiên bản đầy đủ được đính kèm theo file báo cáo này.
+Sau khi hoàn tất thiết kế từ điển dữ liệu, nhóm sử dụng ngôn ngữ định nghĩa dữ liệu (DDL - Data Definition Language) để khởi tạo cấu trúc database. Dưới đây là script SQL đại diện, vui lòng tham khảo file script đầy đủ được đính kèm bản báo cáo.
 
 === Tạo Database
 <tao-database>
@@ -317,7 +319,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 == Dữ Liệu Mẫu
 <du-lieu-mau>
 
-Để hệ thống có thể hoạt động demo, Nhóm 02 đã xây dựng bộ dữ liệu mẫu bao gồm danh mục hệ thống và dữ liệu giao dịch giả lập.
+Để kiểm chứng tính đúng đắn của các mối quan hệ và ràng buộc, đồng thời phục vụ cho việc demo chức năng, nhóm tiến hành nạp (seed) dữ liệu mẫu mô phỏng các hoạt động thực tế của khách sạn.
 
 - Dưới đây là một số ví dụ, vui lòng tham khảo phiên bản đầy đủ đính kèm.
 
@@ -397,6 +399,10 @@ INSERT INTO DATPHONG (user_id, voucher_id, check_in, check_out, trang_thai, crea
 == Kết Luận Chương 3
 <ket-luan-chuong-3>
 
-Trong chương này, nhóm đã thực hiện các bước thiết kế cơ sở dữ liệu ở mức vật lý trên một Hệ Quản Trị Cơ Sở Dữ Liệu cụ thể. Đồng thời đã tạo các bảng, và thêm dữ liệu mẫu.
+Như vậy, nhóm đã hoàn thành việc xây dựng hạ tầng cơ sở dữ liệu cho bài toán "Quản Lý Đặt Phòng Khách Sạn". Hệ thống sau khi cài đặt đã đáp ứng được các yêu cầu cốt lõi:
 
-Tới thời điểm này, cơ sở dữ liệu đã sẵn sàng để thực hiện các bài toán nghiệp vụ cần thiết.
++ Cấu trúc lưu trữ: Phản ánh đúng mô hình thực thể kết hợp đã thiết kế.
++ Toàn vẹn dữ liệu: Các ràng buộc khóa chính, khóa ngoại và ràng buộc miền giá trị (CHECK constraints) đã được áp dụng chặt chẽ.
++ Dữ liệu thử nghiệm: Bộ dữ liệu mẫu bao quát được các kịch bản nghiệp vụ chính (Đặt phòng, Thanh toán, Đánh giá).
+
+Cơ sở dữ liệu vật lý này sẽ đóng vai trò là nền tảng trung tâm để thực hiện các thao tác xử lý dữ liệu nâng cao (Stored Procedures, Triggers, Functions) và các chính sách bảo mật sẽ được trình bày chi tiết trong Chương 4.
