@@ -344,18 +344,17 @@ ADMINS(<u>id</u>, email, password_hash, full_name, status, created_at, updated_a
 
 - Lưu trữ thông tin header của đơn đặt phòng.
 
-DATPHONG(<u>id</u>, *user_id*, *voucher_id*, ngay_dat, ngay_checkin, ngay_checkout, tong_tien, trang_thai, created_at, updated_at)
+DATPHONG(<u>id</u>, *user_id*, *voucher_id*, check_in, check_out, trang_thai, created_at)
 
 | Khóa | Mô tả |
 | --- | --- |
-| id | Mã định danh đơn đặt phòng.
-| user_id | Khóa ngoại tham chiếu tới bảng USERS (Người đặt).
-| voucher_id | Khóa ngoại tham chiếu tới bảng VOUCHERS (Mã giảm giá áp dụng, có thể NULL). |
-| ngay_dat | Thời điểm tạo đơn.
-| ngay_checkin | Ngày nhận phòng dự kiến.
-| ngay_checkout | Ngày trả phòng dự kiến.
-| tong_tien | Tổng giá trị đơn hàng (sau khi trừ voucher nếu có).
+| <u>id</u> | Mã định danh đơn đặt phòng.
+| *user_id* | Khóa ngoại tham chiếu tới bảng USERS (Người đặt).
+| *voucher_id* | Khóa ngoại tham chiếu tới bảng VOUCHERS (Mã giảm giá áp dụng, có thể NULL).
+| check_in | Ngày nhận phòng dự kiến.
+| check_out | Ngày trả phòng dự kiến.
 | trang_thai | Trạng thái đơn (PENDING, CONFIRMED, CANCELLED, COMPLETED).
+| created_at | Thời gian tạo đơn.
 
 #### DICHVU (Dịch Vụ)
 
