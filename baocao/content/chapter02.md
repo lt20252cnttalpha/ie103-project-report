@@ -126,12 +126,11 @@ Tóm tắt các thực thể và mối quan hệ bằng mô hình trực quan:
 
 ![Trực Quan Hóa các Thực Thể và Mối Quan Hệ](diagrams/entity-relationship.svg)
 
-<!-- (nên cần bảng trung gian) -->
-
 ## Mô Hình Mức Quan Niệm
 
 <!-- - Thực thể và các thuộc tính. -->
 <!-- - Mô hình ER dạng Chen. -->
+<!-- Chưa có khái niệm bảng ở đây -->
 
 ![Mô Hình Thực Thể Quan Hệ](diagrams/ER.svg)
 
