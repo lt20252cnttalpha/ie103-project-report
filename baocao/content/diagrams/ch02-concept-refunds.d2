@@ -97,22 +97,23 @@ classes: {
 
 # MARK: REFUNDS
 REFUNDS: {class: entity; label: "REFUNDS"}
-refunds_id: {class: attr_pri; label: "id"}
-refunds_payment_id: {class: attr_foreign_key; label: "payment_id"; width: 120}
-refunds_so_tien_hoan: {class: attr; label: "so_tien_hoan"; width: 120}
-refunds_trang_thai: {class: attr; label: "trang_thai"}
-refunds_ly_do: {class: attr; label: "ly_do"}
-refunds_requested_by: {class: attr_foreign_key; label: "requested_by"; width: 120}
-refunds_approved_by: {class: attr_foreign_key; label: "approved_by"; width: 120}
-refunds_created_at: {class: attr; label: "created_at"; width: 110}
-refunds_updated_at: {class: attr; label: "updated_at"; width: 110}
+
+refunds_id: {class: attr_pri; label: "ID Hoàn Tiền"}
+# refunds_payment_id: {class: attr_foreign_key; label: "payment_id"; width: 120}
+refunds_so_tien_hoan: {class: attr; label: "Số Tiền Hoàn"}
+refunds_trang_thai: {class: attr; label: "Trạng Thái"}
+refunds_ly_do: {class: attr; label: "Lý Do"}
+# refunds_requested_by: {class: attr_foreign_key; label: "requested_by"; width: 120}
+# refunds_approved_by: {class: attr_foreign_key; label: "approved_by"; width: 120}
+# refunds_created_at: {class: attr; label: "created_at"; width: 110}
+# refunds_updated_at: {class: attr; label: "updated_at"; width: 110}
 
 REFUNDS -- refunds_id
-REFUNDS -- refunds_payment_id: {style: {stroke-width: 1; stroke: orange}}
+# REFUNDS -- refunds_payment_id: {style: {stroke-width: 1; stroke: orange}}
 REFUNDS -- refunds_so_tien_hoan
 REFUNDS -- refunds_trang_thai
 REFUNDS -- refunds_ly_do
-REFUNDS -- refunds_requested_by: {style: {stroke-width: 1; stroke: orange}}
-REFUNDS -- refunds_approved_by: {style: {stroke-width: 1; stroke: orange}}
-REFUNDS -- refunds_created_at
-REFUNDS -- refunds_updated_at
+# REFUNDS -- refunds_requested_by: {style: {stroke-width: 1; stroke: orange}}
+# REFUNDS -- refunds_approved_by: {style: {stroke-width: 1; stroke: orange}}
+# REFUNDS -- refunds_created_at
+# REFUNDS -- refunds_updated_at
