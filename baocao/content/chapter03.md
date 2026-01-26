@@ -93,7 +93,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | --- | --- | --- | --- |
 | `id` | `INT` | `PK`, `IDENTITY` | Khóa chính tự tăng. |
 | `email` | `NVARCHAR(255)` | `NOT NULL`, `UNIQUE` | Email đăng nhập. |
-| `phone` | `NVARCHAR(20)` |  | Số điện thoại. |
+| `phone` | `NVARCHAR(20)` | `NULL` | Số điện thoại. |
 | `password_hash` | `NVARCHAR(255)` | `NOT NULL` | Mật khẩu (Hash). |
 | `full_name` | `NVARCHAR(255)` | `NULL` | Họ tên khách hàng. |
 | `status` | `NVARCHAR(50)` | `DEFAULT 'ACTIVE'` | Trạng thái tài khoản. |
@@ -109,11 +109,11 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | --- | --- | --- | --- |
 | `id` | `INT` | `PK`, `IDENTITY` | Khóa chính. |
 | `ten_loai` | `NVARCHAR(100)` | `NOT NULL` | Tên loại (VD: Deluxe). |
-| `mo_ta` | `NVARCHAR(500)` | `NULL` | Mô tả tiện nghi. |
 | `gia_co_ban` | `DECIMAL(18,2)` | `NOT NULL` | Giá niêm yết. |
-| `suc_chua` | `INT` | `NOT NULL` | Số người tối đa. |
-| `created_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày tạo. |
-| `updated_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày cập nhật. |
+| `mo_ta` | `NVARCHAR(500)` | `NULL` | Mô tả tiện nghi. |
+| `suc_chua` | `INT` | `DEFAULT 2` | Số người tối đa. |
+| *CHECK* |  | `gia_co_ban > 0` | Chỉ nhận giá trị quy định. |
+| *CHECK* |  | `suc_chua > 0` | Chỉ nhận giá trị quy định. |
 
 #### 8. PHONG
 
