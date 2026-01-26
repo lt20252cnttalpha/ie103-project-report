@@ -495,15 +495,20 @@ USERS(<u>id</u>, email, phone, password_hash, full_name, status, created_at, upd
 
 - Quản lý các chương trình khuyến mãi.
 
-VOUCHERS(<u>id</u>, code, mo_ta, giam_gia, loai_giam_gia, ngay_bat_dau, ngay_ket_thuc, so_luong, trang_thai)
+VOUCHERS(<u>id</u>, ma_code, phan_tram_giam, ngay_het_han, so_tien_toi_thieu, so_lan_toi_da, so_lan_da_dung, trang_thai, created_at, updated_at)
 
 | Khóa | Mô tả |
 | --- | --- |
-| id | Mã định danh voucher. |
-| code | Mã nhập khuyến mãi (ví dụ: SUMMER2024). |
-| giam_gia | Giá trị giảm (số tiền hoặc phần trăm). |
-| loai_giam_gia | Loại giảm (PERCENT/FIXED). |
-| so_luong | Số lượng mã giới hạn. |
+| <u>id</u> | Mã định danh voucher. |
+| ma_code | Mã nhập khuyến mãi (ví dụ: SUMMER2024). |
+| phan_tram_giam | Phần trăm giảm giá. |
+| ngay_het_han | Ngày hết hạn. |
+| so_tien_toi_thieu | Số tiền tối thiểu để áp dụng voucher. |
+| so_lan_toi_da | Số lần sử dụng tối đa. |
+| so_lan_da_dung | Số lần đã sử dụng. |
+| trang_thai | Trạng thái (ACTIVE/INACTIVE). |
+| created_at | Ngày tạo. |
+| updated_at | Ngày cập nhật. |
 
 ### Nhóm Bảng Mối Liên Kết (Mối Quan Hệ n-n)
 
