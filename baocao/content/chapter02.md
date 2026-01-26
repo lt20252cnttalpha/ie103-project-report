@@ -267,8 +267,8 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
     - Một phòng thuộc về một loại phòng.
     - Một loại phòng có thể có nhiều phòng.
 - USERS - DATPHONG: *(1 - n)*
-    - Một người dùng có thể có nhiều đặt phòng.
-    - Một đặt phòng được thực hiện bởi một người dùng.
+    - Một người dùng có tối thiểu *0* và tối đa *n* đơn đặt phòng.
+    - Một đặt phòng có và chỉ thuộc về một người dùng.
 - DATPHONG - PHONG: *(n - n)*
     - Một đặt phòng có thể có nhiều phòng.
     - Một phòng có thể được đặt trong nhiều đặt phòng.
