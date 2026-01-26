@@ -288,7 +288,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 == Khởi Tạo Cơ Sở Dữ Liệu
 <khoi-tao-co-so-du-lieu>
 
-- Script khởi tạo dữ liệu, phiên bản đầy đủ được đính kèm theo file báo cáo này, hoặc truy cập kho git của bản báo cáo này để lấy phiên bản đầy đủ nhất.
+- Script khởi tạo dữ liệu, phiên bản đầy đủ được đính kèm theo file báo cáo này.
 
 === Tạo Database
 <tao-database>
@@ -317,15 +317,17 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 == Dữ Liệu Mẫu
 <du-lieu-mau>
 
+Để hệ thống có thể hoạt động demo, Nhóm 02 đã xây dựng bộ dữ liệu mẫu bao gồm danh mục hệ thống và dữ liệu giao dịch giả lập.
+
+- Dưới đây là một số ví dụ, vui lòng tham khảo phiên bản đầy đủ đính kèm.
 
 === Phân Quyền
 <phan-quyen>
 
-
-==== ROLES
-<roles-1>
+- Hệ thống định nghĩa các nhóm người dùng cơ bản và quyền hạn tương ứng.
 
 ```sql
+-- 2. ROLES
 INSERT INTO ROLES (code, name, description) VALUES
 ('SUPER_ADMIN', N'Quản trị viên cấp cao', N'Toàn quyền quản lý hệ thống'),
 ('ADMIN', N'Quản trị viên', N'Quản lý phòng và đặt phòng'),
@@ -339,4 +341,55 @@ INSERT INTO ROLES (code, name, description) VALUES
 ('ANALYST', N'Phân tích', N'Xem báo cáo và thống kê');
 
 GO
+```
+
+=== Tài Khoản
+<tai-khoan>
+
+```sql
+-- Insert ADMINS (status: ACTIVE or INACTIVE)
+INSERT INTO ADMINS (email, password_hash, full_name, status) VALUES
+('superadmin@gmail.com', 'hash_password_1', N'Lê Kim Long', 'ACTIVE'),
+('admin@gmail.com', 'hash_password_2', N'Đinh Xuân Sâm', 'ACTIVE'),
+('staff@gmail.com', 'hash_password_3', N'Nguyễn Minh Triết', 'ACTIVE');
+
+GO
+```
+
+=== Loại Phòng
+<loai-phong>
+
+```sql
+INSERT INTO LOAIPHONG (ten_loai, gia_co_ban, mo_ta, suc_chua) VALUES
+(N'Phòng Đơn Tiêu Chuẩn', 500000, N'Phòng đơn cơ bản, giường đơn', 1),
+(N'Phòng Đơn Cao Cấp', 700000, N'Phòng đơn với tiện nghi cao cấp', 1),
+(N'Phòng Đôi Tiêu Chuẩn', 800000, N'Phòng đôi với 2 giường đơn hoặc 1 giường đôi', 2),
+(N'Phòng Đôi Cao Cấp', 1200000, N'Phòng đôi rộng rãi, view đẹp', 2),
+(N'Phòng Gia Đình', 1500000, N'Phòng lớn cho gia đình, 2-3 giường', 4),
+(N'Phòng VIP', 2000000, N'Phòng VIP với đầy đủ tiện nghi', 2),
+(N'Suite Junior', 2500000, N'Suite nhỏ với phòng khách riêng', 2),
+(N'Suite Executive', 3500000, N'Suite cao cấp với nhiều phòng', 4),
+(N'Phòng Deluxe', 1800000, N'Phòng deluxe view biển', 2),
+(N'Phòng Honeymoon', 2200000, N'Phòng trang trí lãng mạn cho cặp đôi', 2);
+
+GO
+```
+
+=== Dữ Liệu Giao Dịch
+<du-lieu-giao-dich>
+
+- Mô phỏng quy trình đặt phòng và thanh toán.
+
+```sql
+INSERT INTO DATPHONG (user_id, voucher_id, check_in, check_out, trang_thai, created_at) VALUES
+-- Đặt phòng đã hoàn thành
+(1, 1, '2024-01-05 14:00:00', '2024-01-08 12:00:00', 'COMPLETED', '2024-01-01 10:00:00'),
+-- Đặt phòng đang diễn ra
+(5, NULL, '2024-01-25 14:00:00', '2024-01-28 12:00:00', 'CONFIRMED', '2024-01-20 16:00:00'),
+-- Đặt phòng sắp tới
+(8, 6, '2024-02-01 14:00:00', '2024-02-05 12:00:00', 'PENDING', '2024-01-25 09:00:00'),
+-- Đặt phòng đã hủy
+(11, NULL, '2024-01-18 14:00:00', '2024-01-20 12:00:00', 'CANCELLED', '2024-01-10 10:00:00'),
+-- Thêm một số đặt phòng nữa
+(1, 8, '2024-02-12 14:00:00', '2024-02-14 12:00:00', 'CONFIRMED', '2024-01-28 10:00:00');
 ```
