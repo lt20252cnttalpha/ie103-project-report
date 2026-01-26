@@ -107,12 +107,12 @@ refunds_approved_by: {class: attr_foreign_key; label: "approved_by"; width: 120}
 refunds_created_at: {class: attr; label: "created_at"; width: 110}
 refunds_updated_at: {class: attr; label: "updated_at"; width: 110}
 
-REFUNDS -- refunds_id: {style: {stroke-width: 1}}
+REFUNDS -- refunds_id
 REFUNDS -- refunds_payment_id: {style: {stroke-width: 1; stroke: orange}}
-REFUNDS -- refunds_so_tien_hoan: {style: {stroke-width: 1}}
-REFUNDS -- refunds_trang_thai: {style: {stroke-width: 1}}
-REFUNDS -- refunds_ly_do: {style: {stroke-width: 1}}
+REFUNDS -- refunds_so_tien_hoan
+REFUNDS -- refunds_trang_thai
+REFUNDS -- refunds_ly_do
 REFUNDS -- refunds_requested_by: {style: {stroke-width: 1; stroke: orange}}
 REFUNDS -- refunds_approved_by: {style: {stroke-width: 1; stroke: orange}}
-REFUNDS -- refunds_created_at: {style: {stroke-width: 1}}
-REFUNDS -- refunds_updated_at: {style: {stroke-width: 1}}
+REFUNDS -- refunds_created_at
+REFUNDS -- refunds_updated_at
