@@ -48,10 +48,10 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 | **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
 | --- | --- | --- | --- |
-| **id** | `INT` | `PK`, `IDENTITY` | Khóa chính. |
-| code | `NVARCHAR(50)` | `NOT NULL`, `UNIQUE` | Mã vai trò (VD: ADMIN). |
-| name | `NVARCHAR(255)` | `NOT NULL` | Tên hiển thị. |
-| description | `NVARCHAR(500)` | `NULL` | Mô tả vai trò. |
+| `id` | `INT` | `PK`, `IDENTITY` | Khóa chính. |
+| `code` | `NVARCHAR(50)` | `NOT NULL`, `UNIQUE` | Mã vai trò (VD: ADMIN). |
+| `name` | `NVARCHAR(255)` | `NOT NULL` | Tên hiển thị. |
+| `description` | `NVARCHAR(500)` | `NULL` | Mô tả vai trò. |
 
 #### 3. PERMISSIONS
 
@@ -59,7 +59,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 | **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
 | --- | --- | --- | --- |
-| **id** | `INT` | `PK`, `IDENTITY` | Khóa chính. |
+| `id` | `INT` | `PK`, `IDENTITY` | Khóa chính. |
 | code | `NVARCHAR(100)` | `NOT NULL`, `UNIQUE` | Mã quyền (VD: USER_READ). |
 | description | `NVARCHAR(255)` | `NULL` | Mô tả quyền hạn. |
 
@@ -91,7 +91,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 | **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
 | --- | --- | --- | --- |
-| **id** | `INT` | `PK`, `IDENTITY` | Khóa chính tự tăng. |
+| `id` | `INT` | `PK`, `IDENTITY` | Khóa chính tự tăng. |
 | email | `NVARCHAR(255)` | `NOT NULL`, `UNIQUE` | Email đăng nhập. |
 | password_hash | `NVARCHAR(255)` | `NOT NULL` | Mật khẩu (Hash). |
 | full_name | `NVARCHAR(255)` | `NULL` | Họ tên khách hàng. |
@@ -106,7 +106,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 | **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
 | --- | --- | --- | --- |
-| **id** | `INT` | `PK`, `IDENTITY` | Khóa chính. |
+| `id` | `INT` | `PK`, `IDENTITY` | Khóa chính. |
 | ten_loai | `NVARCHAR(100)` | `NOT NULL` | Tên loại (VD: Deluxe). |
 | mo_ta | `NVARCHAR(500)` | `NULL` | Mô tả tiện nghi. |
 | gia_co_ban | `DECIMAL(18,2)` | `NOT NULL` | Giá niêm yết. |
@@ -120,7 +120,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 | **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
 | --- | --- | --- | --- |
-| **id** | `INT` | `PK`, `IDENTITY` | Khóa chính. |
+| `id` | `INT` | `PK`, `IDENTITY` | Khóa chính. |
 | loai_phong_id | `INT` | `FK` (LOAIPHONG), `NOT NULL` | Loại phòng tương ứng. |
 | so_phong | `NVARCHAR(50)` | `NOT NULL`, `UNIQUE` | Số phòng (VD: 101). |
 | trang_thai | `NVARCHAR(50)` | `DEFAULT 'AVAILABLE'` | Trạng thái phòng. |
@@ -134,7 +134,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 | **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
 | --- | --- | --- | --- |
-| **id** | `INT` | `PK`, `IDENTITY` | Khóa chính. |
+| `id` | `INT` | `PK`, `IDENTITY` | Khóa chính. |
 | ten_dich_vu | `NVARCHAR(100)` | `NOT NULL` | Tên dịch vụ. |
 | mo_ta | `NVARCHAR(500)` | `NULL` | Mô tả chi tiết. |
 | don_gia | `DECIMAL(18,2)` | `NOT NULL` | Giá dịch vụ. |
@@ -150,7 +150,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 | **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
 | --- | --- | --- | --- |
-| **id** | `INT` | `PK`, `IDENTITY` | Khóa chính. |
+| `id` | `INT` | `PK`, `IDENTITY` | Khóa chính. |
 | code | `NVARCHAR(50)` | `NOT NULL`, `UNIQUE` | Mã Voucher (VD: TET2025). |
 | mo_ta | `NVARCHAR(500)` | `NULL` | Mô tả chương trình. |
 | giam_gia | `DECIMAL(18,2)` | `NOT NULL` | Giá trị giảm. |
@@ -172,7 +172,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 | **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
 | --- | --- | --- | --- |
-| **id** | `INT` | `PK`, `IDENTITY` | Khóa chính. |
+| `id` | `INT` | `PK`, `IDENTITY` | Khóa chính. |
 | user_id | `INT` | `FK` (USERS), `NOT NULL` | Khách đặt phòng. |
 | voucher_id | `INT` | `FK` (VOUCHERS), `NULL` | Voucher áp dụng (nếu có). |
 | ngay_dat | `DATETIME` | `DEFAULT GETDATE()` | Thời gian đặt. |
@@ -190,7 +190,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 | **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
 | --- | --- | --- | --- |
-| **id** | `INT` | `PK`, `IDENTITY` | Khóa chính. |
+| `id` | `INT` | `PK`, `IDENTITY` | Khóa chính. |
 | datphong_id | `INT` | `FK` (DATPHONG), `NOT NULL` | Thuộc đơn đặt phòng nào. |
 | phong_id | `INT` | `FK` (PHONG), `NOT NULL` | Phòng nào. |
 | gia_tien | `DECIMAL(18,2)` | `NOT NULL` | Giá phòng tại thời điểm đặt. |
@@ -203,7 +203,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 | **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
 | --- | --- | --- | --- |
-| **id** | `INT` | `PK`, `IDENTITY` | Khóa chính. |
+| `id` | `INT` | `PK`, `IDENTITY` | Khóa chính. |
 | datphong_id | `INT` | `FK` (DATPHONG), `NOT NULL` | Thuộc đơn đặt phòng nào. |
 | dichvu_id | `INT` | `FK` (DICHVU), `NOT NULL` | Dịch vụ nào. |
 | so_luong | `INT` | `DEFAULT 1`, `NOT NULL` | Số lượng. |
@@ -219,7 +219,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 | **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
 | --- | --- | --- | --- |
-| **id** | `INT` | `PK`, `IDENTITY` | Khóa chính. |
+| `id` | `INT` | `PK`, `IDENTITY` | Khóa chính. |
 | datphong_id | `INT` | `FK` (DATPHONG), `NOT NULL` | Thanh toán cho đơn nào. |
 | user_id | `INT` | `FK` (USERS), `NOT NULL` | Người thanh toán. |
 | so_tien | `DECIMAL(18,2)` | `NOT NULL` | Số tiền giao dịch. |
@@ -238,7 +238,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 | **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
 | --- | --- | --- | --- |
-| **id** | `INT` | `PK`, `IDENTITY` | Khóa chính. |
+| `id` | `INT` | `PK`, `IDENTITY` | Khóa chính. |
 | payment_id | `INT` | `FK` (PAYMENTS), `NOT NULL` | Hoàn tiền cho giao dịch nào. |
 | user_id | `INT` | `FK` (USERS), `NOT NULL` | Người yêu cầu. |
 | admin_id | `INT` | `FK` (ADMINS), `NULL` | Người duyệt. |
@@ -256,7 +256,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 | **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
 | --- | --- | --- | --- |
-| **id** | `INT` | `PK`, `IDENTITY` | Khóa chính. |
+| `id` | `INT` | `PK`, `IDENTITY` | Khóa chính. |
 | user_id | `INT` | `FK` (USERS), `NOT NULL` | Người đánh giá. |
 | phong_id | `INT` | `FK` (PHONG), `NOT NULL` | Phòng được đánh giá. |
 | datphong_id | `INT` | `FK` (DATPHONG), `UNIQUE` | Thuộc đơn nào (Duy nhất 1-1). |
