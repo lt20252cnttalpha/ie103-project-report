@@ -296,9 +296,29 @@ REFUNDS -- refunds_approved_by: {style: {stroke-width: 1}}
 REFUNDS -- refunds_created_at: {style: {stroke-width: 1}}
 REFUNDS -- refunds_updated_at: {style: {stroke-width: 1}}
 
+# MARK: REVIEWS
 REVIEWS: {class: entity; label: "REVIEWS"}
-review_id: {class: attr_pri; label: "id"}
-REVIEWS -- review_id: {style: {stroke-width: 1}}
+reviews_id: {class: attr_pri; label: "id"}
+reviews_user_id: {class: attr_foreign_key; label: "user_id"; width: 120}
+reviews_phong_id: {class: attr_foreign_key; label: "phong_id"; width: 120}
+reviews_datphong_id: {class: attr_foreign_key; label: "datphong_id"; width: 120}
+reviews_so_sao: {class: attr; label: "so_sao"}
+reviews_binh_luan: {class: attr; label: "binh_luan"; width: 110}
+reviews_ngay_danh_gia: {class: attr; label: "ngay_danh_gia"; width: 120}
+reviews_trang_thai: {class: attr; label: "trang_thai"; width: 110}
+reviews_created_at: {class: attr; label: "created_at"; width: 110}
+reviews_updated_at: {class: attr; label: "updated_at"; width: 110}
+
+REVIEWS -- reviews_id: {style: {stroke-width: 1}}
+REVIEWS -- reviews_user_id: {style: {stroke-width: 1}}
+REVIEWS -- reviews_phong_id: {style: {stroke-width: 1}}
+REVIEWS -- reviews_datphong_id: {style: {stroke-width: 1}}
+REVIEWS -- reviews_so_sao: {style: {stroke-width: 1}}
+REVIEWS -- reviews_binh_luan: {style: {stroke-width: 1}}
+REVIEWS -- reviews_ngay_danh_gia: {style: {stroke-width: 1}}
+REVIEWS -- reviews_trang_thai: {style: {stroke-width: 1}}
+REVIEWS -- reviews_created_at: {style: {stroke-width: 1}}
+REVIEWS -- reviews_updated_at: {style: {stroke-width: 1}}
 
 # --- 3. RELATIONSHIPS (MỐI QUAN HỆ) ---
 # Phân biệt rõ đâu là quan hệ. 
