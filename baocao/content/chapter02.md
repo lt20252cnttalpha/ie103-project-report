@@ -85,8 +85,8 @@
 
 ## Mô Hình Mức Quan Niệm
 
-- Thực thể và các thuộc tính.
-- Mô hình ER dạng Chen.
+<!-- - Thực thể và các thuộc tính. -->
+<!-- - Mô hình ER dạng Chen. -->
 
 ![Mô Hình Thực Thể Quan Hệ](diagrams/ch02-ER.svg)
 
