@@ -214,7 +214,9 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | `thoi_diem_su_dung` | `DATETIME` | `DEFAULT GETDATE()` | Thời gian order. |
 | `ghi_chu` | `NVARCHAR(500)` | `NULL` | Ghi chú thêm. |
 | `created_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày tạo. |
-| *CHECK* |  | `so_luong > 0`, `don_gia > 0` | Số lượng và giá phải dương. |
+| *FK Rule* |  | `datphong_id ON DELETE CASCADE` | Xóa đơn xóa luôn chi tiết. |
+| *CHECK* |  | `so_luong > 0` | Số lượng phải dương. |
+| *CHECK* |  | `don_gia > 0` | Giá phải dương. |
 
 #### 14. PAYMENTS
 
