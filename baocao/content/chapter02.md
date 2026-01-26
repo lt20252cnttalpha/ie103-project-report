@@ -330,7 +330,7 @@ ADMINS(<u>id</u>, email, password_hash, full_name, status, created_at, updated_a
 
 <!-- TODO: định dạng khóa chính, khóa ngoại trong bảng -->
 
-| Khóa | Mô tả |
+<!-- | Khóa | Mô tả |
 | --- | --- |
 | <u>id</u> | Mã định danh duy nhất của admin. |
 | email | Tên đăng nhập của admin. |
@@ -338,7 +338,22 @@ ADMINS(<u>id</u>, email, password_hash, full_name, status, created_at, updated_a
 | full_name | Họ tên đầy đủ của admin. |
 | status | Trạng thái của admin. |
 | created_at | Thời gian tạo của admin. |
-| updated_at | Thời gian cập nhật của admin. |
+| updated_at | Thời gian cập nhật của admin. | -->
+
+<!-- Sử dụng bảng của Typst -->
+
+```{=typst}
+#figure(
+  table(
+    columns: (30%, 70%),
+    align: (left, left),
+    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh duy nhất của admin.], [email], [Tên đăng nhập của admin.], [password\_hash], [Mật khẩu của admin.], [full\_name], [Họ tên đầy đủ của admin.], [status], [Trạng thái của admin.], [created\_at], [Thời gian tạo của admin.], [updated\_at], [Thời gian cập nhật của admin.]
+  ),
+  caption: [
+    Mô Hình Mức Logic: ADMINS
+  ],
+)
+```
 
 #### DATPHONG (Đặt Phòng)
 
@@ -346,7 +361,7 @@ ADMINS(<u>id</u>, email, password_hash, full_name, status, created_at, updated_a
 
 DATPHONG(<u>id</u>, *user_id*, *voucher_id*, check_in, check_out, trang_thai, created_at)
 
-| Khóa | Mô tả |
+| **Khóa** | **Mô tả** |
 | --- | --- |
 | <u>id</u> | Mã định danh đơn đặt phòng.
 | *user_id* | Khóa ngoại tham chiếu tới bảng USERS (Người đặt).
