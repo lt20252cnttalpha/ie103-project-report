@@ -134,9 +134,9 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
 | --- | --- | --- | --- |
 | `id` | `INT` | `PK`, `IDENTITY` | Khóa chính. |
-| `ten_dich_vu` | `NVARCHAR(100)` | `NOT NULL` | Tên dịch vụ. |
-| `mo_ta` | `NVARCHAR(500)` | `NULL` | Mô tả chi tiết. |
+| `ten_dich_vu` | `NVARCHAR(255)` | `NOT NULL` | Tên dịch vụ. |
 | `don_gia` | `DECIMAL(18,2)` | `NOT NULL` | Giá dịch vụ. |
+| `don_vi_tinh` | `NVARCHAR(50)` | `NOT NULL`, `DEFAULT N'Lần'` | Đơn vị tính. |
 | `trang_thai` | `NVARCHAR(50)` | `DEFAULT 'ACTIVE'` | Trạng thái. |
 | `created_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày tạo. |
 | `updated_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày cập nhật. |
