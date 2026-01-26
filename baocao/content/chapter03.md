@@ -225,17 +225,15 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
 | --- | --- | --- | --- |
 | `id` | `INT` | `PK`, `IDENTITY` | Khóa chính. |
-| `datphong_id` | `INT` | `FK` (DATPHONG), `NOT NULL` | Thanh toán cho đơn nào. |
+| `booking_id` | `INT` | `FK` (DATPHONG), `NOT NULL` | Thanh toán cho đơn nào. |
 | `user_id` | `INT` | `FK` (USERS), `NOT NULL` | Người thanh toán. |
 | `so_tien` | `DECIMAL(18,2)` | `NOT NULL` | Số tiền giao dịch. |
 | `phuong_thuc` | `NVARCHAR(50)` | `NOT NULL` | Cách trả (`CASH`, `BANK`...). |
-| `ma_giao_dich` | `NVARCHAR(100)` | `UNIQUE`, `NULL` | Ref ID (nếu CK online). |
-| `ngay_thanh_toan` | `DATETIME` | `DEFAULT GETDATE()` | Thời điểm trả. |
-| `trang_thai` | `NVARCHAR(50)` | `DEFAULT 'PENDING'` | Trạng thái giao dịch. |
+| `trang_thai` | `NVARCHAR(50)` | `NULL` | Trạng thái giao dịch. |
 | `created_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày tạo. |
-| `updated_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày cập nhật. |
 | *CHECK* |  | `so_tien > 0` | Tiền phải dương. |
-| *CHECK* |  | `trang_thai IN ('PENDING', 'SUCCESS', 'FAILED')` | Ràng buộc trạng thái. |
+| *CHECK* |  | `trang_thai IN ('PENDING', 'SUCCESS', 'FAILED', 'CANCELLED', 'PAID', 'UNPAID', 'REFUNDED')` | Ràng buộc trạng thái. |
+| *CHECK* |  | `phuong_thuc IN ('TIEN_MAT', 'CHUYEN_KHOAN', 'THE', 'ONLINE')` | Ràng buộc phương thức. |
 
 #### 15. REFUNDS
 
