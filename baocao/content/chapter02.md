@@ -261,8 +261,8 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 ### Các Mối Quan Hệ
 
 - ADMINS - ROLES: *(n - n)*
-    - Một admin có thể có nhiều vai trò.
-    - Một vai trò có thể gán cho nhiều admin.
+    - Một admin có thể có tối thiểu *1* và tối đa *n* vai trò.
+    - Một vai trò có thể gán tối thiểu *0* và tối đa *n* admin.
 - PHONG - LOAIPHONG: *(1 - n)*
     - Một phòng thuộc về một loại phòng.
     - Một loại phòng có thể có nhiều phòng.
@@ -294,8 +294,8 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
     - Một lần thanh toán thuộc về một lần đặt phòng.
     - Một lần đặt phòng có thể có nhiều lần thanh toán.
 - ADMINS - REFUNDS: *(1 - n)*
-    - Một admin có thể duyệt nhiều lần hoàn tiền.
-    - Một lần hoàn tiền chỉ được duyệt bởi một admin.
+    - Một admin có thể duyệt tối thiểu *0* và tối đa *n* lần hoàn tiền.
+    - Một lần hoàn tiền chỉ được duyệt bởi *1* một admin.
 - DATPHONG - DICHVU: *(n - n)*
     - Một lần đặt phòng có thể có nhiều dịch vụ đi kèm.
     - Một dịch vụ đi kèm có thể được áp dụng cho nhiều lần đặt phòng.
