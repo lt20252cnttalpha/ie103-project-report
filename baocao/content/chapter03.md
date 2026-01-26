@@ -18,7 +18,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 - Lưu trữ tài khoản quản trị viên và nhân viên.
 
-| **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
+<!-- | **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
 | --- | --- | --- | --- |
 | `id` | `INT` | `PK`, `IDENTITY` | Khóa chính tự tăng. |
 | `email` | `NVARCHAR(255)` | `NOT NULL`, `UNIQUE` | Email đăng nhập. |
@@ -27,7 +27,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | `status` | `NVARCHAR(50)` | `DEFAULT 'ACTIVE'` | Trạng thái tài khoản. |
 | `created_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày tạo. |
 | `updated_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày cập nhật. |
-| *CHECK* |  | `status IN ('ACTIVE', 'INACTIVE')` | Chỉ nhận giá trị quy định. |
+| *CHECK* |  | `status IN ('ACTIVE', 'INACTIVE')` | Chỉ nhận giá trị quy định. | -->
 
 ```{=typst}
 #figure(
@@ -53,6 +53,19 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | `name` | `NVARCHAR(255)` | `NOT NULL` | Tên hiển thị. |
 | `description` | `NVARCHAR(500)` | `NULL` | Mô tả vai trò. |
 
+```{=typst}
+#figure(
+  table(
+    columns: (20%, 20%, 30%, 30%),
+    align: (left, left, left, left),
+    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính tự tăng.], [`email`], [`NVARCHAR(255)`], [`NOT NULL`, `UNIQUE`], [Email đăng nhập.], [`password_hash`], [`NVARCHAR(255)`], [`NOT NULL`], [Mật khẩu (Hash).], [`full_name`], [`NVARCHAR(255)`], [`NULL`], [Họ tên đầy đủ.], [`status`], [`NVARCHAR(50)`], [`DEFAULT 'ACTIVE'`], [Trạng thái tài khoản.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [`updated_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`status IN ('ACTIVE', 'INACTIVE')`], [Chỉ nhận giá trị quy định.]
+  ),
+  caption: [
+    Mô Hình Mức Vật Lý: ROLES
+  ],
+)
+```
+
 #### 3. PERMISSIONS
 
 - Danh sách các quyền hạn chức năng.
@@ -62,6 +75,19 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | `id` | `INT` | `PK`, `IDENTITY` | Khóa chính. |
 | `code` | `NVARCHAR(100)` | `NOT NULL`, `UNIQUE` | Mã quyền (VD: USER_READ). |
 | `description` | `NVARCHAR(255)` | `NULL` | Mô tả quyền hạn. |
+
+```{=typst}
+#figure(
+  table(
+    columns: (20%, 20%, 30%, 30%),
+    align: (left, left, left, left),
+    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính tự tăng.], [`email`], [`NVARCHAR(255)`], [`NOT NULL`, `UNIQUE`], [Email đăng nhập.], [`password_hash`], [`NVARCHAR(255)`], [`NOT NULL`], [Mật khẩu (Hash).], [`full_name`], [`NVARCHAR(255)`], [`NULL`], [Họ tên đầy đủ.], [`status`], [`NVARCHAR(50)`], [`DEFAULT 'ACTIVE'`], [Trạng thái tài khoản.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [`updated_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`status IN ('ACTIVE', 'INACTIVE')`], [Chỉ nhận giá trị quy định.]
+  ),
+  caption: [
+    Mô Hình Mức Vật Lý: PERMISSIONS
+  ],
+)
+```
 
 #### 4. ADMIN_ROLES
 
@@ -73,6 +99,19 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | `role_id` | `INT` | `PK`, `FK` (ROLES) | Khóa ngoại + Khóa chính. |
 | *FK Rule* |  | `ON DELETE CASCADE` | Xóa Admin/Role tự động xóa dòng này. |
 
+```{=typst}
+#figure(
+  table(
+    columns: (20%, 20%, 30%, 30%),
+    align: (left, left, left, left),
+    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính tự tăng.], [`email`], [`NVARCHAR(255)`], [`NOT NULL`, `UNIQUE`], [Email đăng nhập.], [`password_hash`], [`NVARCHAR(255)`], [`NOT NULL`], [Mật khẩu (Hash).], [`full_name`], [`NVARCHAR(255)`], [`NULL`], [Họ tên đầy đủ.], [`status`], [`NVARCHAR(50)`], [`DEFAULT 'ACTIVE'`], [Trạng thái tài khoản.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [`updated_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`status IN ('ACTIVE', 'INACTIVE')`], [Chỉ nhận giá trị quy định.]
+  ),
+  caption: [
+    Mô Hình Mức Vật Lý: ADMIN_ROLES
+  ],
+)
+```
+
 #### 5. ROLE_PERMISSIONS
 
 - Bảng trung gian gán quyền cho Role.
@@ -82,6 +121,19 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | `role_id` | `INT` | `PK`, `FK` (ROLES) | Khóa ngoại + Khóa chính. |
 | `permission_id` | `INT` | `PK`, `FK` (PERMISSIONS) | Khóa ngoại + Khóa chính. |
 | *FK Rule* |  | `ON DELETE CASCADE` | Xóa Role/Permission tự động xóa dòng này. |
+
+```{=typst}
+#figure(
+  table(
+    columns: (20%, 20%, 30%, 30%),
+    align: (left, left, left, left),
+    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính tự tăng.], [`email`], [`NVARCHAR(255)`], [`NOT NULL`, `UNIQUE`], [Email đăng nhập.], [`password_hash`], [`NVARCHAR(255)`], [`NOT NULL`], [Mật khẩu (Hash).], [`full_name`], [`NVARCHAR(255)`], [`NULL`], [Họ tên đầy đủ.], [`status`], [`NVARCHAR(50)`], [`DEFAULT 'ACTIVE'`], [Trạng thái tài khoản.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [`updated_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`status IN ('ACTIVE', 'INACTIVE')`], [Chỉ nhận giá trị quy định.]
+  ),
+  caption: [
+    Mô Hình Mức Vật Lý: ROLE_PERMISSIONS
+  ],
+)
+```
 
 ### B. Nhóm Bảng Nghiệp Vụ Chính
 
@@ -101,6 +153,19 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | `updated_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày cập nhật. |
 | *CHECK* |  | `status IN ('ACTIVE', 'INACTIVE')` | Chỉ nhận giá trị quy định. |
 
+```{=typst}
+#figure(
+  table(
+    columns: (20%, 20%, 30%, 30%),
+    align: (left, left, left, left),
+    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính tự tăng.], [`email`], [`NVARCHAR(255)`], [`NOT NULL`, `UNIQUE`], [Email đăng nhập.], [`password_hash`], [`NVARCHAR(255)`], [`NOT NULL`], [Mật khẩu (Hash).], [`full_name`], [`NVARCHAR(255)`], [`NULL`], [Họ tên đầy đủ.], [`status`], [`NVARCHAR(50)`], [`DEFAULT 'ACTIVE'`], [Trạng thái tài khoản.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [`updated_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`status IN ('ACTIVE', 'INACTIVE')`], [Chỉ nhận giá trị quy định.]
+  ),
+  caption: [
+    Mô Hình Mức Vật Lý: USERS
+  ],
+)
+```
+
 #### 7. LOAIPHONG
 
 - Danh mục loại phòng.
@@ -115,6 +180,19 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | *CHECK* |  | `gia_co_ban > 0` | Chỉ nhận giá trị quy định. |
 | *CHECK* |  | `suc_chua > 0` | Chỉ nhận giá trị quy định. |
 
+```{=typst}
+#figure(
+  table(
+    columns: (20%, 20%, 30%, 30%),
+    align: (left, left, left, left),
+    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính tự tăng.], [`email`], [`NVARCHAR(255)`], [`NOT NULL`, `UNIQUE`], [Email đăng nhập.], [`password_hash`], [`NVARCHAR(255)`], [`NOT NULL`], [Mật khẩu (Hash).], [`full_name`], [`NVARCHAR(255)`], [`NULL`], [Họ tên đầy đủ.], [`status`], [`NVARCHAR(50)`], [`DEFAULT 'ACTIVE'`], [Trạng thái tài khoản.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [`updated_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`status IN ('ACTIVE', 'INACTIVE')`], [Chỉ nhận giá trị quy định.]
+  ),
+  caption: [
+    Mô Hình Mức Vật Lý: LOAIPHONG
+  ],
+)
+```
+
 #### 8. PHONG
 
 - Danh sách phòng vật lý.
@@ -126,6 +204,19 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | `loai_phong_id` | `INT` | `FK` (LOAIPHONG), `NOT NULL` | Loại phòng tương ứng. |
 | `trang_thai` | `NVARCHAR(50)` | `DEFAULT 'AVAILABLE'` | Trạng thái phòng. |
 | *CHECK* |  | `trang_thai IN ('AVAILABLE', 'OCCUPIED', 'MAINTENANCE', 'RESERVED')` | Chỉ nhận giá trị quy định. |
+
+```{=typst}
+#figure(
+  table(
+    columns: (20%, 20%, 30%, 30%),
+    align: (left, left, left, left),
+    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính tự tăng.], [`email`], [`NVARCHAR(255)`], [`NOT NULL`, `UNIQUE`], [Email đăng nhập.], [`password_hash`], [`NVARCHAR(255)`], [`NOT NULL`], [Mật khẩu (Hash).], [`full_name`], [`NVARCHAR(255)`], [`NULL`], [Họ tên đầy đủ.], [`status`], [`NVARCHAR(50)`], [`DEFAULT 'ACTIVE'`], [Trạng thái tài khoản.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [`updated_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`status IN ('ACTIVE', 'INACTIVE')`], [Chỉ nhận giá trị quy định.]
+  ),
+  caption: [
+    Mô Hình Mức Vật Lý: PHONG
+  ],
+)
+```
 
 #### 9. DICHVU
 
@@ -142,6 +233,19 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | `updated_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày cập nhật. |
 | *CHECK* |  | `don_gia > 0` | Đơn giá phải dương. |
 | *CHECK* |  | `trang_thai IN ('ACTIVE', 'INACTIVE')` | Ràng buộc trạng thái. |
+
+```{=typst}
+#figure(
+  table(
+    columns: (20%, 20%, 30%, 30%),
+    align: (left, left, left, left),
+    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính tự tăng.], [`email`], [`NVARCHAR(255)`], [`NOT NULL`, `UNIQUE`], [Email đăng nhập.], [`password_hash`], [`NVARCHAR(255)`], [`NOT NULL`], [Mật khẩu (Hash).], [`full_name`], [`NVARCHAR(255)`], [`NULL`], [Họ tên đầy đủ.], [`status`], [`NVARCHAR(50)`], [`DEFAULT 'ACTIVE'`], [Trạng thái tài khoản.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [`updated_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`status IN ('ACTIVE', 'INACTIVE')`], [Chỉ nhận giá trị quy định.]
+  ),
+  caption: [
+    Mô Hình Mức Vật Lý: DICHVU
+  ],
+)
+```
 
 #### 10. VOUCHERS
 
@@ -166,6 +270,19 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | *CHECK* |  | `so_lan_da_dung <= so_lan_toi_da` | Số lần đã dùng phải nhỏ hơn hoặc bằng số lần tối đa. |
 | *CHECK* |  | `trang_thai IN ('ACTIVE', 'INACTIVE')` | Ràng buộc trạng thái. |
 
+```{=typst}
+#figure(
+  table(
+    columns: (20%, 20%, 30%, 30%),
+    align: (left, left, left, left),
+    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính tự tăng.], [`email`], [`NVARCHAR(255)`], [`NOT NULL`, `UNIQUE`], [Email đăng nhập.], [`password_hash`], [`NVARCHAR(255)`], [`NOT NULL`], [Mật khẩu (Hash).], [`full_name`], [`NVARCHAR(255)`], [`NULL`], [Họ tên đầy đủ.], [`status`], [`NVARCHAR(50)`], [`DEFAULT 'ACTIVE'`], [Trạng thái tài khoản.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [`updated_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`status IN ('ACTIVE', 'INACTIVE')`], [Chỉ nhận giá trị quy định.]
+  ),
+  caption: [
+    Mô Hình Mức Vật Lý: VOUCHER
+  ],
+)
+```
+
 ### C. Nhóm Bảng Giao Dịch & Chi Tiết
 
 #### 11. DATPHONG
@@ -186,6 +303,19 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | *CHECK* |  | `check_out < 12:00:00` | Thời gian trả phải trước 12 giờ trưa. |
 | *CHECK* |  | `trang_thai IN ('PENDING', 'CONFIRMED', 'CANCELLED', 'COMPLETED')` | Ràng buộc trạng thái. |
 
+```{=typst}
+#figure(
+  table(
+    columns: (20%, 20%, 30%, 30%),
+    align: (left, left, left, left),
+    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính tự tăng.], [`email`], [`NVARCHAR(255)`], [`NOT NULL`, `UNIQUE`], [Email đăng nhập.], [`password_hash`], [`NVARCHAR(255)`], [`NOT NULL`], [Mật khẩu (Hash).], [`full_name`], [`NVARCHAR(255)`], [`NULL`], [Họ tên đầy đủ.], [`status`], [`NVARCHAR(50)`], [`DEFAULT 'ACTIVE'`], [Trạng thái tài khoản.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [`updated_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`status IN ('ACTIVE', 'INACTIVE')`], [Chỉ nhận giá trị quy định.]
+  ),
+  caption: [
+    Mô Hình Mức Vật Lý: DATPHONG
+  ],
+)
+```
+
 #### 12. CT_DATPHONG
 
 - Chi tiết phòng trong đơn đặt.
@@ -199,6 +329,19 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | *FK Rule* |  | `datphong_id ON DELETE CASCADE` | Xóa đơn xóa luôn chi tiết. |
 | *CHECK* |  | `UNIQUE datphong_id, phong_id` | Chi tiết đặt phòng không được trùng. |
 | *CHECK* |  | `don_gia > 0` | Giá phải dương. |
+
+```{=typst}
+#figure(
+  table(
+    columns: (20%, 20%, 30%, 30%),
+    align: (left, left, left, left),
+    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính tự tăng.], [`email`], [`NVARCHAR(255)`], [`NOT NULL`, `UNIQUE`], [Email đăng nhập.], [`password_hash`], [`NVARCHAR(255)`], [`NOT NULL`], [Mật khẩu (Hash).], [`full_name`], [`NVARCHAR(255)`], [`NULL`], [Họ tên đầy đủ.], [`status`], [`NVARCHAR(50)`], [`DEFAULT 'ACTIVE'`], [Trạng thái tài khoản.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [`updated_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`status IN ('ACTIVE', 'INACTIVE')`], [Chỉ nhận giá trị quy định.]
+  ),
+  caption: [
+    Mô Hình Mức Vật Lý: CT_DATPHONG
+  ],
+)
+```
 
 #### 13. CT_SUDUNG_DV
 
@@ -218,6 +361,19 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | *CHECK* |  | `so_luong > 0` | Số lượng phải dương. |
 | *CHECK* |  | `don_gia > 0` | Giá phải dương. |
 
+```{=typst}
+#figure(
+  table(
+    columns: (20%, 20%, 30%, 30%),
+    align: (left, left, left, left),
+    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính tự tăng.], [`email`], [`NVARCHAR(255)`], [`NOT NULL`, `UNIQUE`], [Email đăng nhập.], [`password_hash`], [`NVARCHAR(255)`], [`NOT NULL`], [Mật khẩu (Hash).], [`full_name`], [`NVARCHAR(255)`], [`NULL`], [Họ tên đầy đủ.], [`status`], [`NVARCHAR(50)`], [`DEFAULT 'ACTIVE'`], [Trạng thái tài khoản.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [`updated_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`status IN ('ACTIVE', 'INACTIVE')`], [Chỉ nhận giá trị quy định.]
+  ),
+  caption: [
+    Mô Hình Mức Vật Lý: CT_SUDUNG_DV
+  ],
+)
+```
+
 #### 14. PAYMENTS
 
 - Giao dịch thanh toán.
@@ -234,6 +390,19 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | *CHECK* |  | `so_tien > 0` | Tiền phải dương. |
 | *CHECK* |  | `trang_thai IN ('PENDING', 'SUCCESS', 'FAILED', 'CANCELLED', 'PAID', 'UNPAID', 'REFUNDED')` | Ràng buộc trạng thái. |
 | *CHECK* |  | `phuong_thuc IN ('TIEN_MAT', 'CHUYEN_KHOAN', 'THE', 'ONLINE')` | Ràng buộc phương thức. |
+
+```{=typst}
+#figure(
+  table(
+    columns: (20%, 20%, 30%, 30%),
+    align: (left, left, left, left),
+    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính tự tăng.], [`email`], [`NVARCHAR(255)`], [`NOT NULL`, `UNIQUE`], [Email đăng nhập.], [`password_hash`], [`NVARCHAR(255)`], [`NOT NULL`], [Mật khẩu (Hash).], [`full_name`], [`NVARCHAR(255)`], [`NULL`], [Họ tên đầy đủ.], [`status`], [`NVARCHAR(50)`], [`DEFAULT 'ACTIVE'`], [Trạng thái tài khoản.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [`updated_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`status IN ('ACTIVE', 'INACTIVE')`], [Chỉ nhận giá trị quy định.]
+  ),
+  caption: [
+    Mô Hình Mức Vật Lý: PAYMENTS
+  ],
+)
+```
 
 #### 15. REFUNDS
 
@@ -253,6 +422,19 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | *CHECK* |  | `trang_thai IN ('REQUESTED', 'APPROVED', 'REJECTED', 'COMPLETED')` | Ràng buộc trạng thái. |
 | *CHECK* |  | `so_tien_hoan > 0` | Tiền phải dương. |
 
+```{=typst}
+#figure(
+  table(
+    columns: (20%, 20%, 30%, 30%),
+    align: (left, left, left, left),
+    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính tự tăng.], [`email`], [`NVARCHAR(255)`], [`NOT NULL`, `UNIQUE`], [Email đăng nhập.], [`password_hash`], [`NVARCHAR(255)`], [`NOT NULL`], [Mật khẩu (Hash).], [`full_name`], [`NVARCHAR(255)`], [`NULL`], [Họ tên đầy đủ.], [`status`], [`NVARCHAR(50)`], [`DEFAULT 'ACTIVE'`], [Trạng thái tài khoản.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [`updated_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`status IN ('ACTIVE', 'INACTIVE')`], [Chỉ nhận giá trị quy định.]
+  ),
+  caption: [
+    Mô Hình Mức Vật Lý: REFUNDS
+  ],
+)
+```
+
 #### 16. REVIEWS
 
 - Đánh giá từ khách hàng.
@@ -271,6 +453,19 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | `updated_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày cập nhật. |
 | *CHECK* |  | `so_sao BETWEEN 1 AND 5` | Giới hạn 1 đến 5 sao. |
 | *CHECK* |  | `trang_thai IN ('PENDING', 'APPROVED', 'REJECTED')` | Ràng buộc trạng thái. |
+
+```{=typst}
+#figure(
+  table(
+    columns: (20%, 20%, 30%, 30%),
+    align: (left, left, left, left),
+    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính tự tăng.], [`email`], [`NVARCHAR(255)`], [`NOT NULL`, `UNIQUE`], [Email đăng nhập.], [`password_hash`], [`NVARCHAR(255)`], [`NOT NULL`], [Mật khẩu (Hash).], [`full_name`], [`NVARCHAR(255)`], [`NULL`], [Họ tên đầy đủ.], [`status`], [`NVARCHAR(50)`], [`DEFAULT 'ACTIVE'`], [Trạng thái tài khoản.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [`updated_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`status IN ('ACTIVE', 'INACTIVE')`], [Chỉ nhận giá trị quy định.]
+  ),
+  caption: [
+    Mô Hình Mức Vật Lý: REVIEWS
+  ],
+)
+```
 
 ## Khởi Tạo Cơ Sở Dữ Liệu
 
