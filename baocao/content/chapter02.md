@@ -393,7 +393,7 @@ DATPHONG(<u>id</u>, *user_id*, *voucher_id*, check_in, check_out, trang_thai, cr
 
 DICHVU(<u>id</u>, ten_dich_vu, don_gia, don_vi_tinh, trang_thai, created_at, updated_at)
 
-| **Khóa** | **Mô tả** |
+<!-- | **Khóa** | **Mô tả** |
 | --- | --- |
 | <u>id</u> | Mã định danh dịch vụ. |
 | ten_dich_vu | Tên dịch vụ. |
@@ -401,15 +401,14 @@ DICHVU(<u>id</u>, ten_dich_vu, don_gia, don_vi_tinh, trang_thai, created_at, upd
 | don_vi_tinh | Đơn vị tính. |
 | trang_thai | Trạng thái khả dụng (ACTIVE/INACTIVE). |
 | created_at | Ngày tạo. |
-| updated_at | Ngày cập nhật. |
+| updated_at | Ngày cập nhật. | -->
 
 ```{=typst}
 #figure(
   table(
     columns: (30%, 70%),
     align: (left, left),
-    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh đơn đặt phòng.], [#emph[user\_id]], [Khóa ngoại tham chiếu tới bảng USERS (Người đặt).], [#emph[voucher\_id]], [Khóa ngoại tham chiếu tới bảng VOUCHERS (Mã giảm giá áp dụng, có thể
-    NULL).], [check\_in], [Ngày nhận phòng dự kiến.], [check\_out], [Ngày trả phòng dự kiến.], [trang\_thai], [Trạng thái đơn (PENDING, CONFIRMED, CANCELLED, COMPLETED).], [created\_at], [Thời gian tạo đơn.]
+    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh dịch vụ.], [ten\_dich\_vu], [Tên dịch vụ.], [don\_gia], [Đơn giá niêm yết.], [don\_vi\_tinh], [Đơn vị tính.], [trang\_thai], [Trạng thái khả dụng (ACTIVE/INACTIVE).], [created\_at], [Ngày tạo.], [updated\_at], [Ngày cập nhật.]
   ),
   caption: [
     Mô Hình Mức Logic: DICHVU
