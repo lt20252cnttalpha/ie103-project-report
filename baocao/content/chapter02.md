@@ -175,7 +175,7 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 
 - ID Loại Phòng (Thuộc tính định danh, duy nhất).
 - Tên Loại Phòng
-- Giá Cơ Bản
+- Giá Cơ Bản ($\gt 0$)
 - Mô Tả
 - Sức Chứa (Mặc định là 2).
 
