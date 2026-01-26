@@ -364,9 +364,9 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 ```{=typst}
 #figure(
   table(
-    columns: (20%, 20%, 30%, 30%),
+    columns: (20%, 16%, 28%, 36%),
     align: (left, left, left, left),
-    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`datphong_id`], [`INT`], [`FK` (DATPHONG), `NOT NULL`], [Thuộc đơn đặt phòng nào.], [`dichvu_id`], [`INT`], [`FK` (DICHVU), `NOT NULL`], [Dịch vụ nào.], [`so_luong`], [`INT`], [`DEFAULT 1`, `NOT NULL`], [Số lượng.], [`don_gia`], [`DECIMAL(18,2)`], [`NOT NULL`], [Đơn giá tại thời điểm dùng.], [`thoi_diem_su_dung`], [`DATETIME`], [`DEFAULT GETDATE()`], [Thời gian order.], [`ghi_chu`], [`NVARCHAR(500)`], [`NULL`], [Ghi chú thêm.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [#emph[FK Rule]], [], [`datphong_id ON DELETE CASCADE`], [Xóa đơn xóa luôn chi tiết.], [#emph[CHECK]], [], [`so_luong > 0`], [Số lượng phải dương.], [#emph[CHECK]], [], [`don_gia > 0`], [Giá phải dương.]
+    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`datphong_id`], [`INT`], [`FK (DATPHONG)`, `NOT NULL`], [Thuộc đơn đặt phòng nào.], [`dichvu_id`], [`INT`], [`FK (DICHVU)`, `NOT NULL`], [Dịch vụ nào.], [`so_luong`], [`INT`], [`DEFAULT 1`, `NOT NULL`], [Số lượng.], [`don_gia`], [`DECIMAL(18,2)`], [`NOT NULL`], [Đơn giá tại thời điểm dùng.], [`thoi_diem_su_dung`], [`DATETIME`], [`DEFAULT GETDATE()`], [Thời gian order.], [`ghi_chu`], [`NVARCHAR(500)`], [`NULL`], [Ghi chú thêm.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [#emph[FK Rule]], [], [`datphong_id ON DELETE CASCADE`], [Xóa đơn xóa luôn chi tiết.], [#emph[CHECK]], [], [`so_luong > 0`], [Số lượng phải dương.], [#emph[CHECK]], [], [`don_gia > 0`], [Giá phải dương.]
   ),
   caption: [
     Mô Hình Mức Vật Lý: CT_SUDUNG_DV
