@@ -125,7 +125,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 ```{=typst}
 #figure(
   table(
-    columns: (20%, 20%, 30%, 30%),
+    columns: (20%, 10%, 25%, 45%),
     align: (left, left, left, left),
     [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`role_id`], [`INT`], [`PK`, `FK` (ROLES)], [Khóa ngoại + Khóa chính.], [`permission_id`], [`INT`], [`PK`, `FK` (PERMISSIONS)], [Khóa ngoại + Khóa chính.], [#emph[FK Rule]], [], [`ON DELETE CASCADE`], [Xóa Role/Permission tự động xóa dòng này.]
   ),
@@ -183,7 +183,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 ```{=typst}
 #figure(
   table(
-    columns: (20%, 20%, 30%, 30%),
+    columns: (20%, 20%, 25%, 35%),
     align: (left, left, left, left),
     [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`ten_loai`], [`NVARCHAR(100)`], [`NOT NULL`], [Tên loại (VD: Deluxe).], [`gia_co_ban`], [`DECIMAL(18,2)`], [`NOT NULL`], [Giá niêm yết.], [`mo_ta`], [`NVARCHAR(500)`], [`NULL`], [Mô tả tiện nghi.], [`suc_chua`], [`INT`], [`DEFAULT 2`], [Số người tối đa.], [#emph[CHECK]], [], [`gia_co_ban > 0`], [Chỉ nhận giá trị quy định.], [#emph[CHECK]], [], [`suc_chua > 0`], [Chỉ nhận giá trị quy định.]
   ),
@@ -201,7 +201,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | --- | --- | --- | --- |
 | `id` | `INT` | `PK`, `IDENTITY` | Khóa chính. |
 | `so_phong` | `NVARCHAR(50)` | `NOT NULL`, `UNIQUE` | Số phòng (VD: 101). |
-| `loai_phong_id` | `INT` | `FK` (LOAIPHONG), `NOT NULL` | Loại phòng tương ứng. |
+| `loai_phong_id` | `INT` | `FK (LOAIPHONG)`, `NOT NULL` | Loại phòng tương ứng. |
 | `trang_thai` | `NVARCHAR(50)` | `DEFAULT 'AVAILABLE'` | Trạng thái phòng. |
 | *CHECK* |  | `trang_thai IN ('AVAILABLE', 'OCCUPIED', 'MAINTENANCE', 'RESERVED')` | Chỉ nhận giá trị quy định. | -->
 
@@ -210,7 +210,7 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
   table(
     columns: (20%, 20%, 30%, 30%),
     align: (left, left, left, left),
-    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`so_phong`], [`NVARCHAR(50)`], [`NOT NULL`, `UNIQUE`], [Số phòng (VD: 101).], [`loai_phong_id`], [`INT`], [`FK` (LOAIPHONG), `NOT NULL`], [Loại phòng tương ứng.], [`trang_thai`], [`NVARCHAR(50)`], [`DEFAULT 'AVAILABLE'`], [Trạng thái phòng.], [#emph[CHECK]], [], [`trang_thai IN ('AVAILABLE', 'OCCUPIED', 'MAINTENANCE', 'RESERVED')`], [Chỉ nhận giá trị quy định.]
+    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`so_phong`], [`NVARCHAR(50)`], [`NOT NULL`, `UNIQUE`], [Số phòng (VD: 101).], [`loai_phong_id`], [`INT`], [`FK (LOAIPHONG)`, `NOT NULL`], [Loại phòng tương ứng.], [`trang_thai`], [`NVARCHAR(50)`], [`DEFAULT 'AVAILABLE'`], [Trạng thái phòng.], [#emph[CHECK]], [], [`trang_thai IN ('AVAILABLE', 'OCCUPIED', 'MAINTENANCE', 'RESERVED')`], [Chỉ nhận giá trị quy định.]
   ),
   caption: [
     Mô Hình Mức Vật Lý: PHONG
