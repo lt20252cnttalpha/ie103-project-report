@@ -119,48 +119,20 @@
 
 Đây là quan hệ giữa các thực thể dưới góc độ và ngôn ngữ nghiệp vụ.
 
-- #strong[Quản Trị Viên] - #strong[Vai Trò]:
-  - Một admin có thể có nhiều vai trò.
-  - Một vai trò có thể gán cho nhiều admin.
-- #strong[Phòng] - #strong[Loại Phòng]:
-  - Một phòng thuộc về một loại phòng.
-  - Một loại phòng có thể có nhiều phòng.
-- #strong[Người Dùng] - #strong[Đặt Phòng]:
-  - Một người dùng có thể có nhiều đặt phòng.
-  - Một đặt phòng được thực hiện bởi một người dùng.
-- #strong[Đặt Phòng] - #strong[Phòng]:
-  - Một đặt phòng có thể có nhiều phòng.
-  - Một phòng có thể được đặt trong nhiều đặt phòng.
-- #strong[Đặt Phòng] - #strong[Mã Giảm Giá]:
-  - Một đặt phòng có thể có một mã giảm giá.
-  - Một mã giảm giá có thể được áp dụng cho nhiều đặt phòng.
-- #strong[Đặt Phòng] - #strong[Đánh Giá]:
-  - Một lần đặt phòng có thể có một đánh giá.
-  - Một đánh giá chỉ thuộc về một lần đặt phòng.
-- #strong[Người Dùng] - #strong[Đánh Giá]:
-  - Một người dùng có thể có nhiều đánh giá.
-  - Một đánh giá chỉ thuộc về một người dùng.
-- #strong[Người Dùng] - #strong[Thanh Toán]:
-  - Một người dùng có thể thực hiện nhiều thanh toán.
-  - Một thanh toán chỉ được thực hiện bởi một người dùng.
-- #strong[Người Dùng] - #strong[Hoàn Tiền]:
-  - Một người dùng có thể yêu cầu nhiều lần hoàn tiền.
-  - Một lần hoàn tiền chỉ được yêu cầu bởi một người dùng.
-- #strong[Thanh Toán] - #strong[Hoàn Tiền]:
-  - Một lần thanh toán có thể có nhiều lần hoàn tiền.
-  - Một lần hoàn tiền chỉ thuộc về một lần thanh toán.
-- #strong[Thanh Toán] - #strong[Đặt Phòng]:
-  - Một lần thanh toán thuộc về một lần đặt phòng.
-  - Một lần đặt phòng có thể có nhiều lần thanh toán.
-- #strong[Quản Trị Viên] - #strong[Hoàn Tiền]:
-  - Một admin có thể duyệt nhiều lần hoàn tiền.
-  - Một lần hoàn tiền chỉ được duyệt bởi một admin.
-- #strong[Đặt Phòng] - #strong[Dịch Vụ]:
-  - Một lần đặt phòng có thể có nhiều dịch vụ đi kèm.
-  - Một dịch vụ đi kèm có thể được áp dụng cho nhiều lần đặt phòng.
-- #strong[Vai Trò] - #strong[Quyền Hạn]:
-  - Một vai trò có thể có nhiều quyền hạn.
-  - Một quyền hạn có thể thuộc về nhiều vai trò.
+- #strong[Quản Trị Viên] được gán #strong[Vai Trò].
+- #strong[Vai Trò] có các #strong[Quyền Hạn].
+- #strong[Phòng] thuộc #strong[Loại Phòng].
+- #strong[Người Dùng] thực hiện #strong[Đặt Phòng].
+- #strong[Đặt Phòng] bao gồm #strong[Phòng].
+- #strong[Đặt Phòng] được áp dụng #strong[Mã Giảm Giá].
+- #strong[Đặt Phòng] được #strong[Thanh Toán].
+- #strong[Đặt Phòng] được #strong[Đánh Giá].
+- #strong[Người Dùng] viết #strong[Đánh Giá].
+- #strong[Người Dùng] thực hiện #strong[Thanh Toán].
+- #strong[Người Dùng] yêu cầu #strong[Hoàn Tiền].
+- #strong[Thanh Toán] được #strong[Hoàn Tiền].
+- #strong[Quản Trị Viên] duyệt #strong[Hoàn Tiền].
+- #strong[Đặt Phòng] có kèm #strong[Dịch Vụ].
 
 Tóm tắt các thực thể và mối quan hệ bằng mô hình trực quan:
 
