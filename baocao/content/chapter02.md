@@ -122,7 +122,7 @@
 - DATPHONG - VOUCHERS: *một - nhiều*
     - Một đặt phòng có thể có một mã giảm giá.
     - Một mã giảm giá có thể được áp dụng cho nhiều đặt phòng.
-- DATPHONG - REVIEWS: *một - nhiều*
+- DATPHONG - REVIEWS: *một - một*
     - Một lần đặt phòng có thể có một đánh giá.
     - Một đánh giá chỉ thuộc về một lần đặt phòng.
 - USERS - REVIEWS: *một - nhiều*
@@ -150,11 +150,9 @@
     - Một vai trò có thể có nhiều quyền hạn.
     - Một quyền hạn có thể thuộc về nhiều vai trò.
 
-Tóm tắt các mối quan hệ bằng mô hình đơn giản:
+Tóm tắt các thực thể và mối quan hệ bằng mô hình trực quan đơn giản:
 
-- Các quan hệ nhiều - nhiều được tô sáng để phân biệt và dùng về sau.
-
-![Mô Hình Hóa các Thực Thể và Mối Quan Hệ](diagrams/entity-relationship.svg)
+![Trực Quan Hóa các Thực Thể và Mối Quan Hệ](diagrams/entity-relationship.svg)
 
 <!-- (nên cần bảng trung gian) -->
 
@@ -199,6 +197,49 @@ Thuộc Tính:
 #### VOUCHERS (Mã Giảm Giá)
 
 ### Các Mối Quan Hệ
+
+- ADMINS - ROLES: *nhiều - nhiều*
+    - Một admin có thể có nhiều vai trò.
+    - Một vai trò có thể gán cho nhiều admin.
+- PHONG - LOAIPHONG: *một - nhiều*
+    - Một phòng thuộc về một loại phòng.
+    - Một loại phòng có thể có nhiều phòng.
+- USERS - DATPHONG: *một - nhiều*
+    - Một người dùng có thể có nhiều đặt phòng.
+    - Một đặt phòng được thực hiện bởi một người dùng.
+- DATPHONG - PHONG: *nhiều - nhiều*
+    - Một đặt phòng có thể có nhiều phòng.
+    - Một phòng có thể được đặt trong nhiều đặt phòng.
+- DATPHONG - VOUCHERS: *một - nhiều*
+    - Một đặt phòng có thể có một mã giảm giá.
+    - Một mã giảm giá có thể được áp dụng cho nhiều đặt phòng.
+- DATPHONG - REVIEWS: *một - một*
+    - Một lần đặt phòng có thể có một đánh giá.
+    - Một đánh giá chỉ thuộc về một lần đặt phòng.
+- USERS - REVIEWS: *một - nhiều*
+    - Một người dùng có thể có nhiều đánh giá.
+    - Một đánh giá chỉ thuộc về một người dùng.
+- USERS - PAYMENTS: *một - nhiều*
+    - Một người dùng có thể thực hiện nhiều thanh toán.
+    - Một thanh toán chỉ được thực hiện bởi một người dùng.
+- USERS - REFUNDS: *một - nhiều*
+    - Một người dùng có thể yêu cầu nhiều lần hoàn tiền.
+    - Một lần hoàn tiền chỉ được yêu cầu bởi một người dùng.
+- PAYMENTS - REFUNDS: *một - nhiều*
+    - Một lần thanh toán có thể có nhiều lần hoàn tiền.
+    - Một lần hoàn tiền chỉ thuộc về một lần thanh toán.
+- PAYMENTS - DATPHONG: *một - nhiều*
+    - Một lần thanh toán thuộc về một lần đặt phòng.
+    - Một lần đặt phòng có thể có nhiều lần thanh toán.
+- ADMINS - REFUNDS: *một - nhiều*
+    - Một admin có thể duyệt nhiều lần hoàn tiền.
+    - Một lần hoàn tiền chỉ được duyệt bởi một admin.
+- DATPHONG - DICHVU: *nhiều - nhiều*
+    - Một lần đặt phòng có thể có nhiều dịch vụ đi kèm.
+    - Một dịch vụ đi kèm có thể được áp dụng cho nhiều lần đặt phòng.
+- ROLES - PERMISSIONS: *nhiều - nhiều*
+    - Một vai trò có thể có nhiều quyền hạn.
+    - Một quyền hạn có thể thuộc về nhiều vai trò.
 
 - `ADMINS - ROLES`: (n, n)
     - Một admin có thể có nhiều admin role.

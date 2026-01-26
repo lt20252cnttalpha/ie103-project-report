@@ -24,33 +24,33 @@ classes: {
 }
 
 # --- 2. ENTITIES ---
-ADMINS: {class: entity}
-DATPHONG: {class: entity}
-DICHVU: {class: entity}
-LOAIPHONG: {class: entity}
-PAYMENTS: {class: entity}
-PERMISSIONS: {class: entity}
-PHONG: {class: entity}
-REFUNDS: {class: entity}
-REVIEWS: {class: entity}
-ROLES: {class: entity}
-USERS: {class: entity}
-VOUCHERS: {class: entity}
+ADMINS: {class: entity; label: "Quản Trị Viên"}
+DATPHONG: {class: entity; label: "Đặt Phòng"}
+DICHVU: {class: entity; label: "Dịch Vụ"}
+LOAIPHONG: {class: entity; label: "Loại Phòng"}
+PAYMENTS: {class: entity; label: "Thanh Toán"}
+PERMISSIONS: {class: entity; label: "Quyền Hạn"}
+PHONG: {class: entity; label: "Phòng"}
+REFUNDS: {class: entity; label: "Hoàn Tiền"}
+REVIEWS: {class: entity; label: "Đánh Giá"}
+ROLES: {class: entity; label: "Vai Trò"}
+USERS: {class: entity; label: "Người Dùng"}
+VOUCHERS: {class: entity; label: "Mã Giảm Giá"}
 
 # --- 3. RELATIONSHIPS ---
-# (n, n): được tô sáng để dễ nhận diện
+# ngôn ngữ "tự nhiên"
 
-ADMINS -- REFUNDS: (1, n)
-ADMINS -- ROLES: (n, n) {style: {fill: orange}}
-DATPHONG -- DICHVU: (n, n) {style: {fill: orange}}
-DATPHONG -- PHONG: (n, n) {style: {fill: orange}}
-DATPHONG -- REVIEWS: (1, 1)
-DATPHONG -- VOUCHERS: (n, 1)
-PAYMENTS -- DATPHONG: (n, 1)
-PAYMENTS -- REFUNDS: (1, n)
-PHONG -- LOAIPHONG: (n, 1)
-USERS -- DATPHONG: (1, n)
-USERS -- PAYMENTS: (1, n)
-USERS -- REFUNDS: (1, n)
-USERS -- REVIEWS: (1, n)
-ROLES -- PERMISSIONS: (n, n) {style: {fill: orange}}
+ADMINS -> REFUNDS: duyệt
+ADMINS -> ROLES: được cấp
+DATPHONG -> DICHVU: bao gồm
+DATPHONG -> PAYMENTS: được
+DATPHONG -> PHONG: có nhiều
+DATPHONG -> REVIEWS: được
+LOAIPHONG <- PHONG: thuộc
+PAYMENTS -> REFUNDS: được
+ROLES -> PERMISSIONS: có các
+USERS -> DATPHONG: thực hiện
+USERS -> PAYMENTS: thực hiện
+USERS -> REFUNDS: yêu cầu
+USERS -> REVIEWS: viết
+VOUCHERS -> DATPHONG: áp dụng cho
