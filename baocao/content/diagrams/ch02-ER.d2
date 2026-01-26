@@ -326,14 +326,18 @@ REVIEWS -- reviews_updated_at: {style: {stroke-width: 1}}
 # FOREIGN KEY: orange
 
 # Quan hệ N-N (Từ bảng trung gian)
+# MARK: ADMIN_ROLES
 ADMIN_ROLES: {class: rel; label: "Được Gán\nADMIN_ROLES"}
-admin_roles_pri_key: {class: attr_foreign_pri; width: 200; label: "admin_id, role_id"}
-ADMIN_ROLES -- admin_roles_pri_key: {style: {stroke-width: 1; stroke: orange}}
+admin_roles_admin_id: {class: attr_foreign_pri; label: "admin_id"}
+admin_roles_role_id: {class: attr_foreign_pri; label: "role_id"}
+ADMIN_ROLES -- admin_roles_admin_id: {style: {stroke-width: 1; stroke: orange}}
+ADMIN_ROLES -- admin_roles_role_id: {style: {stroke-width: 1; stroke: orange}}
 
 ROLE_PERMISSIONS: {class: rel; label: "Bao Gồm\nROLE_PERMISSIONS"}
 roles_permissions_pri_key: {class: attr_foreign_pri; width: 200; label: "role_id, permission_id"}
 ROLE_PERMISSIONS -- roles_permissions_pri_key: {style: {stroke-width: 1; stroke: orange}}
 
+# MARK: CT_DATPHONG
 CT_DATPHONG: {class: rel; label: "Chi Tiết Đặt\nCT_DATPHONG"}
 ct_datphong_id: {class: attr_pri; label: "id"}
 ct_datphong_phong_id: {class: attr_foreign_pri; label: "phong_id"}
