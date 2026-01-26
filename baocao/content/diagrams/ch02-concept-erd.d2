@@ -45,7 +45,7 @@ VOUCHERS: {class: entity; label: "VOUCHERS"}
 # Một hoàn tiền có và chỉ có 1 admin duyệt.
 admins_refunds: {class: rel; label: "duyệt"}
 ADMINS -- admins_refunds: (0, n)
-admins_refunds -- REFUNDS: (l, 1)
+admins_refunds -- REFUNDS: (1, 1)
 
 # ADMINS -> ROLES: được cấp
 # n - n: viền cam
