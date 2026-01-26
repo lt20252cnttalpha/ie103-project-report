@@ -132,16 +132,13 @@ Tóm tắt các thực thể và mối quan hệ bằng mô hình trực quan:
 <!-- - Mô hình ER dạng Chen. -->
 <!-- Chưa có khái niệm bảng ở đây -->
 
-![Mô Hình Thực Thể Quan Hệ](diagrams/ER.svg)
+<!-- ![Mô Hình Thực Thể Quan Hệ](diagrams/ER.svg) -->
+
+Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 
 ### Các Thực Thể
 
 #### ADMINS (Quản Lý/Quản Trị Viên)
-
-Định Nghĩa:
-
-- Đại diện cho người dùng nội bộ của hệ thống (Admin / Staff).
-- Có quyền quản lý nghiệp vụ và dữ liệu hệ thống.
 
 Thuộc Tính:
 
@@ -154,6 +151,8 @@ Thuộc Tính:
 - `address`: Địa chỉ của admin.
 - `created_at`: Thời gian tạo của admin.
 - `updated_at`: Thời gian cập nhật của admin.
+
+![Thực Thể ADMINS](diagrams/ch02-table-admins.svg)
 
 #### DATPHONG (Đặt Phòng)
 #### DICHVU (Dịch Vụ)
@@ -218,6 +217,11 @@ Thuộc Tính:
 
 ## Mô Hình Mức Logic
 
+Quy tắc trình bày:
+
+- Khóa chính: <u>gạch chân</u> (ví dụ: <u>id</u>)
+- Khóa ngoại: *in nghiêng* (ví dụ: *loai_phong_id*)
+
 #### ADMINS (Quản Lý/Quản Trị Viên)
 
 ADMINS(<u>id</u>, username, password, full_name, email, phone, address, created_at, updated_at)
@@ -238,6 +242,9 @@ ADMINS(<u>id</u>, username, password, full_name, email, phone, address, created_
 #### PAYMENTS (Thanh Toán)
 #### PERMISSIONS (Quyền Hạn)
 #### PHONG (Phòng)
+
+PHONG(<u>id</u>, so_phong, *loai_phong_id*, trang_thai)
+
 #### REFUNDS (Hoàn Tiền)
 #### REVIEWS (Đánh Giá)
 #### ROLES (Vai Trò)

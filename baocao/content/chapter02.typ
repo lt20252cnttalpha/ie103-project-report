@@ -145,11 +145,7 @@ Tóm tắt các thực thể và mối quan hệ bằng mô hình trực quan:
 == Mô Hình Mức Quan Niệm
 <mo-hinh-muc-quan-niem>
 
-#figure(image("diagrams/ER.svg"),
-  caption: [
-    Mô Hình Thực Thể Quan Hệ
-  ]
-)
+Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 
 === Các Thực Thể
 <cac-thuc-the>
@@ -157,11 +153,6 @@ Tóm tắt các thực thể và mối quan hệ bằng mô hình trực quan:
 
 ==== ADMINS (Quản Lý/Quản Trị Viên)
 <admins-quan-ly-quan-tri-vien>
-
-Định Nghĩa:
-
-- Đại diện cho người dùng nội bộ của hệ thống (Admin / Staff).
-- Có quyền quản lý nghiệp vụ và dữ liệu hệ thống.
 
 Thuộc Tính:
 
@@ -174,6 +165,12 @@ Thuộc Tính:
 - `address`: Địa chỉ của admin.
 - `created_at`: Thời gian tạo của admin.
 - `updated_at`: Thời gian cập nhật của admin.
+
+#figure(image("diagrams/ch02-table-admins.svg"),
+  caption: [
+    Thực Thể ADMINS
+  ]
+)
 
 ==== DATPHONG (Đặt Phòng)
 <datphong-dat-phong>
@@ -271,6 +268,10 @@ Thuộc Tính:
 == Mô Hình Mức Logic
 <mo-hinh-muc-logic>
 
+Quy tắc trình bày:
+
+- Khóa chính: #underline[gạch chân] (ví dụ: #underline[id])
+- Khóa ngoại: #emph[in nghiêng] (ví dụ: #emph[loai\_phong\_id])
 
 ==== ADMINS (Quản Lý/Quản Trị Viên)
 <admins-quan-ly-quan-tri-vien>
@@ -310,6 +311,7 @@ ADMINS(#underline[id], username, password, full\_name, email, phone, address, cr
 ==== PHONG (Phòng)
 <phong-phong>
 
+PHONG(#underline[id], so\_phong, #emph[loai\_phong\_id], trang\_thai)
 
 ==== REFUNDS (Hoàn Tiền)
 <refunds-hoan-tien>
