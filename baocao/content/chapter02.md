@@ -328,6 +328,8 @@ Quy cách trình bày:
 
 ADMINS(<u>id</u>, username, password, full_name, email, phone, address, created_at, updated_at)
 
+<!-- TODO: Sử dụng bảng thay vì list -->
+
 - `id`: Mã định danh duy nhất của admin.
 - `username`: Tên đăng nhập của admin.
 - `password`: Mật khẩu của admin.
