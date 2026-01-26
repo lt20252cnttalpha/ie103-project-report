@@ -263,45 +263,45 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 - ADMINS - ROLES: *(n - n)*
     - Một admin có thể có tối thiểu *1* và tối đa *n* vai trò.
     - Một vai trò có thể gán tối thiểu *0* và tối đa *n* admin.
-- PHONG - LOAIPHONG: *(1 - n)*
-    - Một phòng thuộc về một loại phòng.
-    - Một loại phòng có thể có nhiều phòng.
+- LOAI PHONG - PHONG: *(1 - n)*
+    - Một loại phòng có tối thiểu 0 và tối đa n phòng.
+    - Một phòng thuộc và chỉ thuộc 1 loại phòng.
 - USERS - DATPHONG: *(1 - n)*
     - Một người dùng có tối thiểu *0* và tối đa *n* đơn đặt phòng.
     - Một đặt phòng có và chỉ thuộc về một người dùng.
 - DATPHONG - PHONG: *(n - n)*
-    - Một đặt phòng có thể có nhiều phòng.
-    - Một phòng có thể được đặt trong nhiều đặt phòng.
-- DATPHONG - VOUCHERS: *(1 - n)*
-    - Một đặt phòng có thể có một mã giảm giá.
-    - Một mã giảm giá có thể được áp dụng cho nhiều đặt phòng.
+    - Một đơn đặt phòng có tối thiểu 1 và tối đa n phòng.
+    - Một phòng có tối thiểu 0 và tối đa n đơn đặt phòng.
+- VOUCHERS - DATPHONG: *(1 - n)*
+    - Một mã giảm giá có tối thiểu 0, và tối đa n đơn đặt phòng.
+    - Một đơn đặt phòng có tối thiểu 0, và tối đa 1 mã giảm giá áp dụng.
 - DATPHONG - REVIEWS: *một - một*
-    - Một lần đặt phòng có thể có một đánh giá.
-    - Một đánh giá chỉ thuộc về một lần đặt phòng.
+    - Một đơn đặt phòng có tối thiểu 0 và tối đa 1 đánh giá.
+    - Một đánh giá thuộc và chỉ thuộc 1 đơn đặt phòng.
 - USERS - REVIEWS: *(1 - n)*
-    - Một người dùng có thể có nhiều đánh giá.
-    - Một đánh giá chỉ thuộc về một người dùng.
+    - Một user có tối thiểu 0, và tối đa n đánh giá.
+    - Một đánh giá có tối thiểu 1 tối đa 1 user.
 - USERS - PAYMENTS: *(1 - n)*
-    - Một người dùng có thể thực hiện nhiều thanh toán.
-    - Một thanh toán chỉ được thực hiện bởi một người dùng.
+    - Một user có tối thiểu 0, và tối đa n thanh toán.
+    - Một thanh toán có và chỉ có 1 user
 - USERS - REFUNDS: *(1 - n)*
-    - Một người dùng có thể yêu cầu nhiều lần hoàn tiền.
-    - Một lần hoàn tiền chỉ được yêu cầu bởi một người dùng.
+    - Một user có tối thiểu 0, và tối đa n yêu cầu hoàn tiền.
+    - Một yêu cầu hoàn tiền có và chỉ có 1 user.
 - PAYMENTS - REFUNDS: *(1 - n)*
-    - Một lần thanh toán có thể có nhiều lần hoàn tiền.
-    - Một lần hoàn tiền chỉ thuộc về một lần thanh toán.
-- PAYMENTS - DATPHONG: *(1 - n)*
-    - Một lần thanh toán thuộc về một lần đặt phòng.
-    - Một lần đặt phòng có thể có nhiều lần thanh toán.
+    - Một thanh toán có tối thiểu 0 và tối đa n hoàn tiền.
+    - Một hoàn tiền được và chỉ được tạo từ 1 thanh toán.
+- DATPHONG - PAYMENTS: *(1 - n)*
+    - Một đơn đặt phòng có tối thiểu 0 và tối đa n thanh toán.
+    - Một thanh toán có và chỉ có 1 đơn đặt phòng.
 - ADMINS - REFUNDS: *(1 - n)*
     - Một admin có thể duyệt tối thiểu *0* và tối đa *n* lần hoàn tiền.
     - Một lần hoàn tiền chỉ được duyệt bởi *1* một admin.
 - DATPHONG - DICHVU: *(n - n)*
-    - Một lần đặt phòng có thể có nhiều dịch vụ đi kèm.
-    - Một dịch vụ đi kèm có thể được áp dụng cho nhiều lần đặt phòng.
+    - Một đơn đặt phòng có thể có tối thiểu 0 và tối đa n dịch vụ đi kèm.
+    - Một dịch vụ đi kèm có thể được sử dụng tối thiểu 0 và tối đa n đơn đặt phòng.
 - ROLES - PERMISSIONS: *(n - n)*
-    - Một vai trò có thể có nhiều quyền hạn.
-    - Một quyền hạn có thể thuộc về nhiều vai trò.
+    - Một vai trò có tối thiểu 0 và tối đa n quyền hạn.
+    - Một quyền hạn có tối thiểu 0 và tối đa n vai trò.
 
 ### Mô Hình Thực Thể Quan Hệ (ERD) Hoàn Chỉnh
 
