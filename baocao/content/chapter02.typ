@@ -150,9 +150,16 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 === Các Thực Thể và Thuộc Tính
 <cac-thuc-the-va-thuoc-tinh>
 
+- Trình bày các thực thể và thuộc tính tương ứng ở mức quan niệm phản ánh các thực thể từ mô hình nghiệp vụ.
 
 ==== ADMINS (Quản Lý/Quản Trị Viên)
 <admins-quan-ly-quan-tri-vien>
+
+- ID Admin (Thuộc tính định danh, duy nhất).
+- Email
+- Mật khẩu
+- Tên Đầy Đủ
+- Trạng Thái (Hoạt Động, Không Hoạt Động).
 
 #figure(image("diagrams/ch02-table-admins.svg"),
   caption: [
@@ -163,22 +170,49 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 ==== DATPHONG (Đặt Phòng)
 <datphong-dat-phong>
 
+- ID Đặt Phòng (Thuộc tính định danh, duy nhất).
+- Ngày Nhận Phòng
+- Ngày Trả Phòng
+- Trạng Thái (Đang Chờ, Đã Xác Nhận, Đã Hủy, Đã Hoàn Thành).
+
+#figure(image("diagrams/ch02-table-datphong.svg"),
+  caption: [
+    Thực Thể DATPHONG
+  ]
+)
 
 ==== DICHVU (Dịch Vụ)
 <dichvu-dich-vu>
 
+- ID Dịch Vụ (Thuộc tính định danh, duy nhất).
+- Tên Dịch Vụ
+- Đơn Giá
+- Đơn Vị Tính (Mặc định 'Lần', có thể là 'Kg', 'Giờ', …)
+- Trạng Thái (Hoạt Động, Không Hoạt Động).
 
 ==== LOAIPHONG (Loại Phòng)
 <loaiphong-loai-phong>
 
+- ID Loại Phòng (Thuộc tính định danh, duy nhất).
+- Tên Loại Phòng
+- Giá Cơ Bản
+- Mô Tả
+- Sức Chứa (Mặc định là 2).
 
 ==== PAYMENTS (Thanh Toán)
 <payments-thanh-toan>
 
+- ID Thanh Toán (Thuộc tính định danh, duy nhất).
+- Số Tiền
+- Phương Thức Thanh Toán (Tiền Mặt, Chuyển Khoản, Thẻ, Online)
+- Trạng Thái (Đang Chờ, Thành Công, Gặp Lỗi, Đã Hủy, Đã Thanh Toán, Chưa Thanh Toán, Đã Hoàn Trả).
 
 ==== PERMISSIONS (Quyền Hạn)
 <permissions-quyen-han>
 
+- ID Quyền Hạn (Thuộc tính định danh, duy nhất).
+- Mã Quyền Hạn
+- Miêu Tả
 
 ==== PHONG (Phòng)
 <phong-phong>
@@ -196,22 +230,79 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 ==== REFUNDS (Hoàn Tiền)
 <refunds-hoan-tien>
 
+- ID Hoàn Tiền (Thuộc tính định danh, duy nhất).
+- Số Tiền Hoàn
+- Trạng Thái (Đã Yêu Cầu, Đã Duyệt, Từ Chối, Đã Hoàn Thành).
+- Lý Do
+
+#figure(image("diagrams/ch02-table-refunds.svg"),
+  caption: [
+    Thực Thể REFUNDS
+  ]
+)
 
 ==== REVIEWS (Đánh Giá)
 <reviews-danh-gia>
 
+- ID Đánh Giá (Thuộc tính định danh, duy nhất).
+- Số Sao (1, 2, 3, 4, 5)
+- Bình Luận
+- Ngày Đánh Giá
+- Trạng Thái (Đang Chờ, Đã Duyệt, Từ Chối).
+
+#figure(image("diagrams/ch02-table-reviews.svg"),
+  caption: [
+    Thực Thể REVIEWS
+  ]
+)
 
 ==== ROLES (Vai Trò)
 <roles-vai-tro>
 
+- ID Role (Thuộc tính định danh, duy nhất).
+- Mã Vai Trò
+- Tên Vai Trò
+- Miêu Tả
+
+#figure(image("diagrams/ch02-table-roles.svg"),
+  caption: [
+    Thực Thể ROLES
+  ]
+)
 
 ==== USERS (Người Dùng)
 <users-nguoi-dung>
 
+- ID Người Dùng (Thuộc tính định danh, duy nhất).
+- Email
+- Mật khẩu
+- Số Điện Thoại
+- Tên Đầy Đủ
+- Trạng Thái (Hoạt Động, Không Hoạt Động).
+
+#figure(image("diagrams/ch02-table-users.svg"),
+  caption: [
+    Thực Thể USERS
+  ]
+)
 
 ==== VOUCHERS (Mã Giảm Giá)
 <vouchers-ma-giam-gia>
 
+- ID Voucher (Thuộc tính định danh, duy nhất).
+- Mã Voucher
+- Phần Trăm Giảm
+- Ngày Hết Hạn
+- Số Tiền Tối Thiểu
+- Số Tiền Tối Đa
+- Số Lần Đã Dùng
+- Trạng Thái (Hoạt Động, Không Hoạt Động).
+
+#figure(image("diagrams/ch02-table-vouchers.svg"),
+  caption: [
+    Thực Thể VOUCHERS
+  ]
+)
 
 === Các Mối Quan Hệ
 <cac-moi-quan-he>

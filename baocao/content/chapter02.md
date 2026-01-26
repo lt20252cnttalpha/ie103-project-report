@@ -138,15 +138,56 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 
 ### Các Thực Thể và Thuộc Tính
 
+- Trình bày các thực thể và thuộc tính tương ứng ở mức quan niệm phản ánh các thực thể từ mô hình nghiệp vụ.
+
 #### ADMINS (Quản Lý/Quản Trị Viên)
+
+- ID Admin (Thuộc tính định danh, duy nhất).
+- Email
+- Mật khẩu
+- Tên Đầy Đủ
+- Trạng Thái (Hoạt Động, Không Hoạt Động).
 
 ![Thực Thể ADMINS](diagrams/ch02-table-admins.svg)
 
 #### DATPHONG (Đặt Phòng)
+
+- ID Đặt Phòng (Thuộc tính định danh, duy nhất).
+- Ngày Nhận Phòng
+- Ngày Trả Phòng
+- Trạng Thái (Đang Chờ, Đã Xác Nhận, Đã Hủy, Đã Hoàn Thành).
+
+![Thực Thể DATPHONG](diagrams/ch02-table-datphong.svg)
+
 #### DICHVU (Dịch Vụ)
+
+- ID Dịch Vụ (Thuộc tính định danh, duy nhất).
+- Tên Dịch Vụ
+- Đơn Giá
+- Đơn Vị Tính (Mặc định 'Lần', có thể là 'Kg', 'Giờ', ...)
+- Trạng Thái (Hoạt Động, Không Hoạt Động).
+
 #### LOAIPHONG (Loại Phòng)
+
+- ID Loại Phòng (Thuộc tính định danh, duy nhất).
+- Tên Loại Phòng
+- Giá Cơ Bản
+- Mô Tả
+- Sức Chứa (Mặc định là 2).
+
 #### PAYMENTS (Thanh Toán)
+
+- ID Thanh Toán (Thuộc tính định danh, duy nhất).
+- Số Tiền
+- Phương Thức Thanh Toán (Tiền Mặt, Chuyển Khoản, Thẻ, Online)
+- Trạng Thái (Đang Chờ, Thành Công, Gặp Lỗi, Đã Hủy, Đã Thanh Toán, Chưa Thanh Toán, Đã Hoàn Trả).
+
 #### PERMISSIONS (Quyền Hạn)
+
+- ID Quyền Hạn (Thuộc tính định danh, duy nhất).
+- Mã Quyền Hạn
+- Miêu Tả
+
 #### PHONG (Phòng)
 
 - ID Phòng (Thuộc tính định danh).
@@ -156,10 +197,56 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 ![Thực Thể PHONG (Phòng)](diagrams/ch02-concept-phong.svg)
 
 #### REFUNDS (Hoàn Tiền)
+
+- ID Hoàn Tiền (Thuộc tính định danh, duy nhất).
+- Số Tiền Hoàn
+- Trạng Thái (Đã Yêu Cầu, Đã Duyệt, Từ Chối, Đã Hoàn Thành).
+- Lý Do
+
+![Thực Thể REFUNDS](diagrams/ch02-table-refunds.svg)
+
 #### REVIEWS (Đánh Giá)
+
+- ID Đánh Giá (Thuộc tính định danh, duy nhất).
+- Số Sao (1, 2, 3, 4, 5)
+- Bình Luận
+- Ngày Đánh Giá
+- Trạng Thái (Đang Chờ, Đã Duyệt, Từ Chối).
+
+![Thực Thể REVIEWS](diagrams/ch02-table-reviews.svg)
+
 #### ROLES (Vai Trò)
+
+- ID Role (Thuộc tính định danh, duy nhất).
+- Mã Vai Trò
+- Tên Vai Trò
+- Miêu Tả
+
+![Thực Thể ROLES](diagrams/ch02-table-roles.svg)
+
 #### USERS (Người Dùng)
+
+- ID Người Dùng (Thuộc tính định danh, duy nhất).
+- Email
+- Mật khẩu
+- Số Điện Thoại
+- Tên Đầy Đủ
+- Trạng Thái (Hoạt Động, Không Hoạt Động).
+
+![Thực Thể USERS](diagrams/ch02-table-users.svg)
+
 #### VOUCHERS (Mã Giảm Giá)
+
+- ID Voucher (Thuộc tính định danh, duy nhất).
+- Mã Voucher
+- Phần Trăm Giảm
+- Ngày Hết Hạn
+- Số Tiền Tối Thiểu
+- Số Tiền Tối Đa
+- Số Lần Đã Dùng
+- Trạng Thái (Hoạt Động, Không Hoạt Động).
+
+![Thực Thể VOUCHERS](diagrams/ch02-table-vouchers.svg)
 
 ### Các Mối Quan Hệ
 
