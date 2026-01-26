@@ -273,12 +273,12 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 ```{=typst}
 #figure(
   table(
-    columns: (20%, 20%, 30%, 30%),
+    columns: (20%, 16%, 28%, 36%),
     align: (left, left, left, left),
-    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`ma_code`], [`NVARCHAR(50)`], [`NOT NULL`, `UNIQUE`], [Mã Voucher (VD: TET2025).], [`phan_tram_giam`], [`DECIMAL(5,2)`], [`NOT NULL`], [Phần trăm giảm.], [`ngay_het_han`], [`DATETIME`], [`NOT NULL`], [Ngày hết hạn.], [`so_tien_toi_thieu`], [`DECIMAL(18,2)`], [`NOT NULL`], [Số tiền tối thiểu.], [`so_lan_toi_da`], [`INT`], [`NOT NULL`, `DEFAULT 100`], [Số lần tối đa.], [`so_lan_da_dung`], [`INT`], [`DEFAULT 0`], [Số lần đã dùng.], [`trang_thai`], [`NVARCHAR(50)`], [`DEFAULT 'ACTIVE'`], [Trạng thái.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [`updated_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`phan_tram_giam >= 0`], [Phần trăm giảm phải dương.], [#emph[CHECK]], [], [`so_tien_toi_thieu >= 0`], [Số tiền tối thiểu phải dương.], [#emph[CHECK]], [], [`so_lan_toi_da > 0`], [Số lần tối đa phải dương.], [#emph[CHECK]], [], [`so_lan_da_dung >= 0`], [Số lần đã dùng phải dương.], [#emph[CHECK]], [], [`so_lan_da_dung <= so_lan_toi_da`], [Số lần đã dùng phải nhỏ hơn hoặc bằng số lần tối đa.], [#emph[CHECK]], [], [`trang_thai IN ('ACTIVE', 'INACTIVE')`], [Ràng buộc trạng thái.]
+    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`ma_code`], [`NVARCHAR(50)`], [`NOT NULL`, `UNIQUE`], [Mã Voucher (vd: `TET2025`).], [`phan_tram_giam`], [`DECIMAL(5,2)`], [`NOT NULL`], [Phần trăm giảm.], [`ngay_het_han`], [`DATETIME`], [`NOT NULL`], [Ngày hết hạn.], [`so_tien_toi_thieu`], [`DECIMAL(18,2)`], [`NOT NULL`], [Số tiền tối thiểu.], [`so_lan_toi_da`], [`INT`], [`NOT NULL`, `DEFAULT 100`], [Số lần tối đa.], [`so_lan_da_dung`], [`INT`], [`DEFAULT 0`], [Số lần đã dùng.], [`trang_thai`], [`NVARCHAR(50)`], [`DEFAULT 'ACTIVE'`], [Trạng thái.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [`updated_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`phan_tram_giam >= 0`], [Phần trăm giảm phải >= 0.], [#emph[CHECK]], [], [`so_tien_toi_thieu >= 0`], [Số tiền tối thiểu phải >= 0.], [#emph[CHECK]], [], [`so_lan_toi_da > 0`], [Số lần tối đa phải > 0.], [#emph[CHECK]], [], [`so_lan_da_dung >= 0`], [Số lần đã dùng phải >= 0.], [#emph[CHECK]], [], [`so_lan_da_dung <= so_lan_toi_da`], [Số lần đã dùng phải <= số lần tối đa.], [#emph[CHECK]], [], [`trang_thai IN ('ACTIVE', 'INACTIVE')`], [Ràng buộc trạng thái.]
   ),
   caption: [
-    Mô Hình Mức Vật Lý: VOUCHER
+    Mô Hình Mức Vật Lý: VOUCHERS
   ],
 )
 ```
