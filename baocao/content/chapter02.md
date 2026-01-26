@@ -326,19 +326,17 @@ Quy cách trình bày:
 
 #### ADMINS (Quản Lý/Quản Trị Viên)
 
-ADMINS(<u>id</u>, username, password, full_name, email, phone, address, created_at, updated_at)
+ADMINS(<u>id</u>, email, password_hash, full_name, status, created_at, updated_at)
 
 <!-- TODO: định dạng khóa chính, khóa ngoại trong bảng -->
 
 | Khóa | Mô tả |
 | --- | --- |
-| id | Mã định danh duy nhất của admin. |
-| username | Tên đăng nhập của admin. |
-| password | Mật khẩu của admin. |
+| <u>id</u> | Mã định danh duy nhất của admin. |
+| email | Tên đăng nhập của admin. |
+| password_hash | Mật khẩu của admin. |
 | full_name | Họ tên đầy đủ của admin. |
-| email | Email của admin. |
-| phone | Số điện thoại của admin. |
-| address | Địa chỉ của admin. |
+| status | Trạng thái của admin. |
 | created_at | Thời gian tạo của admin. |
 | updated_at | Thời gian cập nhật của admin. |
 
