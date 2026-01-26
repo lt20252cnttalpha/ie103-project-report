@@ -133,8 +133,11 @@ USERS -- users_reviews: (0, n)
 users_reviews -- REVIEWS: (1, 1)
 
 # VOUCHERS -> DATPHONG: áp dụng cho
-# Một voucher có tối thiểu 1, và tối đa n đơn đặt phòng
+# Một voucher có tối thiểu 0, và tối đa n đơn đặt phòng
 # Một đơn đặt phòng có và chỉ có 1 voucher áp dụng
 vouchers_datphong: {class: rel; label: "áp dụng"}
-VOUCHERS -- vouchers_datphong: (1, n)
-vouchers_datphong -- DATPHONG: (1, 1)
+VOUCHERS -- vouchers_datphong: (0, n)
+vouchers_datphong -- DATPHONG: (0, 1)
+
+# 4. Bảng Số
+# Tách riêng cho dễ cập nhật và quản lý.
