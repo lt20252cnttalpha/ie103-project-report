@@ -507,20 +507,19 @@ PERMISSIONS(<u>id</u>, code, description)
 
 PHONG(<u>id</u>, so_phong, *loai_phong_id*, trang_thai)
 
-| **Khóa** | **Mô tả** |
+<!-- | **Khóa** | **Mô tả** |
 | --- | --- |
 | <u>id</u> | Mã định danh phòng. |
 | so_phong | Số hiệu phòng (ví dụ: 101, 202). |
 | *loai_phong_id* | Khóa ngoại tham chiếu tới bảng LOAIPHONG. |
-| trang_thai | Trạng thái hiện tại (AVAILABLE, OCCUPIED, MAINTENANCE, RESERVED). |
+| trang_thai | Trạng thái hiện tại (AVAILABLE, OCCUPIED, MAINTENANCE, RESERVED). | -->
 
 ```{=typst}
 #figure(
   table(
     columns: (30%, 70%),
     align: (left, left),
-    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh đơn đặt phòng.], [#emph[user\_id]], [Khóa ngoại tham chiếu tới bảng USERS (Người đặt).], [#emph[voucher\_id]], [Khóa ngoại tham chiếu tới bảng VOUCHERS (Mã giảm giá áp dụng, có thể
-    NULL).], [check\_in], [Ngày nhận phòng dự kiến.], [check\_out], [Ngày trả phòng dự kiến.], [trang\_thai], [Trạng thái đơn (PENDING, CONFIRMED, CANCELLED, COMPLETED).], [created\_at], [Thời gian tạo đơn.]
+    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh phòng.], [so\_phong], [Số hiệu phòng (ví dụ: 101, 202).], [#emph[loai\_phong\_id]], [Khóa ngoại tham chiếu tới bảng LOAIPHONG.], [trang\_thai], [Trạng thái hiện tại (AVAILABLE, OCCUPIED, MAINTENANCE, RESERVED).]
   ),
   caption: [
     Mô Hình Mức Logic: PHONG
