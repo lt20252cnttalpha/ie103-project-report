@@ -360,15 +360,17 @@ DATPHONG(<u>id</u>, *user_id*, *voucher_id*, check_in, check_out, trang_thai, cr
 
 - Danh mục các dịch vụ đi kèm (Ăn uống, Spa, Đưa đón...).
 
-DICHVU(<u>id</u>, ten_dich_vu, mo_ta, don_gia, trang_thai, created_at, updated_at)
+DICHVU(<u>id</u>, ten_dich_vu, don_gia, don_vi_tinh, trang_thai, created_at, updated_at)
 
 | Khóa | Mô tả |
 | --- | --- |
-| id | Mã định danh dịch vụ. |
+| <u>id</u> | Mã định danh dịch vụ. |
 | ten_dich_vu | Tên dịch vụ. |
-| mo_ta | Mô tả chi tiết dịch vụ. |
 | don_gia | Đơn giá niêm yết. |
+| don_vi_tinh | Đơn vị tính. |
 | trang_thai | Trạng thái khả dụng (ACTIVE/INACTIVE). |
+| created_at | Ngày tạo. |
+| updated_at | Ngày cập nhật. |
 
 #### LOAIPHONG (Loại Phòng)
 
