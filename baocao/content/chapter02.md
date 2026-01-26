@@ -303,11 +303,15 @@ Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
     - Một vai trò có thể có nhiều quyền hạn.
     - Một quyền hạn có thể thuộc về nhiều vai trò.
 
-### Mô Hình ERD Hoàn Chỉnh
+### Mô Hình Thực Thể Quan Hệ (ERD) Hoàn Chỉnh
 
 Quy cách:
 
 - Các quan hệ *(n - n)* được tô sáng màu cam, chuẩn bị cho bước thiết kế logic.
+- Đơn giản hóa đồ họa bằng cách không biểu diễn các thuộc tính.
+- Mô hình đầy đủ các thuộc tính được trình bày ở phần *Phụ Lục B*, mục *Mô Hình Thực Thể Quan Hệ Đầy Đủ*.
+
+<!-- TODO: Cân nhắc sử dụng direction TD -->
 
 ![Mô Hình ERD Hoàn Chỉnh](diagrams/ch02-concept-erd.svg)
 
