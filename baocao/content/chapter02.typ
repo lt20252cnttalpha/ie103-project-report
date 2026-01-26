@@ -119,46 +119,46 @@
 
 Đây là quan hệ giữa các thực thể dưới góc độ và ngôn ngữ nghiệp vụ.
 
-- ADMINS - ROLES: #emph[nhiều - nhiều]
+- #strong[Quản Trị Viên] - #strong[Vai Trò]:
   - Một admin có thể có nhiều vai trò.
   - Một vai trò có thể gán cho nhiều admin.
-- PHONG - LOAIPHONG: #emph[một - nhiều]
+- #strong[Phòng] - #strong[Loại Phòng]:
   - Một phòng thuộc về một loại phòng.
   - Một loại phòng có thể có nhiều phòng.
-- USERS - DATPHONG: #emph[một - nhiều]
+- #strong[Người Dùng] - #strong[Đặt Phòng]:
   - Một người dùng có thể có nhiều đặt phòng.
   - Một đặt phòng được thực hiện bởi một người dùng.
-- DATPHONG - PHONG: #emph[nhiều - nhiều]
+- #strong[Đặt Phòng] - #strong[Phòng]:
   - Một đặt phòng có thể có nhiều phòng.
   - Một phòng có thể được đặt trong nhiều đặt phòng.
-- DATPHONG - VOUCHERS: #emph[một - nhiều]
+- #strong[Đặt Phòng] - #strong[Mã Giảm Giá]:
   - Một đặt phòng có thể có một mã giảm giá.
   - Một mã giảm giá có thể được áp dụng cho nhiều đặt phòng.
-- DATPHONG - REVIEWS: #emph[một - một]
+- #strong[Đặt Phòng] - #strong[Đánh Giá]:
   - Một lần đặt phòng có thể có một đánh giá.
   - Một đánh giá chỉ thuộc về một lần đặt phòng.
-- USERS - REVIEWS: #emph[một - nhiều]
+- #strong[Người Dùng] - #strong[Đánh Giá]:
   - Một người dùng có thể có nhiều đánh giá.
   - Một đánh giá chỉ thuộc về một người dùng.
-- USERS - PAYMENTS: #emph[một - nhiều]
+- #strong[Người Dùng] - #strong[Thanh Toán]:
   - Một người dùng có thể thực hiện nhiều thanh toán.
   - Một thanh toán chỉ được thực hiện bởi một người dùng.
-- USERS - REFUNDS: #emph[một - nhiều]
+- #strong[Người Dùng] - #strong[Hoàn Tiền]:
   - Một người dùng có thể yêu cầu nhiều lần hoàn tiền.
   - Một lần hoàn tiền chỉ được yêu cầu bởi một người dùng.
-- PAYMENTS - REFUNDS: #emph[một - nhiều]
+- #strong[Thanh Toán] - #strong[Hoàn Tiền]:
   - Một lần thanh toán có thể có nhiều lần hoàn tiền.
   - Một lần hoàn tiền chỉ thuộc về một lần thanh toán.
-- PAYMENTS - DATPHONG: #emph[một - nhiều]
+- #strong[Thanh Toán] - #strong[Đặt Phòng]:
   - Một lần thanh toán thuộc về một lần đặt phòng.
   - Một lần đặt phòng có thể có nhiều lần thanh toán.
-- ADMINS - REFUNDS: #emph[một - nhiều]
+- #strong[Quản Trị Viên] - #strong[Hoàn Tiền]:
   - Một admin có thể duyệt nhiều lần hoàn tiền.
   - Một lần hoàn tiền chỉ được duyệt bởi một admin.
-- DATPHONG - DICHVU: #emph[nhiều - nhiều]
+- #strong[Đặt Phòng] - #strong[Dịch Vụ]:
   - Một lần đặt phòng có thể có nhiều dịch vụ đi kèm.
   - Một dịch vụ đi kèm có thể được áp dụng cho nhiều lần đặt phòng.
-- ROLES - PERMISSIONS: #emph[nhiều - nhiều]
+- #strong[Vai Trò] - #strong[Quyền Hạn]:
   - Một vai trò có thể có nhiều quyền hạn.
   - Một quyền hạn có thể thuộc về nhiều vai trò.
 
