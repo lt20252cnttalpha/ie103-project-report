@@ -3,12 +3,22 @@
 = Cài Đặt - Triển Khai
 <cai-dat-trien-khai>
 
+Trong chương này, Nhóm 02 sẽ trình bày chi tiết về việc cài đặt mô hình dữ liệu (mức vật lý) và các chức năng quản lý thông tin trên hệ quản trị cơ sở dữ liệu Microsoft SQL Server.
+
+== Môi Trường Cài Đặt
+<moi-truong-cai-dat>
+
+- Hệ quản trị cơ sở dữ liệu (DBMS) được sử dụng là Microsoft SQL Server, phiên bản 2019.
+- Công cụ quản lý: SQL Server Management Studio (SSMS), phiên bản 18.12.1.
+- Công cụ bổ sung: Azure Data Studio, phiên bản 1.52.0.
 
 == Cài Đặt Mô Hình Dữ Liệu (Mức Vật Lý)
 <cai-dat-mo-hinh-du-lieu-muc-vat-ly>
 
-- Hệ quản trị cơ sở dữ liệu (DBMS) được sử dụng là Microsoft SQL Server.
-- Dưới đây là đặc tả chi tiết các bảng dữ liệu, kiểu dữ liệu và các ràng buộc toàn vẹn.
+
+== Khởi Tạo Cơ Sở Dữ Liệu
+<khoi-tao-co-so-du-lieu>
+
 
 == Dữ Liệu Mẫu
 <du-lieu-mau>
