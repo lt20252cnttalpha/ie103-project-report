@@ -574,7 +574,7 @@ CT_SUDUNG_DV(<u>id</u>, *datphong_id*, *dichvu_id*, so_luong, don_gia, thoi_diem
 
 ### Tổng Hợp Danh Sách Bảng
 
-| Bảng | Loại | Mô Tả |
+<!-- | **Tên Bảng** | **Loại** | **Mô Tả** |
 |------|------|-------|
 | ADMINS | Thực Thể | Biểu diễn người quản trị. |
 | DATPHONG | Thực Thể | Lưu trữ thông tin đơn đặt phòng. |
@@ -591,33 +591,17 @@ CT_SUDUNG_DV(<u>id</u>, *datphong_id*, *dichvu_id*, so_luong, don_gia, thoi_diem
 | ADMIN_ROLES | Liên Kết | Mối quan hệ giữa ADMINS và ROLES. |
 | ROLE_PERMISSIONS | Liên Kết | Mối quan hệ giữa ROLES và PERMISSIONS. |
 | CT_DATPHONG | Liên Kết | Chi tiết các phòng trong đơn đặt phòng. |
-| CT_SUDUNG_DV | Liên Kết | Chi tiết các dịch vụ khách sử dụng. |
+| CT_SUDUNG_DV | Liên Kết | Chi tiết các dịch vụ khách sử dụng. | -->
 
 ```{=typst}
 #figure(
   table(
-    columns: (10%, 30%, 15%, 45%),
-    align: (right, left, left, left),
-    [#strong("STT")], [#strong("Tên Thực Thể")], [#strong("Loại")], [#strong("Mô tả")],
-    [1], [`ADMIN_ROLES`], [Quan hệ], [Quan hệ giữa admin và role],
-    [2], [`ADMINS`], [Thực thể], [Admin và staff],
-    [3], [`CT_DATPHONG`], [Thực thể], [Chi tiết đặt phòng],
-    [4], [`CT_SUDUNG_DV`], [Thực thể], [Chi tiết sử dụng dịch vụ],
-    [5], [`DATPHONG`], [Thực thể], [Đặt phòng],
-    [6], [`DICHVU`], [Thực thể], [Dịch vụ đi kèm],
-    [7], [`LOAIPHONG`], [Thực thể], [Loại phòng],
-    [8], [`PAYMENTS`], [Thực thể], [Thanh toán],
-    [9], [`PERMISSIONS`], [Quan hệ], [Quan hệ giữa permission và role],
-    [10], [`PHONG`], [Thực thể], [Phòng],
-    [11], [`REFUNDS`], [Thực thể], [Hoàn tiền],
-    [12], [`REVIEWS`], [Thực thể], [Đánh giá & phản hồi],
-    [13], [`ROLE_PERMISSIONS`], [Quan hệ], [Quan hệ giữa role và permission],
-    [14], [`ROLES`], [Thực thể], [Role],
-    [15], [`USERS`], [Thực thể], [End User],
-    [16], [`VOUCHERS`], [Thực thể], [Mã giảm giá],
+    columns: (30%, 15%, 55%),
+    align: (left, left, left),
+  [#strong[Tên Bảng]], [#strong[Loại]], [#strong[Mô Tả]], [ADMINS], [Thực Thể], [Biểu diễn người quản trị.], [DATPHONG], [Thực Thể], [Lưu trữ thông tin đơn đặt phòng.], [DICHVU], [Thực Thể], [Danh mục các dịch vụ đi kèm.], [LOAIPHONG], [Thực Thể], [Danh mục phân loại phòng.], [PAYMENTS], [Thực Thể], [Lưu trữ lịch sử giao dịch thanh toán.], [PERMISSIONS], [Thực Thể], [Danh sách các quyền hạn hệ thống.], [PHONG], [Thực Thể], [Danh sách các phòng vật lý.], [REFUNDS], [Thực Thể], [Lưu trữ yêu cầu và lịch sử hoàn tiền.], [REVIEWS], [Thực Thể], [Lưu trữ đánh giá từ khách hàng.], [ROLES], [Thực Thể], [Định nghĩa các vai trò trong hệ thống.], [USERS], [Thực Thể], [Lưu trữ thông tin khách hàng.], [VOUCHERS], [Thực Thể], [Quản lý các chương trình khuyến mãi.], [ADMIN\_ROLES], [Liên Kết], [Mối quan hệ giữa ADMINS và ROLES.], [ROLE\_PERMISSIONS], [Liên Kết], [Mối quan hệ giữa ROLES và PERMISSIONS.], [CT\_DATPHONG], [Liên Kết], [Chi tiết các phòng trong đơn đặt phòng.], [CT\_SUDUNG\_DV], [Liên Kết], [Chi tiết các dịch vụ khách sử dụng.]
   ),
   caption: [
-    Các Bảng Trong Cơ Sở Dữ Liệu
+    Mô Hình Mức Logic: Danh Sách Bảng
   ],
 )
 ```
