@@ -50,8 +50,16 @@
 - US-10: Xem đánh giá phòng
     - Là **End User**, tôi muốn xem điểm trung bình và các đánh giá của từng loại phòng để đưa ra quyết định đặt phòng phù hợp.
 
-### Các Đối Tượng Chính
+### Các Đối Tượng Chính Và Quan Hệ
 
+### Các Đối Tượng Chính
+#### PHÒNG
+#### DỊCH VỤ
+#### THANH TOÁN
+#### HOÀN TRẢ
+#### QUYỀN
+#### ROLES
+#### USERS
 
 ### Quan Hệ Giữa Các Đối Tượng
 
@@ -76,7 +84,7 @@
 
 ![Mô Hình Thực Thể Quan Hệ](diagrams/ch02-ER.svg)
 
-## Thiết Kế Cơ Sở Dữ Liệu
+## Mô Hình Mức Logic
 
 ### Nhóm Bảng Thực Thể
 
@@ -113,3 +121,7 @@
 )
 ```
 
+## Thiết Kế Cơ Sở Dữ Liệu
+
+
+### Vật Lý
