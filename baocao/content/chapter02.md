@@ -136,7 +136,7 @@ Tóm tắt các thực thể và mối quan hệ bằng mô hình trực quan:
 
 Các thực thể từ các yêu cầu nghiệp vụ được mô hình hóa.
 
-### Các Thực Thể
+### Các Thực Thể và Thuộc Tính
 
 #### ADMINS (Quản Lý/Quản Trị Viên)
 
