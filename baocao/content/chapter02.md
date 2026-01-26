@@ -46,7 +46,7 @@
 - **Mỗi đặt phòng chỉ được đánh giá một lần**.
 - **Số sao đánh giá phải từ 1 đến 5**.
 
-### User Stories
+### Miêu Tả Các Nghiệp Vụ (User Stories)
 
 - US-01: Quản lý phòng
     - Là **Admin**, tôi muốn thêm, sửa, xóa phòng để cập nhật thông tin phòng.

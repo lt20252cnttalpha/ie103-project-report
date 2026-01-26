@@ -57,8 +57,8 @@
 - #strong[Mỗi đặt phòng chỉ được đánh giá một lần].
 - #strong[Số sao đánh giá phải từ 1 đến 5].
 
-=== User Stories
-<user-stories>
+=== Miêu Tả Các Nghiệp Vụ (User Stories)
+<mieu-ta-cac-nghiep-vu-user-stories>
 
 - US-01: Quản lý phòng
   - Là #strong[Admin], tôi muốn thêm, sửa, xóa phòng để cập nhật thông tin phòng.
