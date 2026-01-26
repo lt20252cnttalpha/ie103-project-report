@@ -457,9 +457,9 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 ```{=typst}
 #figure(
   table(
-    columns: (20%, 20%, 30%, 30%),
+    columns: (20%, 18%, 26%, 36%),
     align: (left, left, left, left),
-    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`user_id`], [`INT`], [`FK` (USERS), `NOT NULL`], [Người đánh giá.], [`phong_id`], [`INT`], [`FK` (PHONG), `NOT NULL`], [Phòng được đánh giá.], [`datphong_id`], [`INT`], [`FK` (DATPHONG), `UNIQUE`, `NOT NULL`], [Thuộc đơn đặt phòng nào (Duy nhất 1-1).], [`so_sao`], [`INT`], [`NOT NULL`], [Điểm sao (1-5).], [`binh_luan`], [`NVARCHAR(1000)`], [`NULL`], [Nội dung text.], [`ngay_danh_gia`], [`DATE`], [`DEFAULT GETDATE()`], [Ngày đánh giá.], [`trang_thai`], [`NVARCHAR(50)`], [`DEFAULT 'PENDING'`], [Trạng thái.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [`updated_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`so_sao BETWEEN 1 AND 5`], [Giới hạn 1 đến 5 sao.], [#emph[CHECK]], [], [`trang_thai IN ('PENDING', 'APPROVED', 'REJECTED')`], [Ràng buộc trạng thái.]
+    [#strong[Thuộc Tính]], [#strong[Kiểu]], [#strong[Ràng Buộc]], [#strong[Mô Tả]], [`id`], [`INT`], [`PK`, `IDENTITY`], [Khóa chính.], [`user_id`], [`INT`], [`FK (USERS)`, `NOT NULL`], [Người đánh giá.], [`phong_id`], [`INT`], [`FK (PHONG)`, `NOT NULL`], [Phòng được đánh giá.], [`datphong_id`], [`INT`], [`FK (DATPHONG)`, `UNIQUE`, `NOT NULL`], [Thuộc đơn đặt phòng nào (Duy nhất 1-1).], [`so_sao`], [`INT`], [`NOT NULL`], [Điểm sao (1-5).], [`binh_luan`], [`NVARCHAR(1000)`], [`NULL`], [Nội dung text.], [`ngay_danh_gia`], [`DATE`], [`DEFAULT GETDATE()`], [Ngày đánh giá.], [`trang_thai`], [`NVARCHAR(50)`], [`DEFAULT 'PENDING'`], [Trạng thái.], [`created_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày tạo.], [`updated_at`], [`DATETIME`], [`DEFAULT GETDATE()`], [Ngày cập nhật.], [#emph[CHECK]], [], [`so_sao BETWEEN 1 AND 5`], [Giới hạn 1 đến 5 sao.], [#emph[CHECK]], [], [`trang_thai IN ('PENDING', 'APPROVED', 'REJECTED')`], [Ràng buộc trạng thái.]
   ),
   caption: [
     Mô Hình Mức Vật Lý: REVIEWS
