@@ -70,10 +70,10 @@ DATPHONG -- datphong_payments: (0, n)
 datphong_payments -- PAYMENTS: (1, 1)
 
 # DATPHONG -> PHONG: có nhiều
-# Một đơn đặt phòng có tối thiểu 0 và tối đa n phòng.
+# Một đơn đặt phòng có tối thiểu 1 và tối đa n phòng.
 # Một phòng có tối thiểu 0 và tối đa n đơn đặt phòng.
 datphong_phong: {class: rel; label: "bao gồm"; style: {stroke: orange}}
-DATPHONG -- datphong_phong: (0, n)
+DATPHONG -- datphong_phong: (1, n)
 datphong_phong -- PHONG: (0, n)
 
 # DATPHONG -> REVIEWS: được
