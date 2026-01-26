@@ -325,7 +325,19 @@ REVIEWS -- reviews_updated_at: {style: {stroke-width: 1}}
 # Các bảng trung gian N-N trong SQL được coi là Quan Hệ trong ERD.
 # FOREIGN KEY: orange
 
-# Quan hệ N-N (Từ bảng trung gian)
+# Quan hệ 1-N / 1-1 (Logical)
+thuc_hien: {class: rel; label: "Thực Hiện"}
+thuoc_loai: {class: rel; label: "Thuộc Loại"}
+ap_dung: {class: rel; label: "Áp Dụng"}
+thanh_toan: {class: rel; label: "Thanh Toán"}
+hoan_tien: {class: rel; label: "Hoàn Tiền"}
+yeu_cau: {class: rel; label: "Yêu Cầu"}
+duoc_duyet: {class: rel; label: "Được Duyệt"}
+tao_review: {class: rel; label: "Viết"}
+review_cho: {class: rel; label: "Review Cho"}
+review_cua: {class: rel; label: "Của Đơn"}
+
+# Quan hệ N-N (Bảng trung gian)
 # MARK: ADMIN_ROLES
 ADMIN_ROLES: {class: rel; label: "Được Gán\nADMIN_ROLES"}
 admin_roles_admin_id: {class: attr_foreign_pri; label: "admin_id"}
@@ -371,18 +383,6 @@ CT_SUDUNG_DV -- ct_sudung_dv_don_gia: {style: {stroke-width: 1}}
 CT_SUDUNG_DV -- ct_sudung_dv_thoi_diem_su_dung: {style: {stroke-width: 1}}
 CT_SUDUNG_DV -- ct_sudung_dv_ghi_chu: {style: {stroke-width: 1}}
 CT_SUDUNG_DV -- ct_sudung_dv_created_at: {style: {stroke-width: 1}}
-
-# Quan hệ 1-N / 1-1 (Logical)
-thuc_hien: {class: rel; label: "Thực Hiện"}
-thuoc_loai: {class: rel; label: "Thuộc Loại"}
-ap_dung: {class: rel; label: "Áp Dụng"}
-thanh_toan: {class: rel; label: "Thanh Toán"}
-hoan_tien: {class: rel; label: "Hoàn Tiền"}
-yeu_cau: {class: rel; label: "Yêu Cầu"}
-duoc_duyet: {class: rel; label: "Được Duyệt"}
-tao_review: {class: rel; label: "Viết"}
-review_cho: {class: rel; label: "Review Cho"}
-review_cua: {class: rel; label: "Của Đơn"}
 
 # --- 4. CONNECTIONS (CARDINALITY) ---
 
