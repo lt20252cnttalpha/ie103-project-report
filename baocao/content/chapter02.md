@@ -50,9 +50,10 @@
 - US-10: Xem đánh giá phòng
     - Là **End User**, tôi muốn xem điểm trung bình và các đánh giá của từng loại phòng để đưa ra quyết định đặt phòng phù hợp.
 
-### Các Đối Tượng Chính Và Quan Hệ
+### Các Thực Thể Và Quan Hệ
 
-### Các Đối Tượng Chính
+### Các Thực Thể
+
 #### PHÒNG
 #### DỊCH VỤ
 #### THANH TOÁN
@@ -61,7 +62,9 @@
 #### ROLES
 #### USERS
 
-### Quan Hệ Giữa Các Đối Tượng
+### Quan Hệ Giữa Các Thực Thể
+
+<!-- TODO: Mô tả bằng ngôn ngữ "business" thay vì kỹ thuật -->
 
 - `ADMINS 1 --- n ADMIN_ROLES`: Một admin có thể có nhiều admin role.
 - `DATPHONG 1 --- 1 REVIEWS`: Một đặt phòng có thể có một đánh giá.
@@ -81,6 +84,9 @@
 - `VOUCHERS 1 --- n DATPHONG`: Một voucher có thể được dùng cho nhiều đặt phòng.
 
 ## Mô Hình Mức Quan Niệm
+
+- Thực thể và các thuộc tính.
+- Mô hình ER dạng Chen.
 
 ![Mô Hình Thực Thể Quan Hệ](diagrams/ch02-ER.svg)
 
