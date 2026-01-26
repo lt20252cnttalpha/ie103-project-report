@@ -60,8 +60,8 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
 | --- | --- | --- | --- |
 | `id` | `INT` | `PK`, `IDENTITY` | Khóa chính. |
-| code | `NVARCHAR(100)` | `NOT NULL`, `UNIQUE` | Mã quyền (VD: USER_READ). |
-| description | `NVARCHAR(255)` | `NULL` | Mô tả quyền hạn. |
+| `code` | `NVARCHAR(100)` | `NOT NULL`, `UNIQUE` | Mã quyền (VD: USER_READ). |
+| `description` | `NVARCHAR(255)` | `NULL` | Mô tả quyền hạn. |
 
 #### 4. ADMIN_ROLES
 
@@ -69,8 +69,8 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 | **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
 | --- | --- | --- | --- |
-| **admin_id** | `INT` | `PK`, `FK` (ADMINS) | Khóa ngoại + Khóa chính. |
-| **role_id** | `INT` | `PK`, `FK` (ROLES) | Khóa ngoại + Khóa chính. |
+| `admin_id` | `INT` | `PK`, `FK` (ADMINS) | Khóa ngoại + Khóa chính. |
+| `role_id` | `INT` | `PK`, `FK` (ROLES) | Khóa ngoại + Khóa chính. |
 | *FK Rule* |  | `ON DELETE CASCADE` | Xóa Admin/Role tự động xóa dòng này. |
 
 #### 5. ROLE_PERMISSIONS
@@ -79,8 +79,8 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 
 | **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
 | --- | --- | --- | --- |
-| **role_id** | `INT` | `PK`, `FK` (ROLES) | Khóa ngoại + Khóa chính. |
-| **permission_id** | `INT` | `PK`, `FK` (PERMISSIONS) | Khóa ngoại + Khóa chính. |
+| `role_id` | `INT` | `PK`, `FK` (ROLES) | Khóa ngoại + Khóa chính. |
+| `permission_id` | `INT` | `PK`, `FK` (PERMISSIONS) | Khóa ngoại + Khóa chính. |
 | *FK Rule* |  | `ON DELETE CASCADE` | Xóa Role/Permission tự động xóa dòng này. |
 
 ### B. Nhóm Bảng Nghiệp Vụ Chính
@@ -92,13 +92,13 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
 | --- | --- | --- | --- |
 | `id` | `INT` | `PK`, `IDENTITY` | Khóa chính tự tăng. |
-| email | `NVARCHAR(255)` | `NOT NULL`, `UNIQUE` | Email đăng nhập. |
-| password_hash | `NVARCHAR(255)` | `NOT NULL` | Mật khẩu (Hash). |
-| full_name | `NVARCHAR(255)` | `NULL` | Họ tên khách hàng. |
-| phone_number | `NVARCHAR(20)` | `NULL` | Số điện thoại. |
-| address | `NVARCHAR(500)` | `NULL` | Địa chỉ liên hệ. |
-| created_at | `DATETIME` | `DEFAULT GETDATE()` | Ngày đăng ký. |
-| updated_at | `DATETIME` | `DEFAULT GETDATE()` | Ngày cập nhật. |
+| `email` | `NVARCHAR(255)` | `NOT NULL`, `UNIQUE` | Email đăng nhập. |
+| `password_hash` | `NVARCHAR(255)` | `NOT NULL` | Mật khẩu (Hash). |
+| `full_name` | `NVARCHAR(255)` | `NULL` | Họ tên khách hàng. |
+| `phone_number` | `NVARCHAR(20)` | `NULL` | Số điện thoại. |
+| `address` | `NVARCHAR(500)` | `NULL` | Địa chỉ liên hệ. |
+| `created_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày đăng ký. |
+| `updated_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày cập nhật. |
 
 #### 7. LOAIPHONG
 
@@ -107,12 +107,12 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
 | --- | --- | --- | --- |
 | `id` | `INT` | `PK`, `IDENTITY` | Khóa chính. |
-| ten_loai | `NVARCHAR(100)` | `NOT NULL` | Tên loại (VD: Deluxe). |
-| mo_ta | `NVARCHAR(500)` | `NULL` | Mô tả tiện nghi. |
-| gia_co_ban | `DECIMAL(18,2)` | `NOT NULL` | Giá niêm yết. |
-| suc_chua | `INT` | `NOT NULL` | Số người tối đa. |
-| created_at | `DATETIME` | `DEFAULT GETDATE()` | Ngày tạo. |
-| updated_at | `DATETIME` | `DEFAULT GETDATE()` | Ngày cập nhật. |
+| `ten_loai` | `NVARCHAR(100)` | `NOT NULL` | Tên loại (VD: Deluxe). |
+| `mo_ta` | `NVARCHAR(500)` | `NULL` | Mô tả tiện nghi. |
+| `gia_co_ban` | `DECIMAL(18,2)` | `NOT NULL` | Giá niêm yết. |
+| `suc_chua` | `INT` | `NOT NULL` | Số người tối đa. |
+| `created_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày tạo. |
+| `updated_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày cập nhật. |
 
 #### 8. PHONG
 
@@ -121,11 +121,11 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
 | --- | --- | --- | --- |
 | `id` | `INT` | `PK`, `IDENTITY` | Khóa chính. |
-| loai_phong_id | `INT` | `FK` (LOAIPHONG), `NOT NULL` | Loại phòng tương ứng. |
-| so_phong | `NVARCHAR(50)` | `NOT NULL`, `UNIQUE` | Số phòng (VD: 101). |
-| trang_thai | `NVARCHAR(50)` | `DEFAULT 'AVAILABLE'` | Trạng thái phòng. |
-| created_at | `DATETIME` | `DEFAULT GETDATE()` | Ngày tạo. |
-| updated_at | `DATETIME` | `DEFAULT GETDATE()` | Ngày cập nhật. |
+| `loai_phong_id` | `INT` | `FK` (LOAIPHONG), `NOT NULL` | Loại phòng tương ứng. |
+| `so_phong` | `NVARCHAR(50)` | `NOT NULL`, `UNIQUE` | Số phòng (VD: 101). |
+| `trang_thai` | `NVARCHAR(50)` | `DEFAULT 'AVAILABLE'` | Trạng thái phòng. |
+| `created_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày tạo. |
+| `updated_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày cập nhật. |
 | *CHECK* |  | `trang_thai IN ('AVAILABLE', 'BOOKED', 'MAINTENANCE')` | Ràng buộc trạng thái. |
 
 #### 9. DICHVU
@@ -135,12 +135,12 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
 | --- | --- | --- | --- |
 | `id` | `INT` | `PK`, `IDENTITY` | Khóa chính. |
-| ten_dich_vu | `NVARCHAR(100)` | `NOT NULL` | Tên dịch vụ. |
-| mo_ta | `NVARCHAR(500)` | `NULL` | Mô tả chi tiết. |
-| don_gia | `DECIMAL(18,2)` | `NOT NULL` | Giá dịch vụ. |
-| trang_thai | `NVARCHAR(50)` | `DEFAULT 'ACTIVE'` | Trạng thái. |
-| created_at | `DATETIME` | `DEFAULT GETDATE()` | Ngày tạo. |
-| updated_at | `DATETIME` | `DEFAULT GETDATE()` | Ngày cập nhật. |
+| `ten_dich_vu` | `NVARCHAR(100)` | `NOT NULL` | Tên dịch vụ. |
+| `mo_ta` | `NVARCHAR(500)` | `NULL` | Mô tả chi tiết. |
+| `don_gia` | `DECIMAL(18,2)` | `NOT NULL` | Giá dịch vụ. |
+| `trang_thai` | `NVARCHAR(50)` | `DEFAULT 'ACTIVE'` | Trạng thái. |
+| `created_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày tạo. |
+| `updated_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày cập nhật. |
 | *CHECK* |  | `don_gia > 0` | Đơn giá phải dương. |
 | *CHECK* |  | `trang_thai IN ('ACTIVE', 'INACTIVE')` | Ràng buộc trạng thái. |
 
@@ -151,16 +151,16 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
 | --- | --- | --- | --- |
 | `id` | `INT` | `PK`, `IDENTITY` | Khóa chính. |
-| code | `NVARCHAR(50)` | `NOT NULL`, `UNIQUE` | Mã Voucher (VD: TET2025). |
-| mo_ta | `NVARCHAR(500)` | `NULL` | Mô tả chương trình. |
-| giam_gia | `DECIMAL(18,2)` | `NOT NULL` | Giá trị giảm. |
-| loai_giam_gia | `NVARCHAR(20)` | `NOT NULL` | Loại (`PERCENT`, `FIXED`). |
-| ngay_bat_dau | `DATETIME` | `NOT NULL` | Ngày bắt đầu. |
-| ngay_ket_thuc | `DATETIME` | `NOT NULL` | Ngày kết thúc. |
-| so_luong | `INT` | `NOT NULL` | Số lượng mã. |
-| trang_thai | `NVARCHAR(50)` | `DEFAULT 'ACTIVE'` | Trạng thái. |
-| created_at | `DATETIME` | `DEFAULT GETDATE()` | Ngày tạo. |
-| updated_at | `DATETIME` | `DEFAULT GETDATE()` | Ngày cập nhật. |
+| `code` | `NVARCHAR(50)` | `NOT NULL`, `UNIQUE` | Mã Voucher (VD: TET2025). |
+| `mo_ta` | `NVARCHAR(500)` | `NULL` | Mô tả chương trình. |
+| `giam_gia` | `DECIMAL(18,2)` | `NOT NULL` | Giá trị giảm. |
+| `loai_giam_gia` | `NVARCHAR(20)` | `NOT NULL` | Loại (`PERCENT`, `FIXED`). |
+| `ngay_bat_dau` | `DATETIME` | `NOT NULL` | Ngày bắt đầu. |
+| `ngay_ket_thuc` | `DATETIME` | `NOT NULL` | Ngày kết thúc. |
+| `so_luong` | `INT` | `NOT NULL` | Số lượng mã. |
+| `trang_thai` | `NVARCHAR(50)` | `DEFAULT 'ACTIVE'` | Trạng thái. |
+| `created_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày tạo. |
+| `updated_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày cập nhật. |
 | *CHECK* |  | `trang_thai IN ('ACTIVE', 'EXPIRED', 'DISABLED')` | Ràng buộc trạng thái. |
 | *CHECK* |  | `loai_giam_gia IN ('PERCENT', 'FIXED')` | Ràng buộc loại giảm. |
 
@@ -173,15 +173,15 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
 | --- | --- | --- | --- |
 | `id` | `INT` | `PK`, `IDENTITY` | Khóa chính. |
-| user_id | `INT` | `FK` (USERS), `NOT NULL` | Khách đặt phòng. |
-| voucher_id | `INT` | `FK` (VOUCHERS), `NULL` | Voucher áp dụng (nếu có). |
-| ngay_dat | `DATETIME` | `DEFAULT GETDATE()` | Thời gian đặt. |
-| ngay_checkin | `DATE` | `NOT NULL` | Ngày nhận phòng. |
-| ngay_checkout | `DATE` | `NOT NULL` | Ngày trả phòng. |
-| tong_tien | `DECIMAL(18,2)` | `NOT NULL` | Tổng tiền đơn. |
-| trang_thai | `NVARCHAR(50)` | `DEFAULT 'PENDING'` | Trạng thái đơn. |
-| created_at | `DATETIME` | `DEFAULT GETDATE()` | Ngày tạo. |
-| updated_at | `DATETIME` | `DEFAULT GETDATE()` | Ngày cập nhật. |
+| `user_id` | `INT` | `FK` (USERS), `NOT NULL` | Khách đặt phòng. |
+| `voucher_id` | `INT` | `FK` (VOUCHERS), `NULL` | Voucher áp dụng (nếu có). |
+| `ngay_dat` | `DATETIME` | `DEFAULT GETDATE()` | Thời gian đặt. |
+| `ngay_checkin` | `DATE` | `NOT NULL` | Ngày nhận phòng. |
+| `ngay_checkout` | `DATE` | `NOT NULL` | Ngày trả phòng. |
+| `tong_tien` | `DECIMAL(18,2)` | `NOT NULL` | Tổng tiền đơn. |
+| `trang_thai` | `NVARCHAR(50)` | `DEFAULT 'PENDING'` | Trạng thái đơn. |
+| `created_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày tạo. |
+| `updated_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày cập nhật. |
 | *CHECK* |  | `trang_thai IN ('PENDING', 'CONFIRMED', 'CANCELLED', 'COMPLETED')` | Ràng buộc trạng thái. |
 
 #### 12. CT_DATPHONG
@@ -191,10 +191,10 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
 | --- | --- | --- | --- |
 | `id` | `INT` | `PK`, `IDENTITY` | Khóa chính. |
-| datphong_id | `INT` | `FK` (DATPHONG), `NOT NULL` | Thuộc đơn đặt phòng nào. |
-| phong_id | `INT` | `FK` (PHONG), `NOT NULL` | Phòng nào. |
-| gia_tien | `DECIMAL(18,2)` | `NOT NULL` | Giá phòng tại thời điểm đặt. |
-| created_at | `DATETIME` | `DEFAULT GETDATE()` | Ngày tạo. |
+| `datphong_id` | `INT` | `FK` (DATPHONG), `NOT NULL` | Thuộc đơn đặt phòng nào. |
+| `phong_id` | `INT` | `FK` (PHONG), `NOT NULL` | Phòng nào. |
+| `gia_tien` | `DECIMAL(18,2)` | `NOT NULL` | Giá phòng tại thời điểm đặt. |
+| `created_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày tạo. |
 | *FK Rule* |  | `datphong_id ON DELETE CASCADE` | Xóa đơn xóa luôn chi tiết. |
 
 #### 13. CT_SUDUNG_DV
@@ -204,13 +204,13 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
 | --- | --- | --- | --- |
 | `id` | `INT` | `PK`, `IDENTITY` | Khóa chính. |
-| datphong_id | `INT` | `FK` (DATPHONG), `NOT NULL` | Thuộc đơn đặt phòng nào. |
-| dichvu_id | `INT` | `FK` (DICHVU), `NOT NULL` | Dịch vụ nào. |
-| so_luong | `INT` | `DEFAULT 1`, `NOT NULL` | Số lượng. |
-| don_gia | `DECIMAL(18,2)` | `NOT NULL` | Đơn giá tại thời điểm dùng. |
-| thoi_diem_su_dung | `DATETIME` | `DEFAULT GETDATE()` | Thời gian order. |
-| ghi_chu | `NVARCHAR(500)` | `NULL` | Ghi chú thêm. |
-| created_at | `DATETIME` | `DEFAULT GETDATE()` | Ngày tạo. |
+| `datphong_id` | `INT` | `FK` (DATPHONG), `NOT NULL` | Thuộc đơn đặt phòng nào. |
+| `dichvu_id` | `INT` | `FK` (DICHVU), `NOT NULL` | Dịch vụ nào. |
+| `so_luong` | `INT` | `DEFAULT 1`, `NOT NULL` | Số lượng. |
+| `don_gia` | `DECIMAL(18,2)` | `NOT NULL` | Đơn giá tại thời điểm dùng. |
+| `thoi_diem_su_dung` | `DATETIME` | `DEFAULT GETDATE()` | Thời gian order. |
+| `ghi_chu` | `NVARCHAR(500)` | `NULL` | Ghi chú thêm. |
+| `created_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày tạo. |
 | *CHECK* |  | `so_luong > 0`, `don_gia > 0` | Số lượng và giá phải dương. |
 
 #### 14. PAYMENTS
@@ -220,15 +220,15 @@ Mô Hình Dữ Liệu, hay Từ Điển Dữ Liệu, trình bày chi tiết thà
 | **Thuộc Tính** | **Kiểu** | **Ràng Buộc** | **Mô Tả** |
 | --- | --- | --- | --- |
 | `id` | `INT` | `PK`, `IDENTITY` | Khóa chính. |
-| datphong_id | `INT` | `FK` (DATPHONG), `NOT NULL` | Thanh toán cho đơn nào. |
-| user_id | `INT` | `FK` (USERS), `NOT NULL` | Người thanh toán. |
-| so_tien | `DECIMAL(18,2)` | `NOT NULL` | Số tiền giao dịch. |
-| phuong_thuc | `NVARCHAR(50)` | `NOT NULL` | Cách trả (`CASH`, `BANK`...). |
-| ma_giao_dich | `NVARCHAR(100)` | `UNIQUE`, `NULL` | Ref ID (nếu CK online). |
-| ngay_thanh_toan | `DATETIME` | `DEFAULT GETDATE()` | Thời điểm trả. |
-| trang_thai | `NVARCHAR(50)` | `DEFAULT 'PENDING'` | Trạng thái giao dịch. |
-| created_at | `DATETIME` | `DEFAULT GETDATE()` | Ngày tạo. |
-| updated_at | `DATETIME` | `DEFAULT GETDATE()` | Ngày cập nhật. |
+| `datphong_id` | `INT` | `FK` (DATPHONG), `NOT NULL` | Thanh toán cho đơn nào. |
+| `user_id` | `INT` | `FK` (USERS), `NOT NULL` | Người thanh toán. |
+| `so_tien` | `DECIMAL(18,2)` | `NOT NULL` | Số tiền giao dịch. |
+| `phuong_thuc` | `NVARCHAR(50)` | `NOT NULL` | Cách trả (`CASH`, `BANK`...). |
+| `ma_giao_dich` | `NVARCHAR(100)` | `UNIQUE`, `NULL` | Ref ID (nếu CK online). |
+| `ngay_thanh_toan` | `DATETIME` | `DEFAULT GETDATE()` | Thời điểm trả. |
+| `trang_thai` | `NVARCHAR(50)` | `DEFAULT 'PENDING'` | Trạng thái giao dịch. |
+| `created_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày tạo. |
+| `updated_at` | `DATETIME` | `DEFAULT GETDATE()` | Ngày cập nhật. |
 | *CHECK* |  | `so_tien > 0` | Tiền phải dương. |
 | *CHECK* |  | `trang_thai IN ('PENDING', 'SUCCESS', 'FAILED')` | Ràng buộc trạng thái. |
 
