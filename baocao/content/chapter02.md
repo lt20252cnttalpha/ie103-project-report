@@ -565,7 +565,7 @@ REFUNDS(<u>id</u>, *payment_id*, *requested_by*, *approved_by*, so_tien_hoan, ly
 
 REVIEWS(<u>id</u>, *user_id*, *phong_id*, *datphong_id*, so_sao, binh_luan, ngay_danh_gia, trang_thai, created_at, updated_at)
 
-| **Khóa** | **Mô tả** |
+<!-- | **Khóa** | **Mô tả** |
 | --- | --- |
 | <u>id</u> | Mã định danh đánh giá. |
 | *user_id* | Người đánh giá, khóa ngoại tham chiếu tới USERS. |
@@ -574,15 +574,14 @@ REVIEWS(<u>id</u>, *user_id*, *phong_id*, *datphong_id*, so_sao, binh_luan, ngay
 | so_sao | Điểm đánh giá (1-5). |
 | trang_thai | Trạng thái kiểm duyệt (VISIBLE/HIDDEN). |
 | created_at | Ngày tạo. |
-| updated_at | Ngày cập nhật. |
+| updated_at | Ngày cập nhật. | -->
 
 ```{=typst}
 #figure(
   table(
     columns: (30%, 70%),
     align: (left, left),
-    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh đơn đặt phòng.], [#emph[user\_id]], [Khóa ngoại tham chiếu tới bảng USERS (Người đặt).], [#emph[voucher\_id]], [Khóa ngoại tham chiếu tới bảng VOUCHERS (Mã giảm giá áp dụng, có thể
-    NULL).], [check\_in], [Ngày nhận phòng dự kiến.], [check\_out], [Ngày trả phòng dự kiến.], [trang\_thai], [Trạng thái đơn (PENDING, CONFIRMED, CANCELLED, COMPLETED).], [created\_at], [Thời gian tạo đơn.]
+    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh đánh giá.], [#emph[user\_id]], [Người đánh giá, khóa ngoại tham chiếu tới USERS.], [#emph[datphong\_id]], [Khóa ngoại tham chiếu đơn đặt phòng, DATPHONG.], [#emph[phong\_id]], [Khóa ngoại tham chiếu phòng được đánh giá, PHONG.], [so\_sao], [Điểm đánh giá (1-5).], [trang\_thai], [Trạng thái kiểm duyệt (VISIBLE/HIDDEN).], [created\_at], [Ngày tạo.], [updated\_at], [Ngày cập nhật.]
   ),
   caption: [
     Mô Hình Mức Logic: REVIEWS
@@ -596,20 +595,19 @@ REVIEWS(<u>id</u>, *user_id*, *phong_id*, *datphong_id*, so_sao, binh_luan, ngay
 
 ROLES(<u>id</u>, code, name, description)
 
-| **Khóa** | **Mô tả** |
+<!-- | **Khóa** | **Mô tả** |
 | --- | --- |
 | <u>id</u> | Mã định danh vai trò. |
 | code | Mã code vai trò (ADMIN, STAFF, USER). |
 | name | Tên hiển thị. |
-| description | Mô tả chi tiết vai trò. |
+| description | Mô tả chi tiết vai trò. | -->
 
 ```{=typst}
 #figure(
   table(
     columns: (30%, 70%),
     align: (left, left),
-    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh đơn đặt phòng.], [#emph[user\_id]], [Khóa ngoại tham chiếu tới bảng USERS (Người đặt).], [#emph[voucher\_id]], [Khóa ngoại tham chiếu tới bảng VOUCHERS (Mã giảm giá áp dụng, có thể
-    NULL).], [check\_in], [Ngày nhận phòng dự kiến.], [check\_out], [Ngày trả phòng dự kiến.], [trang\_thai], [Trạng thái đơn (PENDING, CONFIRMED, CANCELLED, COMPLETED).], [created\_at], [Thời gian tạo đơn.]
+    [#strong[Khóa]], [#strong[Mô tả]], [#underline[id]], [Mã định danh vai trò.], [code], [Mã code vai trò (ADMIN, STAFF, USER).], [name], [Tên hiển thị.], [description], [Mô tả chi tiết vai trò.]
   ),
   caption: [
     Mô Hình Mức Logic: ROLES
