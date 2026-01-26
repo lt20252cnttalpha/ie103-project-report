@@ -521,6 +521,8 @@ VOUCHERS(<u>id</u>, ma_code, phan_tram_giam, ngay_het_han, so_tien_toi_thieu, so
 
 `ADMIN_ROLES`(<u>admin_id</u>, <u>role_id</u>)
 
+<!-- Nếu khóa vừa là khóa chính, vừa là khóa ngoại: đậm-nghiêng -->
+
 | Khóa | Mô tả |
 | --- | --- |
 | ***admin_id*** | Mã định danh duy nhất của admin. Khóa ngoại tham chiếu ADMINS. |
@@ -543,14 +545,14 @@ ROLE_PERMISSIONS(<u>role_id</u>, <u>permission_id</u>)
 - Giải quyết quan hệ N-N giữa DATPHONG và PHONG.
 - Lưu trữ danh sách phòng trong một đơn đặt phòng.
 
-CT_DATPHONG(<u>id</u>, *datphong_id*, *phong_id*, gia_tien)
+CT_DATPHONG(<u>id</u>, *datphong_id*, *phong_id*, don_gia)
 
 | Khóa | Mô tả |
 | --- | --- |
-| id | Mã định danh dòng chi tiết (Surrogate Key). |
-| datphong_id | Khóa ngoại tham chiếu DATPHONG. |
-| phong_id | Khóa ngoại tham chiếu PHONG. |
-| gia_tien | Giá phòng được chốt tại thời điểm đặt (Lưu lịch sử giá). |
+| <u>id</u> | Mã định danh dòng chi tiết (Surrogate Key). |
+| *datphong_id* | Khóa ngoại tham chiếu DATPHONG. |
+| *phong_id* | Khóa ngoại tham chiếu PHONG. |
+| don_gia | Giá phòng được chốt tại thời điểm đặt (Lưu lịch sử giá). |
 
 #### CT_SUDUNG_DV
 
