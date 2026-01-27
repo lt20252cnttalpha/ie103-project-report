@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: 'Inter', -apple-system, sans-serif; line-height: 1.7; color: #1e293b; background: #fff; margin: 0; padding: 0; }
+        h1 { font-size: 1.875rem; font-weight: 700; color: #059669; margin: 0 0 1.5rem 0; padding-bottom: 0.75rem; border-bottom: 2px solid #10b981; }
+        h2 { font-size: 1.5rem; font-weight: 600; color: #0f172a; margin: 2rem 0 1rem 0; }
+        h3 { font-size: 1.125rem; font-weight: 600; color: #334155; margin: 1.5rem 0 0.75rem 0; }
+        p { margin: 0.75rem 0; color: #475569; }
+        ul { margin: 0.75rem 0; padding-left: 1.5rem; }
+        li { margin: 0.375rem 0; color: #475569; }
+        table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9375rem; background: #fff; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); border-radius: 0.5rem; overflow: hidden; }
+        th { background-color: #6ee7b7; padding: 0.875rem 1rem; text-align: left; font-weight: 600; color: #064e3b; border-bottom: 2px solid #34d399; }
+        td { padding: 0.75rem 1rem; color: #334155; border-bottom: 1px solid #e2e8f0; }
+        tbody tr:hover { background-color: #ecfdf5; }
+        code { font-family: 'Fira Code', monospace; font-size: 0.875rem; background-color: #ecfdf5; color: #059669; padding: 0.125rem 0.375rem; border-radius: 0.25rem; }
+        pre { background-color: #1e293b; color: #e2e8f0; padding: 1.25rem; border-radius: 0.5rem; overflow-x: auto; margin: 1.25rem 0; }
+        pre code { background: none; color: inherit; padding: 0; }
+        .flow-step { background-color: #ecfdf5; border-left: 3px solid #10b981; padding: 0.875rem 1rem; margin: 0.5rem 0; border-radius: 0.25rem; color: #334155; }
+        hr { border: none; border-top: 1px solid #e2e8f0; margin: 2rem 0; }
+    </style>
+</head>
+<body>
+    <h1>🏨 FUNCTION – Xếp Hạng Thành Viên</h1>
+
+    <h2>FN_TINHHANGTHANHVIEN – Phân hạng Loyalty</h2>
+
+    <div class="section">
+        <h3>📌 Mục đích</h3>
+        <p>Function dùng để <strong>tính hạng thành viên</strong> cho khách hàng:</p>
+        <ul>
+            <li>Dựa trên tổng doanh thu thực tế.</li>
+            <li>Chỉ tính các giao dịch có trạng thái <strong>PAID</strong>.</li>
+            <li>Giúp bộ phận CSKH áp dụng chính sách khuyến mãi tự động.</li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <div class="section">
+        <h3>📥 Tham số</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tên</th>
+                    <th>Kiểu</th>
+                    <th>Mô tả</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>@UserID</code></td>
+                    <td>INT</td>
+                    <td>Mã khách hàng cần kiểm tra</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <hr>
+
+    <div class="section">
+        <h3>📤 Giá trị trả về</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Kiểu</th>
+                    <th>Giá trị có thể</th>
+                    <th>Điều kiện</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="3">VARCHAR(20)</td>
+                    <td><code>STANDARD</code></td>
+                    <td>Tổng chi tiêu &lt; 5 Triệu</td>
+                </tr>
+                <tr>
+                    <td><code>GOLD</code></td>
+                    <td>5 Triệu &le; Tổng chi tiêu &lt; 20 Triệu</td>
+                </tr>
+                <tr>
+                    <td><code>PLATINUM</code></td>
+                    <td>Tổng chi tiêu &ge; 20 Triệu</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <hr>
+
+    <div class="section">
+        <h3>🔄 Logic xử lý</h3>
+        <div class="flow-step">1. Query bảng <code>PAYMENTS</code> theo UserID.</div>
+        <div class="flow-step">2. Filter các giao dịch thành công (Status IN 'PAID').</div>
+        <div class="flow-step">3. Tính tổng tiền: <code>SUM(amount)</code>.</div>
+        <div class="flow-step">4. So sánh tổng tiền với các mốc quy định (5tr, 20tr).</div>
+        <div class="flow-step">5. Trả về tên hạng tương ứng.</div>
+    </div>
+
+    <hr>
+
+    <div class="section">
+        <h3>✅ Cách sử dụng</h3>
+        <pre><code>-- Kiểm tra hạng của khách hàng ID = 1 và 3
+SELECT 
+    dbo.fn_TinhHangThanhVien(1) AS Hang_User1,
+    dbo.fn_TinhHangThanhVien(3) AS Hang_User3;</code></pre>
+    </div>
+</body>
+</html>

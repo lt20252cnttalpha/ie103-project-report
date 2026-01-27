@@ -1,0 +1,25 @@
+{
+  "id": "demo-fn-hang-thanh-vien",
+  "title": "Function 1: Xếp Hạng Thành Viên",
+  "type": "Function",
+  "shortDesc": "Tự động xếp hạng (Standard, Gold, Platinum) dựa trên chi tiêu.",
+  "mdFile": "Function/Demo_HangThanhVien/problem.html",
+  "sqlFile": "Function/Demo_HangThanhVien/fn_HangThanhVien.sql",
+  "separateTables": [
+    {
+      "name": "KET_QUA",
+      "label": "🏆 KẾT QUẢ XẾP HẠNG",
+      "sqlFetchInitial": "SELECT 0 AS id, '' AS full_name, '' AS xep_hang",
+      "sqlBefore": "SELECT 0 AS id, N'Chưa chạy' AS full_name, '' AS xep_hang",
+      "sqlAfter": "SELECT u.id, u.full_name, dbo.fn_TinhHangThanhVien(@UserID) AS xep_hang FROM USERS u WHERE u.id = @UserID",
+      "columns": [
+        { "key": "id", "label": "ID", "isPk": true },
+        { "key": "full_name", "label": "Full Name" },
+        { "key": "xep_hang", "label": "Xếp Hạng" }
+      ]
+    }
+  ],
+  "params": [
+    { "name": "@UserID", "type": "int", "defaultValue": 1 }
+  ]
+}
