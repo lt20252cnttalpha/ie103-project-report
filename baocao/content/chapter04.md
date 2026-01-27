@@ -89,7 +89,8 @@ Chiến lược sao lưu dữ liệu được đề xuất:
 
 Hệ thống được thiết kế hướng tới trải nghiệm người dùng tối ưu hóa cho từng đối tượng.
 
-### Menu
+<!-- Menu: Không sử dụng -->
+<!-- ### Menu
 
 - Module Khách Hàng (Front-Office):
     - Trang chủ / Tìm kiếm phòng.
@@ -99,9 +100,10 @@ Hệ thống được thiết kế hướng tới trải nghiệm người dùng
     - Dashboard: Thống kê doanh thu, tỷ lệ lấp đầy.
     - Quản lý phòng: Sơ đồ phòng, cập nhật trạng thái.
     - Nghiệp vụ: Check-in, Check-out, Dịch vụ đi kèm.
-    - Cấu hình: Quản lý Voucher, Tài khoản nhân viên.
+    - Cấu hình: Quản lý Voucher, Tài khoản nhân viên. -->
 
-### Form
+<!-- Form: Không sử dụng -->
+<!-- ### Form -->
 
 ### Report
 
