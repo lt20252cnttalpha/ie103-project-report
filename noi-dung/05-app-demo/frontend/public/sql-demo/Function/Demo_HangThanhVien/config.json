@@ -6,7 +6,6 @@
   "mdFile": "Function/Demo_HangThanhVien/problem.html",
   "sqlFile": "Function/Demo_HangThanhVien/fn_HangThanhVien.sql",
   "separateTables": [
-
     {
       "name": "KET_QUA",
       "label": "🏆 KẾT QUẢ XẾP HẠNG",

@@ -61,4 +61,8 @@ GO
 ```SQL
 -- Câu lệnh chạy test
 SELECT * FROM dbo.fn_TimPhongTrongTheoLoai(1, '2023-04-04', '2023-04-05');
+<<<<<<< HEAD
 ```
+=======
+```
+>>>>>>> main

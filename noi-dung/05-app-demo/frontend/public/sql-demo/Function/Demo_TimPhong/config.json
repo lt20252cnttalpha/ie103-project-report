@@ -10,8 +10,6 @@
     {
       "name": "KET_QUA",
       "label": "✅ KẾT QUẢ TÌM KIẾM",
-      "sqlFetchInitial": "SELECT '' AS [SoPhong], '' AS [TrangThai]",
-      "sqlBefore": "SELECT 'Chưa chạy' AS [SoPhong], '' AS [TrangThai]",
       "sqlAfter": "SELECT so_phong AS [SoPhong], N'✅ Còn trống' AS [TrangThai] FROM dbo.fn_TimPhongTrongTheoLoai(@LoaiPhongID, CAST(@CheckIn AS DATETIME), CAST(@CheckOut AS DATETIME))",
       "columns": [
         { "key": "SoPhong", "label": "Phòng Có Thể Đặt", "isPk": true },

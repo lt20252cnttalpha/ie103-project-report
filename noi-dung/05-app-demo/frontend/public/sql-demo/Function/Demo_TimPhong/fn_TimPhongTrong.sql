@@ -1,5 +1,9 @@
 ﻿/* ===========================================================
+<<<<<<< HEAD
    Function: Tìm Phòng Trống Theo Loại
+=======
+   1. FUNCTION: Tim Phòng Trống Theo Loại
+>>>>>>> main
    ===========================================================
 
 CREATE FUNCTION dbo.fn_TimPhongTrongTheoLoai 
