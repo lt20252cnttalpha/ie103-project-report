@@ -29,7 +29,7 @@
   ),
   assignment: (
     title: "BÁO CÁO ĐỒ ÁN QUẢN LÝ THÔNG TIN",
-    subtitle: "Quản Lý Dữ Liệu Đặt Phòng Khách Sạn",
+    subtitle: "Quản Lý Đặt Phòng Khách Sạn",
     type: "Luận Án",
     date: "TP. Hồ Chí Minh, tháng 01 năm 2026",
     duration: "15 phút",
