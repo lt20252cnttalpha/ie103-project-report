@@ -174,6 +174,16 @@
     include "/content/summary.typ"
   }
 
+  // MARK: Forewords
+  if doc-type == "thesis" {
+    // No Header/Footer, No Numbering
+    set page(header: none, footer: none, numbering: none)
+    // No Heading Numbering, No Outlined
+    set heading(numbering: none, outlined: false)
+    // We place the forewords here
+    include "/content/forewords.typ"
+  }
+
   // MARK: Acknowledgement
   if doc-type == "thesis" {
     // No Header/Footer, No Numbering
