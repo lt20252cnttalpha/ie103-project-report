@@ -130,11 +130,11 @@ Các bước thực hiện:
 2. Kết nối Tableau vào CSDL.
 3. Kéo view `V_RPT_DOANHTHU_THEO_PHONG_2024` vào Canvas.
 4. Sheet tạo chart bar, mapping dữ liệu từ View `V_RPT_DOANHTHU_THEO_PHONG_2024` để tạo report:
-    - `Thang` -> Columns, edit chọn Discrete => để hiển thị từng tháng theo cột.
-    - `Doanh Thu Phong` -> Rows => để tableau tự tính SUM doanh thu theo từng tháng tương ứng.
+    - `Thang` $\to$ Columns, edit chọn *Discrete* $\Rightarrow$ để hiển thị từng tháng theo cột.
+    - `Doanh Thu Phong` $\to$ Rows $\Rightarrow$ để Tableau tự tính `SUM` doanh thu theo từng tháng tương ứng.
     - Kéo thả vào mục Marks các trường trong view:
-        - `Doanh Thu Phong` -> Color => để hiển thị màu phân biệt giá trị doanh thu.
-        - `Doanh Thu Phong` và `So Luot Dat`  -> Label => để hiển thị doanh thu, số lần đặt trên bar.
+        - `Doanh Thu Phong` $\to$ Color $\Rightarrow$ để hiển thị màu phân biệt giá trị doanh thu.
+        - `Doanh Thu Phong` và `So Luot Dat`  $\to$ Label $\Rightarrow$ để hiển thị doanh thu, số lần đặt trên bar.
         - Kéo `So Luot Dat` vào tooltip và edit thông tin để hiển thị khi rê chuột.
         - Tạo calculated fields để hiển thị mã phòng - tên loại phòng.
 5. Màn hình design và preview chart bar.
