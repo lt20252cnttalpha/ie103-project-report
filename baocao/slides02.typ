@@ -41,11 +41,11 @@
 //   Another variant with primary color in background...
 // ]
 
-// == Summary
+== Cảm Ơn
 
-// #slide(self => [
-//   #align(center + horizon)[
-//     #set text(size: 3em, weight: "bold", fill: self.colors.primary)
-//     THANKS FOR ALL
-//   ]
-// ])
+#slide(self => [
+  #align(center + horizon)[
+    #set text(size: 3em, weight: "bold", fill: self.colors.primary)
+    THANK YOU.
+  ]
+])
