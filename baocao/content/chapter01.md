@@ -44,6 +44,21 @@ Bảng dưới đây mô tả vai trò và trách nhiệm của các đối tư�
 | **Staff** | Nhân viên vận hành (Lễ tân/Sale). Chịu trách nhiệm xử lý các đơn đặt phòng, thực hiện thủ tục nhận/trả phòng và ghi nhận thanh toán. |
 | **End User** | Khách hàng cá nhân. Có thể tìm kiếm phòng, tạo đơn đặt phòng, xem lịch sử giao dịch và gửi đánh giá chất lượng. |
 
+## Mô Tả Quy Trình Nghiệp Vụ Thực Tế
+
+Quy trình quản lý đặt phòng trong thực tế (Business Process) mà hệ thống hướng tới tin học hóa được mô tả qua các bước sau:
+
+1. **Tiếp nhận yêu cầu:** Khách hàng yêu cầu đặt phòng (qua điện thoại, trực tiếp hoặc website) với các thông tin: Ngày đến, Ngày đi, Loại phòng, Số lượng người.
+2. **Kiểm tra tình trạng (Availability Check):** Nhân viên/Hệ thống kiểm tra danh sách phòng trống trong khoảng thời gian yêu cầu.
+    - Nếu hết phòng: Thông báo và đề xuất thời gian/loại phòng khác.
+    - Nếu còn phòng: Tiến hành tạm giữ phòng.
+3. **Tạo đơn đặt phòng (Booking):** Ghi nhận thông tin khách hàng và thông tin phòng. Hệ thống tính toán tổng tiền tạm tính.
+4. **Thanh toán & Xác nhận:**
+    - Khách hàng thực hiện thanh toán (Cọc hoặc toàn bộ).
+    - Đơn hàng chuyển sang trạng thái "Đã xác nhận" (Confirmed).
+5. **Lưu trú & Sử dụng dịch vụ:** Khách check-in. Trong quá trình ở, khách có thể sử dụng thêm dịch vụ (Ăn uống, Spa) -> Ghi nhận vào chi tiết hóa đơn.
+6. **Trả phòng & Quyết toán:** Khách check-out. Hệ thống tổng hợp tiền phòng + tiền dịch vụ - tiền cọc/khuyến mãi. Khách thanh toán số còn lại và hoàn tất giao dịch.
+
 ## Động Lực, Mục Tiêu, Ý Nghĩa của Đề Tài
 
 ### Tên Sản Phẩm
