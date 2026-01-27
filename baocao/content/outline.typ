@@ -117,5 +117,9 @@
 <trinh-bay-thong-tin>
 
 
+=== Report
+<report>
+
+
 = Kết Luận
 <ket-luan>
