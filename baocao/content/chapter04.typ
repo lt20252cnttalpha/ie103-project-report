@@ -195,13 +195,13 @@ Các bước thực hiện:
 
 #figure(image("./images/rpt1-4.png"),
   caption: [
-    Report 1 - Màn hình Design Sheet Hiển Thị Bảng Chi Tiết
+    Report 1 - Màn hình Design Hiển Thị Bảng Chi Tiết
   ]
 )
 
 #figure(image("./images/rpt1-5.png"),
   caption: [
-    Report 1 - Màn hình Preview Sheet Hiển Thị Bảng Chi Tiết
+    Report 1 - Màn hình Preview Hiển Thị Bảng Chi Tiết
   ]
 )
 

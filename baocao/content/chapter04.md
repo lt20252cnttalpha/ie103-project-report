@@ -145,9 +145,9 @@ Các bước thực hiện:
 
 6. Màn hình Design và Preview sheet hiển thị bảng chi tiết.
 
-![Report 1 - Màn hình Design Sheet Hiển Thị Bảng Chi Tiết](./images/rpt1-4.png)
+![Report 1 - Màn hình Design Hiển Thị Bảng Chi Tiết](./images/rpt1-4.png)
 
-![Report 1 - Màn hình Preview Sheet Hiển Thị Bảng Chi Tiết](./images/rpt1-5.png)
+![Report 1 - Màn hình Preview Hiển Thị Bảng Chi Tiết](./images/rpt1-5.png)
 
 7. Tạo dashboard để hiển thị report.
     - Hiển thị 2 sheet charts ở trên.
