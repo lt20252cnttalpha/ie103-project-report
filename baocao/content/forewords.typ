@@ -1,4 +1,4 @@
 #import "../template/lib.typ": *
-#import "../template/libthesis.typ": *
 
-#unheading[Lời Nói Đầu]
+= Lời Nói Đầu
+<loi-noi-dau>
