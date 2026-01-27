@@ -32,7 +32,8 @@ Hệ thống được thiết kế phù hợp cho mô hình:
 
 - Khách sạn, nhà nghỉ, homestay quy mô nhỏ và vừa.
 - Hỗ trợ quy trình đặt phòng trực tiếp (tại quầy) và đặt phòng trực tuyến (qua ứng dụng).
-- *Lưu ý:* Trong khuôn khổ đồ án môn học, hệ thống sẽ mô phỏng tính năng thanh toán trực tuyến và chưa tích hợp với các kênh OTA (như Agoda, Booking.com).
+
+*Lưu ý:* Trong khuôn khổ đồ án môn học, hệ thống sẽ mô phỏng tính năng thanh toán trực tuyến và chưa tích hợp với các kênh OTA (như Agoda, Booking.com).
 
 ### Các Bên Liên Quan (Stakeholders)
 
@@ -56,7 +57,7 @@ Quy trình quản lý đặt phòng trong thực tế (Business Process) mà h�
 4. **Thanh toán & Xác nhận:**
     - Khách hàng thực hiện thanh toán (Cọc hoặc toàn bộ).
     - Đơn hàng chuyển sang trạng thái "Đã xác nhận" (Confirmed).
-5. **Lưu trú & Sử dụng dịch vụ:** Khách check-in. Trong quá trình ở, khách có thể sử dụng thêm dịch vụ (Ăn uống, Spa) -> Ghi nhận vào chi tiết hóa đơn.
+5. **Lưu trú & Sử dụng dịch vụ:** Khách check-in. Trong quá trình ở, khách có thể sử dụng thêm dịch vụ (Ăn uống, Spa) $\to$ Ghi nhận vào chi tiết hóa đơn.
 6. **Trả phòng & Quyết toán:** Khách check-out. Hệ thống tổng hợp tiền phòng + tiền dịch vụ - tiền cọc/khuyến mãi. Khách thanh toán số còn lại và hoàn tất giao dịch.
 
 ## Tổng Kết Chương 1
