@@ -24,6 +24,26 @@ Xuất phát từ thực tế đó, Nhóm 02 quyết định xây dựng **"Book
     - **Nhân viên (Staff):** Thao tác nghiệp vụ hàng ngày (Check-in, Check-out, Thanh toán).
     - **Khách hàng (End User):** Tìm kiếm và đặt phòng trực tuyến.
 
+## Phạm Vi & Đối Tượng Nghiên Cứu
+
+### Phạm Vi Áp Dụng
+
+Hệ thống được thiết kế phù hợp cho mô hình:
+
+- Khách sạn, nhà nghỉ, homestay quy mô nhỏ và vừa.
+- Hỗ trợ quy trình đặt phòng trực tiếp (tại quầy) và đặt phòng trực tuyến (qua ứng dụng).
+- *Lưu ý:* Trong khuôn khổ đồ án môn học, hệ thống sẽ mô phỏng tính năng thanh toán trực tuyến và chưa tích hợp với các kênh OTA (như Agoda, Booking.com).
+
+### Các Bên Liên Quan (Stakeholders)
+
+Bảng dưới đây mô tả vai trò và trách nhiệm của các đối tượng tham gia hệ thống:
+
+| Vai trò | Mô tả trách nhiệm |
+| --- | --- |
+| **Admin** | Quản trị viên cấp cao. Chịu trách nhiệm cấu hình hệ thống, quản lý danh mục phòng, thiết lập giá và quản lý tài khoản nhân viên. |
+| **Staff** | Nhân viên vận hành (Lễ tân/Sale). Chịu trách nhiệm xử lý các đơn đặt phòng, thực hiện thủ tục nhận/trả phòng và ghi nhận thanh toán. |
+| **End User** | Khách hàng cá nhân. Có thể tìm kiếm phòng, tạo đơn đặt phòng, xem lịch sử giao dịch và gửi đánh giá chất lượng. |
+
 ## Động Lực, Mục Tiêu, Ý Nghĩa của Đề Tài
 
 ### Tên Sản Phẩm
