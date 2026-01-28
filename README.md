@@ -2,15 +2,13 @@
 
 - IE103 Project Report.
 - Deadline: 28/01/2026.
+- Nộp đồ án: Đại diện 1 người nộp bài trên Website môn học dưới tệp nén DoAn_NhomX.zip (với X là STT nhóm), bao gồm các files sau:
 - Files:
-  - 1 File báo cáo văn bản, PDF.
-  - 1 File Slides, PDF.
-  - 1 File Video Trình bày + Demo: 15-20 phút.
-  - Source Code
-    - SQL
-    - Demo
-    - Report (PDF)
-    - vv…
+  - 01 `BaoCao_NhomX.pdf`: chứa nội dung báo cáo đồ án (20-25 trang), trình bày theo các chương 🡪 xuất .pdf để nộp.
+  - 01 `Slides_NhomX.pdf`: chứa slides thuyết trình (15-20 slides) 🡪 xuất .pdf để nộp.
+  - 01 `Video_NhomX.txt`: chứa video thuyết trình (15-20 phút) 🡪 upload video lên Google Drive, sau đó get link (ở chế độ công khai) và cho link vào file `.txt`.
+  - 01 `Source.zip`: chứa các nội dung liên quan đến source code, bao gồm các files `.sql` cho truy vấn và source code Website Demo.
+  - Các file khác (nếu có).
 - KHÔNG CÒN BÁO CÁO TRỰC TIẾP TẠI LỚP. TẤT CẢ NỘP LẠI FILES.
 - Cách nộp bài: Sẽ có hướng dẫn nộp sau.
   - Files báo cáo/mã nguồn: Elearning.
