@@ -12,17 +12,45 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
 
 #### SP1: ApplyVoucher
 
+```{=typst}
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+```
+
 #### SP2: BookingRoom
+
+```{=typst}
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+```
 
 #### SP3: Checkout
 
+```{=typst}
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+```
+
 #### SP4: Payment
+
+```{=typst}
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+```
 
 #### SP5: RegisterUser
 
+```{=typst}
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+```
+
 #### SPx: Review Room
 
+```{=typst}
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+```
+
 #### SPx: Service
+
+```{=typst}
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+```
 
 ### Triggers (5)
 
@@ -30,13 +58,33 @@ Sử dụng Trigger để đảm bảo toàn vẹn dữ liệu và tự động 
 
 #### TG1: AutoPrice
 
+```{=typst}
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+```
+
 #### TG2: CheckTime
+
+```{=typst}
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+```
 
 #### TG3: Payment
 
+```{=typst}
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+```
+
 #### TG4: Refund
 
+```{=typst}
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+```
+
 #### TG5: SyncStatus
+
+```{=typst}
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+```
 
 ### Functions (3)
 
@@ -44,9 +92,21 @@ Các hàm hỗ trợ tính toán và kiểm tra nhanh.
 
 #### F1: CheckRoomAvailable
 
+```{=typst}
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+```
+
 #### F2: RevertCreateError
 
+```{=typst}
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+```
+
 #### F3 (WIP)
+
+```{=typst}
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+```
 
 ### Cursors (2)
 
@@ -55,6 +115,10 @@ Sử dụng Cursor cho các tác vụ xử lý theo lô (Batch Processing) đị
 - `C_UpdateOverdueBookings`: Quét toàn bộ các đơn đặt phòng trạng thái `PENDING`. Nếu quá hạn thanh toán (24h), hệ thống tự động hủy đơn và giải phóng phòng.
 
 #### Cursor - SyncRoomStatus (Đồng Bộ Trạng Thái Phòng)
+
+```{=typst}
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+```
 
 <!-- ![Cursor - SyncRoomStatus 01](demo/C-SyncRoomStatus01.png)
 

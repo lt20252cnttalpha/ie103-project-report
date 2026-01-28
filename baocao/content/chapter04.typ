@@ -18,30 +18,37 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
 ==== SP1: ApplyVoucher
 <sp1-applyvoucher>
 
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
 
 ==== SP2: BookingRoom
 <sp2-bookingroom>
 
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
 
 ==== SP3: Checkout
 <sp3-checkout>
 
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
 
 ==== SP4: Payment
 <sp4-payment>
 
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
 
 ==== SP5: RegisterUser
 <sp5-registeruser>
 
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
 
 ==== SPx: Review Room
 <spx-review-room>
 
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
 
 ==== SPx: Service
 <spx-service>
 
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
 
 === Triggers (5)
 <triggers-5>
@@ -51,22 +58,27 @@ Sử dụng Trigger để đảm bảo toàn vẹn dữ liệu và tự động 
 ==== TG1: AutoPrice
 <tg1-autoprice>
 
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
 
 ==== TG2: CheckTime
 <tg2-checktime>
 
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
 
 ==== TG3: Payment
 <tg3-payment>
 
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
 
 ==== TG4: Refund
 <tg4-refund>
 
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
 
 ==== TG5: SyncStatus
 <tg5-syncstatus>
 
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
 
 === Functions (3)
 <functions-3>
@@ -76,14 +88,17 @@ Các hàm hỗ trợ tính toán và kiểm tra nhanh.
 ==== F1: CheckRoomAvailable
 <f1-checkroomavailable>
 
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
 
 ==== F2: RevertCreateError
 <f2-revertcreateerror>
 
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
 
 ==== F3 (WIP)
 <f3-wip>
 
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
 
 === Cursors (2)
 <cursors-2>
@@ -95,6 +110,7 @@ Sử dụng Cursor cho các tác vụ xử lý theo lô (Batch Processing) đị
 ==== Cursor - SyncRoomStatus (Đồng Bộ Trạng Thái Phòng)
 <cursor-syncroomstatus-dong-bo-trang-thai-phong>
 
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
 
 ==== Cursor - Cập Nhật Trạng Thái Phòng
 <cursor-cap-nhat-trang-thai-phong>
