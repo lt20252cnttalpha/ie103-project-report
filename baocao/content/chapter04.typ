@@ -92,13 +92,26 @@ Sử dụng Cursor cho các tác vụ xử lý theo lô (Batch Processing) đị
 
 - `C_UpdateOverdueBookings`: Quét toàn bộ các đơn đặt phòng trạng thái `PENDING`. Nếu quá hạn thanh toán (24h), hệ thống tự động hủy đơn và giải phóng phòng.
 
-==== C1: SyncRoomStatus
-<c1-syncroomstatus>
+==== Cursor - SyncRoomStatus (Đồng Bộ Trạng Thái Phòng)
+<cursor-syncroomstatus-dong-bo-trang-thai-phong>
 
 
-==== C2: UpdateStatusWhenOverdue
-<c2-updatestatuswhenoverdue>
+==== Cursor - Cập Nhật Trạng Thái Phòng
+<cursor-cap-nhat-trang-thai-phong>
 
+- `UpdateStatusWhenOverdue`
+
+#figure(image("demo/C-UpdateStatusWhenOverdue01.png"),
+  caption: [
+    Cursor - UpdateStatusWhenOverdue 01
+  ]
+)
+
+#figure(image("demo/C-UpdateStatusWhenOverdue02.png"),
+  caption: [
+    Cursor - UpdateStatusWhenOverdue 02
+  ]
+)
 
 == An Toàn Thông Tin
 <an-toan-thong-tin>
