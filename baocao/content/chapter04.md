@@ -124,15 +124,29 @@ Sử dụng Cursor cho các tác vụ xử lý theo lô (Batch Processing) đị
 
 ![Cursor - SyncRoomStatus 02](demo/C-SyncRoomStatus02.png) -->
 
-#### Cursor - Cập Nhật Trạng Thái Phòng
+#### Cursor - Tự Động Hoàn Tất Đơn Đặt Phòng Khi Quá Hạn
 
-```{=typst}
-#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
-```
+- Tên gọi: `cursor_checkout`.
+- **Mục Đích:**
+    - Tự động hóa việc kết thúc quy trình đặt phòng.
+    - Hệ thống quét các đơn đặt phòng đã quá hạn trả phòng (`Check-out`) nhưng trạng thái vẫn là `CONFIRMED` để chuyển sang `COMPLETED` và giải phóng phòng.
+- **Logic xử lý:**
+    - Khai báo Cursor quét bảng `DATPHONG`.
+    - Điều kiện lọc: `trang_thai = 'CONFIRMED'` VÀ `check_out < GETDATE()` (Thời gian hiện tại đã vượt qua giờ check-out).
+    - **Xử lý ngoại lệ:** Vòng lặp xử lý từng đơn:
+        + Cập nhật trạng thái đơn (`DATPHONG`) thành `COMPLETED`.
+        + Tìm các phòng liên quan trong bảng `CT_DATPHONG` và cập nhật trạng thái phòng (`PHONG`) về `AVAILABLE` (Sẵn sàng đón khách mới).
+        + Đếm số lượng đơn đã xử lý và in log thông báo.
 
-- UpdateStatusWhenOverdue
+Trước khi thực hiện:
+
+- Các phòng có trạng thái `CONFIRMED`.
 
 ![Cursor - UpdateStatusWhenOverdue 01](demo/C-UpdateStatusWhenOverdue01.png)
+
+Kết quả:
+
+- Các phòng có trạng thái `AVAILABLE`.
 
 ![Cursor - UpdateStatusWhenOverdue 02](demo/C-UpdateStatusWhenOverdue02.png)
 

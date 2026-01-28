@@ -112,17 +112,34 @@ Sử dụng Cursor cho các tác vụ xử lý theo lô (Batch Processing) đị
 
 #todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
 
-==== Cursor - Cập Nhật Trạng Thái Phòng
-<cursor-cap-nhat-trang-thai-phong>
+==== Cursor - Tự Động Hoàn Tất Đơn Đặt Phòng Khi Quá Hạn
+<cursor-tu-dong-hoan-tat-don-dat-phong-khi-qua-han>
 
-#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
-- UpdateStatusWhenOverdue
+- Tên gọi: `cursor_checkout`.
+- #strong[Mục Đích:]
+  - Tự động hóa việc kết thúc quy trình đặt phòng.
+  - Hệ thống quét các đơn đặt phòng đã quá hạn trả phòng (`Check-out`) nhưng trạng thái vẫn là `CONFIRMED` để chuyển sang `COMPLETED` và giải phóng phòng.
+- #strong[Logic xử lý:]
+  - Khai báo Cursor quét bảng `DATPHONG`.
+  - Điều kiện lọc: `trang_thai = 'CONFIRMED'` VÀ `check_out < GETDATE()` (Thời gian hiện tại đã vượt qua giờ check-out).
+  - #strong[Xử lý ngoại lệ:] Vòng lặp xử lý từng đơn:
+    - Cập nhật trạng thái đơn (`DATPHONG`) thành `COMPLETED`.
+    - Tìm các phòng liên quan trong bảng `CT_DATPHONG` và cập nhật trạng thái phòng (`PHONG`) về `AVAILABLE` (Sẵn sàng đón khách mới).
+    - Đếm số lượng đơn đã xử lý và in log thông báo.
+
+Trước khi thực hiện:
+
+- Các phòng có trạng thái `CONFIRMED`.
 
 #figure(image("demo/C-UpdateStatusWhenOverdue01.png"),
   caption: [
     Cursor - UpdateStatusWhenOverdue 01
   ]
 )
+
+Kết quả:
+
+- Các phòng có trạng thái `AVAILABLE`.
 
 #figure(image("demo/C-UpdateStatusWhenOverdue02.png"),
   caption: [

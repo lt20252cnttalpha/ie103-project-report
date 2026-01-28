@@ -1,4 +1,4 @@
-### Function 1: Tự Động Hoàn Tất Đơn Đặt Phòng (`cursor_checkout`)
+### Cursor - Tự Động Hoàn Tất Đơn Đặt Phòng Khi Quá Hạn
 
 <!-- MARK: Miêu Tả -->
 
