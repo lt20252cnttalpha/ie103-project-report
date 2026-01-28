@@ -175,8 +175,9 @@ Sử dụng Cursor cho các tác vụ xử lý theo lô (Batch Processing) đị
 
 Hệ thống áp dụng mô hình bảo mật dựa trên vai trò (RBAC - Role Based Access Control).
 
-- Xác thực: Mật khẩu người dùng được mã hóa (Hashing) trước khi lưu vào cơ sở dữ liệu (giả lập logic ứng dụng).
-- Phân quyền:
+- Xác thực:
+    - Mật khẩu người dùng được mã hóa (Hashing) trước khi lưu vào cơ sở dữ liệu (giả lập logic ứng dụng).
+- Bảng phân quyền:
 
 | STT | **Vai Trò** | **Quyền Hạn** |
 |----:|----|----|
