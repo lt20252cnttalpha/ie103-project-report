@@ -1,28 +1,26 @@
-### Function 2: Cursor 2: Đồng bộ trạng thái phòng thực tế (`cur_phong_status`)
+### Cursor - Đồng Bộ Trạng Thái Phòng Thực Tế (`cur_phong_status`)
 
 #### 1. Mô tả và Hướng xử lý
 
-- **Mục đích:** Cursor này đảm bảo trạng thái hiển thị của phòng (`AVAILABLE`, `OCCUPIED`, `MAINTENANCE`, `RESERVED`) trên giao diện luôn khớp với dữ liệu đặt 
-                phòng thực tế trong cơ sở dữ liệu.
+- **Mục đích:**
+    - Cursor này đảm bảo trạng thái hiển thị của phòng (`AVAILABLE`, `OCCUPIED`, `MAINTENANCE`, `RESERVED`) trên giao diện luôn khớp với dữ liệu đặt phòng thực tế trong cơ sở dữ liệu.
 - **Logic xử lý:**
-    
-    - Duyệt qua tất cả các phòng trong bảng PHONG, lấy thông tin id, so_phong và trang_thai hiện tại.
-
-    - Với mỗi phòng, thực hiện truy vấn kiểm tra xem có đơn đặt phòng nào đang hoạt động (Trạng thái CONFIRMED và thời gian 
-    hiện tại nằm trong khoảng lưu trú).
-
+    - Duyệt qua tất cả các phòng trong bảng `PHONG`, lấy thông tin id, so_phong và trang_thai hiện tại.
+    - Với mỗi phòng, thực hiện truy vấn kiểm tra xem có đơn đặt phòng nào đang hoạt động (Trạng thái `CONFIRMED` và thời gian hiện tại nằm trong khoảng lưu trú).
     - Cập nhật:
-        + Trường hợp 1 (Có khách đang ở): Nếu trạng thái hiện tại chưa phải OCCUPIED -> Cập nhật thành OCCUPIED.
+        + Trường hợp 1 (Có khách đang ở): Nếu trạng thái hiện tại chưa phải `OCCUPIED` -> Cập nhật thành `OCCUPIED`.
         + Trường hợp 2 (Không có khách):
-            Nếu trạng thái hiện tại là OCCUPIED (tức là dữ liệu cũ bị sai/treo) -> Trả về AVAILABLE.
-            Nếu trạng thái hiện tại là MAINTENANCE (Bảo trì) hoặc RESERVED (Đã đặt trước) -> Giữ nguyên, không can thiệp.
-        
+            - Nếu trạng thái hiện tại là `OCCUPIED` (tức là dữ liệu cũ bị sai/treo) -> Trả về `AVAILABLE`.
+            - Nếu trạng thái hiện tại là `MAINTENANCE` (Bảo trì) hoặc `RESERVED` (Đã đặt trước) -> Giữ nguyên, không can thiệp.
 
-#### 2. Source Code 
+#### 2. Source Code
 
-SQL
+Khai báo:
 
-```
+```sql
+-- Nhóm 02.
+-- Cursor - Đồng Bộ Trạng Thái Phòng Thực Tế
+
 DECLARE @id_phong INT;
 DECLARE @so_phong NVARCHAR(20);
 DECLARE @trang_thai NVARCHAR(50);
@@ -76,28 +74,25 @@ GO
 
 #### 3. Kiểm thử
 
-- **Kịch bản:** Phòng 101: Đang trống thực tế nhưng dữ liệu lỗi hiển thị là `AVAILABLE`.
+- **Kịch bản:**
+    - Phòng 101: Đang trống thực tế nhưng dữ liệu lỗi hiển thị là `AVAILABLE`.
+    - Phòng 102: Đang có khách ở thực tế nhưng hiển thị là `AVAILABLE`.
+    - Phòng 503: Đang bảo trì (`MAINTENANCE`), không có khách.
+- **Dữ liệu**: 
+    - 101: AVAILABLE (Đúng)
+    - 102: AVAILABLE (Sai)
+    - 503: MAINTENANCE (Đúng)
+- **Kết quả mong đợi:**
+    - Phòng 101 -> Giữ nguyên là `AVAILABLE`
+    - Phòng 102 -> Được sửa thành `OCCUPIED`.
+    - Phòng 503 -> Giữ nguyên là `MAINTENANCE`
 
-                Phòng 102: Đang có khách ở thực tế nhưng hiển thị là `AVAILABLE`.
+Kết quả:
 
-                Phòng 503: Đang bảo trì (`MAINTENANCE`), không có khách.
-- **Dữ liệu**:  101: AVAILABLE (Đúng)
-
-                102: AVAILABLE (Sai)
-
-                503: MAINTENANCE (Đúng)
-
-- **Kết quả mong đợi:** Phòng 101 -> Giữ nguyên là `AVAILABLE`
-
-                        Phòng 102 -> Được sửa thành `OCCUPIED`.
-
-                        Phòng 503 -> Giữ nguyên là `MAINTENANCE`
-
-SQL
-```
-    -- Chạy đoạn code Cursor bên trên và quan sát cửa sổ Messages
-    -- Kết quả in ra mong đợi:
-    -- Phòng 101: Giữ nguyên trạng thái (AVAILABLE)
-    -- Phòng 102: Cập nhật sang Đang có khách (OCCUPIED)
-    -- Phòng 503: Giữ nguyên trạng thái (MAINTENANCE)
+```sql
+-- Chạy đoạn code Cursor bên trên và quan sát cửa sổ Messages
+-- Kết quả in ra mong đợi:
+-- Phòng 101: Giữ nguyên trạng thái (AVAILABLE)
+-- Phòng 102: Cập nhật sang Đang có khách (OCCUPIED)
+-- Phòng 503: Giữ nguyên trạng thái (MAINTENANCE)
 ```
