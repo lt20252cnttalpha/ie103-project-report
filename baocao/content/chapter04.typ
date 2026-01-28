@@ -99,7 +99,8 @@ Sử dụng Cursor cho các tác vụ xử lý theo lô (Batch Processing) đị
 ==== Cursor - Cập Nhật Trạng Thái Phòng
 <cursor-cap-nhat-trang-thai-phong>
 
-- `UpdateStatusWhenOverdue`
+#todo[KIỂM TRA VÀ COPY MIÊU TẢ CỦA DEMO VÀO BÁO CÁO.]
+- UpdateStatusWhenOverdue
 
 #figure(image("demo/C-UpdateStatusWhenOverdue01.png"),
   caption: [
