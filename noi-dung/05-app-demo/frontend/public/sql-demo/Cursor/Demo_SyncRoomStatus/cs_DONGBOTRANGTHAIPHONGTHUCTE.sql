@@ -1,6 +1,6 @@
-﻿--Cursor 2: Kiểm kê và cập nhật trạng thái thực tế của bảng PHONG
---Nghiệp vụ này rất quan trọng: Cursor sẽ quét từng phòng trong hệ thống, kiểm tra xem tại thời điểm hiện tại (GETDATE()), phòng đó có 
---đang nằm trong một đơn đặt phòng nào "đang ở" (CONFIRMED) hay không để cập nhật trạng thái OCCUPIED hoặc AVAILABLE cho chính xác.
+﻿-- Cursor: Kiểm kê và cập nhật trạng thái thực tế của bảng PHONG
+-- Cursor sẽ quét từng phòng trong hệ thống, kiểm tra xem tại thời điểm hiện tại (GETDATE()), phòng đó có 
+-- đang nằm trong một đơn đặt phòng nào "ĐANG Ở" (CONFIRMED) hay không để cập nhật trạng thái OCCUPIED hoặc AVAILABLE cho chính xác.
 
 DECLARE @id_phong INT;
 DECLARE @so_phong NVARCHAR(20);

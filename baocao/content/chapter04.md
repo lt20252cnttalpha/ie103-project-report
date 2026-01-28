@@ -12,17 +12,45 @@ Nhóm xây dựng các thủ tục để xử lý các giao dịch chính như �
 
 #### SP1: ApplyVoucher
 
+```{=typst}
+#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
+```
+
 #### SP2: BookingRoom
+
+```{=typst}
+#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
+```
 
 #### SP3: Checkout
 
+```{=typst}
+#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
+```
+
 #### SP4: Payment
+
+```{=typst}
+#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
+```
 
 #### SP5: RegisterUser
 
+```{=typst}
+#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
+```
+
 #### SPx: Review Room
 
+```{=typst}
+#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
+```
+
 #### SPx: Service
+
+```{=typst}
+#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
+```
 
 ### Triggers (5)
 
@@ -30,13 +58,33 @@ Sử dụng Trigger để đảm bảo toàn vẹn dữ liệu và tự động 
 
 #### TG1: AutoPrice
 
+```{=typst}
+#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
+```
+
 #### TG2: CheckTime
+
+```{=typst}
+#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
+```
 
 #### TG3: Payment
 
+```{=typst}
+#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
+```
+
 #### TG4: Refund
 
+```{=typst}
+#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
+```
+
 #### TG5: SyncStatus
+
+```{=typst}
+#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
+```
 
 ### Functions (3)
 
@@ -44,36 +92,119 @@ Các hàm hỗ trợ tính toán và kiểm tra nhanh.
 
 #### F1: CheckRoomAvailable
 
+```{=typst}
+#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
+```
+
 #### F2: RevertCreateError
 
+```{=typst}
+#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
+```
+
 #### F3 (WIP)
+
+```{=typst}
+#todo[(Xử Lý Thông Tin) TRÌNH BÀY DEMO.]
+```
 
 ### Cursors (2)
 
 Sử dụng Cursor cho các tác vụ xử lý theo lô (Batch Processing) định kỳ.
 
-- `C_UpdateOverdueBookings`: Quét toàn bộ các đơn đặt phòng trạng thái `PENDING`. Nếu quá hạn thanh toán (24h), hệ thống tự động hủy đơn và giải phóng phòng.
+#### Cursor - Tự Động Hoàn Tất Đơn Đặt Phòng Khi Quá Hạn
 
-#### C1: SyncRoomStatus
+- Tên gọi: `cursor_checkout`.
+- **Mục Đích:**
+    - Tự động hóa việc kết thúc quy trình đặt phòng.
+    - Hệ thống quét các đơn đặt phòng đã quá hạn trả phòng (`Check-out`) nhưng trạng thái vẫn là `CONFIRMED` để chuyển sang `COMPLETED` và giải phóng phòng.
+- **Logic Xử Lý:**
+    - Khai báo Cursor quét bảng `DATPHONG`.
+    - Điều kiện lọc: `trang_thai = 'CONFIRMED'` VÀ `check_out < GETDATE()` (Thời gian hiện tại đã vượt qua giờ check-out).
+    - **Xử Lý Ngoại Lệ:** Vòng lặp xử lý từng đơn:
+        + Cập nhật trạng thái đơn (`DATPHONG`) thành `COMPLETED`.
+        + Tìm các phòng liên quan trong bảng `CT_DATPHONG` và cập nhật trạng thái phòng (`PHONG`) về `AVAILABLE` (Sẵn sàng đón khách mới).
+        + Đếm số lượng đơn đã xử lý và in log thông báo.
 
-#### C2: UpdateStatusWhenOverdue
+**Kiểm Thử: Trước khi thực hiện.**
+
+- Các phòng có trạng thái `CONFIRMED`.
+
+![Cursor - UpdateStatusWhenOverdue 01](demo/C-UpdateStatusWhenOverdue01.png)
+
+**Kiểm Thử: Kết quả.**
+
+- Các phòng có trạng thái `AVAILABLE`.
+
+![Cursor - UpdateStatusWhenOverdue 02](demo/C-UpdateStatusWhenOverdue02.png)
+
+#### Cursor - Đồng Bộ Trạng Thái Phòng Thực Tế
+
+- Tên gọi: `cur_phong_status`.
+- **Mục đích:**
+    - Cursor này đảm bảo trạng thái hiển thị của phòng (`AVAILABLE`, `OCCUPIED`, `MAINTENANCE`, `RESERVED`) trên giao diện luôn khớp với dữ liệu đặt phòng thực tế trong cơ sở dữ liệu.
+- **Logic xử lý:**
+    - Duyệt qua tất cả các phòng trong bảng `PHONG`, lấy thông tin `id`, `so_phong` và `trang_thai` hiện tại.
+    - Với mỗi phòng, thực hiện truy vấn kiểm tra xem có đơn đặt phòng nào đang hoạt động (Trạng thái `CONFIRMED` và thời gian hiện tại nằm trong khoảng lưu trú).
+    - Cập nhật:
+        + Trường hợp 1 (Có khách đang ở):
+            - Nếu trạng thái hiện tại chưa phải `OCCUPIED` $\to$ Cập nhật thành `OCCUPIED`.
+        + Trường hợp 2 (Không có khách):
+            - Nếu trạng thái hiện tại là `OCCUPIED` (tức là dữ liệu cũ bị sai/treo) $\to$ Trả về `AVAILABLE`.
+            - Nếu trạng thái hiện tại là `MAINTENANCE` (Bảo trì) hoặc `RESERVED` (Đã đặt trước) $\to$ Giữ nguyên, không can thiệp.
+
+**Kiểm Thử: Trước khi thực hiện.**
+
+- Phòng 101: Đang trống thực tế và dữ liệu lỗi hiển thị là `AVAILABLE` (đúng).
+- Phòng 102: Đang có khách ở thực tế nhưng hiển thị là `AVAILABLE` (sai).
+- Phòng 503: Đang bảo trì (`MAINTENANCE`), không có khách (đúng).
+
+![Cursor - SyncRoomStatus 01](demo/C-SyncRoomStatus03.png)
+
+**Kiểm Thử: Kết quả.**
+
+- Phòng 101: Giữ nguyên trạng thái (`AVAILABLE`).
+- Phòng 102: Cập nhật sang Đang có khách (`OCCUPIED`).
+- Phòng 503: Giữ nguyên trạng thái (`MAINTENANCE`).
+
+![Cursor - SyncRoomStatus 02](demo/C-SyncRoomStatus04.png)
 
 ## An Toàn Thông Tin
 
-### Xác thực và phân quyền
+### Xác Thực Và Phân Quyền
+
+```{=typst}
+#todo[(Xác Thực Và Phân Quyền) THỰC HIỆN PHÂN QUYỀN.]
+```
 
 Hệ thống áp dụng mô hình bảo mật dựa trên vai trò (RBAC - Role Based Access Control).
 
-- Xác thực: Mật khẩu người dùng được mã hóa (Hashing) trước khi lưu vào cơ sở dữ liệu (giả lập logic ứng dụng).
-- Phân quyền:
+- Xác thực:
+    - Mật khẩu người dùng được mã hóa (Hashing) trước khi lưu vào cơ sở dữ liệu (giả lập logic ứng dụng).
+- Bảng phân quyền:
 
-| Vai Trò | Quyền Hạn |
-|----|----|
-| Admin | Quản lý tất cả |
-| Staff | Quản lý đặt phòng |
-| End User | Đặt phòng |
+<!-- | STT | **Vai Trò** | **Quyền Hạn** |
+|----:|----|----|
+| 1 | Admin | Quản lý tất cả |
+| 2 | Staff | Quản lý đặt phòng |
+| 3 | End User | Đặt phòng | -->
+
+```{=typst}
+#figure(
+    table(
+    columns: (10%, 20%, 70%),
+    align: (right, left, left),
+    [STT], [#strong[Vai Trò]], [#strong[Quyền Hạn]], [1], [Admin], [Quản lý tất cả], [2], [Staff], [Quản lý đặt phòng], [3], [End User], [Đặt phòng]
+    ),
+    caption: [An Toàn Thông Tin - Bảng Phân Quyền]
+)
+```
 
 ### Sao Lưu & Phục Hồi
+
+```{=typst}
+#todo[(Sao Lưu & Phục Hồi) TRÌNH BÀY BACKUP/RESTORE.]
+```
 
 Chiến lược sao lưu dữ liệu được đề xuất:
 

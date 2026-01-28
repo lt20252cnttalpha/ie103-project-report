@@ -2,15 +2,13 @@
 
 - IE103 Project Report.
 - Deadline: 28/01/2026.
+- Nộp đồ án: Đại diện 1 người nộp bài trên Website môn học dưới tệp nén DoAn_NhomX.zip (với X là STT nhóm), bao gồm các files sau:
 - Files:
-  - 1 File báo cáo văn bản, PDF.
-  - 1 File Slides, PDF.
-  - 1 File Video Trình bày + Demo: 15-20 phút.
-  - Source Code
-    - SQL
-    - Demo
-    - Report (PDF)
-    - vv…
+  - 01 `BaoCao_NhomX.pdf`: chứa nội dung báo cáo đồ án (20-25 trang), trình bày theo các chương 🡪 xuất .pdf để nộp.
+  - 01 `Slides_NhomX.pdf`: chứa slides thuyết trình (15-20 slides) 🡪 xuất .pdf để nộp.
+  - 01 `Video_NhomX.txt`: chứa video thuyết trình (15-20 phút) 🡪 upload video lên Google Drive, sau đó get link (ở chế độ công khai) và cho link vào file `.txt`.
+  - 01 `Source.zip`: chứa các nội dung liên quan đến source code, bao gồm các files `.sql` cho truy vấn và source code Website Demo.
+  - Các file khác (nếu có).
 - KHÔNG CÒN BÁO CÁO TRỰC TIẾP TẠI LỚP. TẤT CẢ NỘP LẠI FILES.
 - Cách nộp bài: Sẽ có hướng dẫn nộp sau.
   - Files báo cáo/mã nguồn: Elearning.
@@ -20,22 +18,18 @@ Tasks:
 
 - Với mỗi đề bài, tạo một mini-report trình bày bài toán tương ứng.
 
-| MSSV     | Họ và Tên             | Tasks                      | NOTES         |
-| -------- | --------------------- | -------------------------- | ------------- |
-| 25410291 | Đinh Xuân Sâm         | Report/ERD Chen |               |
-| 25410319 | Đặng Hữu Toàn         | Cursor: 2                  |               |
-| 25410321 | Nguyễn Điền Triết     | Stored Procedure: 3        |               |
-| 25410204 | Trương Xuân Hậu       | Trigger: 5                 |               |
-| 25410338 | Lê Anh Vũ             | Stored Procedure: 2        |               |
-| 25410176 | Trần Sơn Bình         | Function: 3                |               |
-| 25410247 | Lê Kim Long           | ERD/Data Seed              |               |
-| 25410337 | La Anh Vũ             | Code/Demo Website                 |               |
-| 25410209 | Lê Ngọc Hiệp          | Tableau Report                     |               |
-| 25410271 | Nguyễn Thị Ngọc Nhung | Không có task                          |               |
-
-Kế hoạch:
-
-- 
+| MSSV     | Họ và Tên             | Tasks               | NOTES |
+| -------- | --------------------- | ------------------- | ----- |
+| 25410291 | Đinh Xuân Sâm         | Report/ERD Chen     |       |
+| 25410319 | Đặng Hữu Toàn         | Cursor: 2           |       |
+| 25410321 | Nguyễn Điền Triết     | Stored Procedure: 3 |       |
+| 25410204 | Trương Xuân Hậu       | Trigger: 5          |       |
+| 25410338 | Lê Anh Vũ             | Stored Procedure: 2 |       |
+| 25410176 | Trần Sơn Bình         | Function: 3         |       |
+| 25410247 | Lê Kim Long           | ERD/Data Seed       |       |
+| 25410337 | La Anh Vũ             | Code/Demo Website   |       |
+| 25410209 | Lê Ngọc Hiệp          | Tableau Report      |       |
+| 25410271 | Nguyễn Thị Ngọc Nhung | Không có task       |       |
 
 ## Quy Cách Tổ Chức
 
@@ -80,11 +74,9 @@ Kế hoạch:
 
 1. (Bảo mật)
 2. ~~Xác thực~~
-
 3. Phân quyền
    1. [RBAC](https://whitehat.vn/threads/kiem-soat-truy-cap-dua-tren-vai-tro-role-based-access-control-la-gi.17301/)
    2. Xét duyệt REFUNDS
-
 4. Import
 5. Export
 6. Backup
@@ -104,7 +96,6 @@ Kế hoạch:
 #### Lưu ý: **Demo** cho các chức năng (Trên nền tảng Web, Desktop, Mobile, ...)
 
 * Demo các mục được trình bày ở phần Xử lý thông tin, An toàn thông tin, vv..
-
 
 ## Phạm vi chức năng
 
@@ -135,4 +126,3 @@ Kế hoạch:
 - Khung nội dung: [outline.md](baocao/content/outline.md)
 - Hiện tại được biểu diễn theo chương (heading level 1) > mục (heading level 2) > tiểu mục (heading level 3).
   - Khi thực hiện slides, chuyển tiểu mục về heading level 1.
-
