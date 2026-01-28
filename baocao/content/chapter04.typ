@@ -206,6 +206,7 @@ Hệ thống áp dụng mô hình bảo mật dựa trên vai trò (RBAC - Role 
 === Sao Lưu & Phục Hồi
 <sao-luu-phuc-hoi>
 
+#todo[(Sao Lưu & Phục Hồi) TRÌNH BÀY BACKUP/RESTORE.]
 Chiến lược sao lưu dữ liệu được đề xuất:
 
 - Full Backup: Thực hiện định kỳ vào 00:00 Chủ Nhật hàng tuần.
